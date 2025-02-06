@@ -41,12 +41,16 @@
 </script>
 <style lang="scss">
 .courses {
+    padding: 50px 0;
     .page-name {
         font-size: 20px;
         font-weight: 500;
         margin: 0 0 30px 0;
         line-height: 19px;
         color: #000000;
+        @include mqm(1024) {
+            text-align: center;
+        }
     }
     &__container {
         padding: 0 20px;
@@ -62,6 +66,7 @@
         border-radius: 15px;
         box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.35);
         cursor: pointer;
+        min-height: 130px;
         &:not(:first-child) {
             margin-top: 20px;
         }

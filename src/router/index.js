@@ -109,6 +109,10 @@ const router = createRouter({
               component: () => import('../views/AboutView.vue'),
             },*/
     ],
+    scrollBehavior(to, from, savedPosition) {
+        // always scroll to top
+        return { top: 0 }
+    },
 })
 function nextFactory(context, middleware, index) {
     const subsequentMiddleware = middleware[index];
