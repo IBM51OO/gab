@@ -264,6 +264,9 @@ const swiperOptions = reactive({
 .main-page {
     .container {
         padding: 0 20px;
+        @include mqm(1024) {
+            padding: 0 80px;
+        }
     }
 }
 </style>
