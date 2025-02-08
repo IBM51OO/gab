@@ -11,8 +11,8 @@ export default defineConfig({
         preprocessorOptions: {
             scss: {
                 quietDeps: true,
-                additionalData: `
-                    @import "/src/assets/mixins.scss";`
+                additionalData:
+                    '@use "/src/assets/mixins.scss" as *;'
             }
         }
     },

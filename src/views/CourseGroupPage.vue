@@ -14,7 +14,7 @@
                     </div>
                     <div class="course-group__course-info">
                         <div class="course-group__course-price">
-                            {{ course.prices[0].amount }} {{ currentValue }}
+                            {{ course.prices.find((el) => el.currency === currentCurrency).amount }} {{ currentValue }}
                         </div>
                         <arrow-right class="course-group__arrow-right-icon" />
                     </div>

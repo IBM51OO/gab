@@ -17,13 +17,13 @@
                             </div>
                         </div>
                         <div class="user-profile__courses-list" v-else>
-                            <div class="user-profile__course" v-for="item in courses" :key="item.img">
+                            <div class="user-profile__course" v-for="item in courses" :key="item.img" @click="router.push(`/course/${item.id}/detail`)">
                                 <div class="user-profile__course-info">
                                     <div class="user-profile__course-img">
-                                        <img src="" alt="">
+                                        <img :src="`${BaseUrl}/image/${item.images[0]}`" alt="">
                                     </div>
                                     <div class="user-profile__course-title">
-                                        {{ item.text }}
+                                        {{ item.name }}
                                     </div>
                                 </div>
                                 <arrow-right class="breadcrumbs__arrow-right-icon" />
@@ -101,6 +101,7 @@ import {useRouter} from "vue-router";
 import LeftMenu from "@/components/LeftMenu.vue";
 import api from "@/services/client.js";
 const mainStore = useMainStore();
+const BaseUrl = ref(import.meta.env.VITE_BASE_API);
 const currentMenuActive = computed(() => mainStore.getCurrentPersonalPage);
 const isMobile = computed(() => window.innerWidth < 1024);
 const router = useRouter();
@@ -217,6 +218,8 @@ function logout() {
     &__course {
         display: flex;
         align-items: center;
+        cursor: pointer;
+        justify-content: space-between;
         box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.35);
         padding: 10px;
         border-radius: 15px;

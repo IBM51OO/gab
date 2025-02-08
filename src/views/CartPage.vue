@@ -36,7 +36,7 @@
                     <div class="page-name">
                         Billing details
                     </div>
-                    <Form :validation-schema="schemaBillings" @submit="onSubmitSignIn">
+                    <Form :validation-schema="schemaBillings" @submit="onSubmitOrder" class="cart-page__form">
                         <div class="cart-page__first-name">
                             <div class="cart-page__first-name-label">
                                 First name
@@ -55,7 +55,7 @@
                             <div class="cart-page__email-label">
                                 Email
                             </div>
-                            <Field name="email" type="email"/>
+                            <Field name="email" type="email" :value="user.email" />
                             <ErrorMessage name="email"/>
                         </div>
                         <div class="cart-page__billings-rule">
@@ -67,6 +67,7 @@
                                 <span>I have read and agree to the website <p>terms and conditions</p></span>
                             </label>
                         </Field>
+                        <ErrorMessage name="agree"/>
                         <button>Place order</button>
                     </Form>
                 </div>
@@ -75,11 +76,14 @@
     </div>
 </template>
 <script setup>
-import {computed, onMounted, reactive, ref} from "vue";
+import {computed, onMounted, ref} from "vue";
 import {ErrorMessage, Field, Form} from "vee-validate";
 import * as yup from "yup";
 import api from "@/services/client.js";
 import {useMainStore} from "@/stores/main.js";
+import {notify} from "@kyvg/vue3-notification";
+import {useRouter} from "vue-router";
+const router = useRouter();
 const schemaBillings = yup.object({
     firstName: yup.string().required('First Name is a required field'),
     lastName: yup.string().required('Last Name is a required field'),
@@ -94,11 +98,28 @@ const mainStore = useMainStore();
 const fetchCourses = async () => {
     courses.value = await api.get('/courses');
 }
+const user = computed(() => mainStore.getUser);
 const currentValue = computed(() => mainStore.getCurrency);
 const cartItems = computed(() => mainStore.getUser?.basket && courses.value.filter((el) => mainStore.getUser.basket.includes(el.id)))
 const cartSubtotal = computed(() => cartItems.value?.reduce((acc, curr) => curr.prices.find((el) => currentValue.value === el.currency).amount + acc, 0));
-function onSubmitSignIn() {
-    console.log('');
+async function onSubmitOrder() {
+    try {
+        await api.post('/order-from-basket', {}, {
+            params: {
+                currency: currentValue.value
+            }
+        });
+        notify({
+            type: 'success',
+            title: "Order success",
+        });
+        router.push({name: 'profile'})
+    } catch (e) {
+        notify({
+            type: 'error',
+            title: "Server Error. Try Again",
+        });
+    }
 }
 </script>
 <style lang="scss">
@@ -114,6 +135,11 @@ function onSubmitSignIn() {
         @include mqm(1024) {
             margin-bottom: 40px;
             text-align: center;
+        }
+    }
+    &__form {
+        button {
+            cursor: pointer;
         }
     }
     &__info {

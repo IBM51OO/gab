@@ -7,6 +7,11 @@
                 </div>
                 <ul class="header-nav">
                     <li>
+                        <div class="header__wallets">
+                            <span class="header__wallets-euro header__wallet" :class="{'active': mainStore.getCurrency === 'EUR'}" @click="setActiveCurrency('EUR')">€</span> / <span :class="{'active': mainStore.getCurrency === 'GBP'}" class="header__wallet header__wallets-fu" @click="setActiveCurrency('GBP')">£</span>
+                        </div>
+                    </li>
+                    <li>
                         <router-link to="/">
                             Home
                         </router-link>
@@ -32,7 +37,7 @@
                         </router-link>
                     </li>
                     <li>
-                        <router-link to="/">
+                        <router-link to="/contact">
                             Contact
                         </router-link>
                     </li>
@@ -58,6 +63,9 @@ import {useMainStore} from "@/stores/main.js";
 import {useRouter} from "vue-router";
 const router = useRouter();
 const mainStore = useMainStore();
+const setActiveCurrency = (currency) => {
+    mainStore.changeCurrency(currency);
+}
 const burderItems = reactive([
     {
         name: 'home',
@@ -106,6 +114,18 @@ const burderItems = reactive([
                 display: none;
             }
         }
+        &__wallets {
+            font-size: 16px;
+            span {
+                cursor: pointer;
+            }
+        }
+        &__wallet {
+            &.active {
+                font-size: 24px;
+                font-weight: 700;
+            }
+        }
         .container {
             width: 100%;
         }
@@ -121,10 +141,15 @@ const burderItems = reactive([
             list-style-type: none;
             li {
                 padding-right: 30px;
-                cursor: pointer;
+                &:not(:first-child) {
+                    cursor: pointer;
+                }
                 a {
                     text-decoration: none;
                     color: #000000;
+                    &.router-link-active {
+                        font-weight: 700;
+                    }
                 }
             }
             @include mqm(1024) {

@@ -278,6 +278,7 @@ async function onSubmitSignUpVerify(data) {
     }
 }
 .auth-page {
+    padding-bottom: 100px;
     @include mqm(1024) {
         display: flex;
     }
@@ -317,8 +318,6 @@ async function onSubmitSignUpVerify(data) {
         margin-top: 30px;
         cursor: pointer;
     }
-
-    padding-bottom: 100px;
 }
 
 .sign-in {

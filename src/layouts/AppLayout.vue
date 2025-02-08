@@ -1,23 +1,28 @@
 <template>
     <component :is="layoutComponent" v-if="isLayoutLoaded">
-        <slot/>
+        <div class="main-wrapper">
+            <slot/>
+        </div>
     </component>
 </template>
 <script setup>
 import {useMainStore} from "@/stores/main.js";
-import {computed, defineAsyncComponent, ref} from "vue";
-import axios from "axios";
+import {computed, defineAsyncComponent, ref, watch, watchEffect} from "vue";
+import {useRoute } from 'vue-router';
 import api from "@/services/client.js";
 import {notify} from "@kyvg/vue3-notification";
 import {useCookies} from "vue3-cookies";
 const {cookies} = useCookies()
 const isLayoutLoaded = ref(false);
 const mainStore = useMainStore();
-if (cookies.get("access_token")) {
-    me();
-} else {
-    isLayoutLoaded.value = true;
-}
+const router = useRoute();
+watch(router,(to) => {
+    if (cookies.get("access_token")) {
+        me();
+    } else {
+        isLayoutLoaded.value = true;
+    }
+}, { deep: true });
 async function me() {
     try {
         const r = await api.get('/me');
@@ -46,5 +51,9 @@ const layoutComponent = computed(() => {
 <style lang="scss">
 .notification-content {
     font-size: 16px;
+}
+.main-wrapper {
+    min-height: calc(100vh - 470px);
+    padding-bottom: 50px;
 }
 </style>

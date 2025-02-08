@@ -28,6 +28,7 @@ export const useMainStore = defineStore('main', () => {
         user.value = userData;
     }
     return {
+        user,
         currency,
         getCurrency,
         changeCurrency,

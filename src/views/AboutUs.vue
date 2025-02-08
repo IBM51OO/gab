@@ -189,6 +189,7 @@ const router = useRouter();
     }
     &__image {
         height: 353px;
+        flex: 0 0 auto;
         img {
             height: 100%;
             border-radius: 10px;

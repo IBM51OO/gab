@@ -18,7 +18,7 @@ axios.interceptors.request.use(
 
         // e.g. set Base url
         config.headers["Authorization"] = "Bearer " + cookies.get('access_token');
-        config.baseURL = "http://91.227.40.254:8880"
+        config.baseURL = import.meta.env.VITE_BASE_API;
 
         return config
     },
