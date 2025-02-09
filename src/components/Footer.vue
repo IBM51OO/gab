@@ -27,11 +27,11 @@
                             Menu
                         </div>
                         <ul class="footer__menu-list">
-                            <li>Home</li>
-                            <li>Courses</li>
-                            <li>About Us</li>
-                            <li>Blog</li>
-                            <li>Login / My Account</li>
+                            <li @click="router.push({name: 'home'})">Home</li>
+                            <li @click="router.push({name: 'courses'})">Courses</li>
+                            <li @click="router.push({name: 'about-us'})">About Us</li>
+                            <li @click="router.push({name: 'blog'})">Blog</li>
+                            <li @click="router.push({name: 'sign-in'})">Login / My Account</li>
                         </ul>
                     </div>
                     <div class="footer__legal-information">
@@ -63,6 +63,8 @@
 </template>
 <script setup>
 import LogoSvg from '@/img/svg/logow.svg?component';
+import {useRouter} from "vue-router";
+const router = useRouter();
 </script>
 <style lang="scss">
 .footer {
@@ -147,6 +149,7 @@ import LogoSvg from '@/img/svg/logow.svg?component';
         color: #fff;
         margin-top: 15px;
         font-weight: 400;
+        cursor: pointer;
     }
     &__legal-information {
         margin-top: 40px;
