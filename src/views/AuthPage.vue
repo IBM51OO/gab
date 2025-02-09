@@ -316,6 +316,7 @@ async function onSubmitSignUpVerify(data) {
         color: #576C7E;
         line-height: 14px;
         margin-top: 30px;
+        background: #fff;
         cursor: pointer;
     }
 }
