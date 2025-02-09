@@ -37,11 +37,6 @@
                         </router-link>
                     </li>
                     <li>
-                        <router-link to="/contact">
-                            Contact
-                        </router-link>
-                    </li>
-                    <li>
                         <router-link to="/sign-in" v-if="!mainStore.getIsAuth">
                             Login / My Account
                         </router-link>
