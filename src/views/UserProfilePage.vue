@@ -34,50 +34,55 @@
                         <div class="page-name">
                             Account details
                         </div>
-                        <Form :validation-schema="schemaUser" @submit="onChange">
+                        <Form>
                             <div class="user-profile__first-name user-profile__input-field">
                                 <div class="user-profile__first-name-label">
                                     First name
                                 </div>
-                                <Field name="firstName"/>
+                                <Field name="firstName" v-model="userProfile.firstName"/>
                                 <ErrorMessage name="firstName"/>
                             </div>
                             <div class="user-profile__last-name user-profile__input-field">
                                 <div class="user-profile__last-name-label">
                                     Last name
                                 </div>
-                                <Field name="lastName"/>
+                                <Field name="lastName" v-model="userProfile.lastName"/>
                                 <ErrorMessage name="lastName"/>
+                                <span @click="changeName" v-if="userProfile.firstName !== user.first_name || userProfile.lastName !== user.second_name">Change</span>
                             </div>
                             <div class="user-profile__email user-profile__input-field">
                                 <div class="user-profile__email-label">
                                     Email
                                 </div>
-                                <Field name="Email"/>
-                                <ErrorMessage name="Email"/>
+                                <Field name="Email" v-model="userProfile.email"/>
+                                <div class="user-profile__email-label" v-if="isEmailCodeSend">
+                                    Code
+                                </div>
+                                <Field name="code" v-model="userProfile.code" v-if="isEmailCodeSend"/>
+                                <span @click="changeEmail" v-if="userProfile.email !== user.email">Change</span>
                             </div>
                             <div class="user-profile__old-password user-profile__input-field">
                                 <div class="user-profile__old-password-label">
                                     Old password
                                 </div>
-                                <Field name="Email"/>
-                                <ErrorMessage name="Email"/>
+                                <Field name="oldPassword" v-model="userProfile.oldPassword" type="password"/>
+                                <ErrorMessage name="oldPassword"/>
                             </div>
                             <div class="user-profile__password user-profile__input-field">
                                 <div class="user-profile__password-label">
                                     New password
                                 </div>
-                                <Field name="password"/>
-                                <ErrorMessage name="password"/>
+                                <Field name="newPassword" v-model="userProfile.newPassword" type="password"/>
+                                <ErrorMessage name="newPassword"/>
                             </div>
                             <div class="user-profile__password-confirm user-profile__input-field">
                                 <div class="user-profile__password-confirm-label">
                                     Confirm new password
                                 </div>
-                                <Field name="passwordConfirm"/>
-                                <ErrorMessage name="passwordConfirm"/>
+                                <Field name="passwordConfirm" v-model="userProfile.confirmNewPassword" type="password"/>
+                                <ErrorMessage name="passwordConfirm" v-model="userProfile.confirmNewPassword"/>
+                                <span @click="changePassword" v-if="userProfile.newPassword" >Change password</span>
                             </div>
-                            <button class="user-profile__save-changes">Save changes</button>
                         </Form>
                     </div>
                     <div class="user-profile__logout-wrapper" v-if="currentMenuActive === 'logout' || isMobile">
@@ -100,12 +105,101 @@ import {useCookies} from "vue3-cookies";
 import {useRouter} from "vue-router";
 import LeftMenu from "@/components/LeftMenu.vue";
 import api from "@/services/client.js";
+import {notify} from "@kyvg/vue3-notification";
 const mainStore = useMainStore();
+const user = computed(() => mainStore.getUser);
 const BaseUrl = ref(import.meta.env.VITE_BASE_API);
 const currentMenuActive = computed(() => mainStore.getCurrentPersonalPage);
 const isMobile = computed(() => window.innerWidth < 1024);
 const router = useRouter();
+const isEmailCodeSend = ref(false);
 const courses = ref([])
+const userProfile = reactive({
+    email: user.value.email,
+    newPassword: '',
+    code: '',
+    oldPassword: '',
+    confirmNewPassword: '',
+    firstName: user.value.first_name,
+    lastName: user.value.second_name,
+});
+const changePassword = async () => {
+    if (userProfile.newPassword !== userProfile.confirmNewPassword) {
+        notify({
+            type: 'error',
+            title: "Passwords don't match",
+        });
+        return
+    }
+    if (!userProfile.confirmNewPassword) {
+        notify({
+            type: 'error',
+            title: "Fill out password confirmation",
+        });
+        return
+    }
+    try {
+        const r = await api.post('/change-password', {
+            old_password: userProfile.oldPassword,
+            new_password: userProfile.newPassword,
+        });
+        notify({
+            type: 'success',
+            title: "Password changed",
+        });
+    } catch (e) {
+        notify({
+            type: 'error',
+            title: "Server Error. Try Again",
+        });
+    }
+}
+const changeEmail = async (code) => {
+    try {
+        const r = await api.post('/change-email', {
+            new_email: userProfile.email,
+        }, {
+            params: {
+                code,
+            }
+        });
+        isEmailCodeSend.value = true;
+        if (!code) {
+            notify({
+                type: 'success',
+                title: "Code Sent",
+            });
+        } else {
+            isEmailCodeSend.value = false;
+            notify({
+                type: 'success',
+                title: "Email changed",
+            });
+        }
+    } catch (e) {
+        notify({
+            type: 'error',
+            title: "Server Error. Try Again",
+        });
+    }
+}
+const changeName = async () => {
+    try {
+        const r = await api.post('/users', {
+            first_name: userProfile.firstName,
+            second_name: userProfile.lastName,
+        });
+        notify({
+            type: 'success',
+            title: "Profile Updated",
+        });
+    } catch (e) {
+        notify({
+            type: 'error',
+            title: "Server Error. Try Again",
+        });
+    }
+}
 onMounted(() => {
     fetchMyCourses();
 });
@@ -178,6 +272,11 @@ function logout() {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 gap: 20px;
+            }
+            span {
+                display: inline-block;
+                cursor: pointer;
+                margin-top: 10px;
             }
         }
         input {

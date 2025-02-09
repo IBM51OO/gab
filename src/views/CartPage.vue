@@ -59,12 +59,12 @@
                             <ErrorMessage name="email"/>
                         </div>
                         <div class="cart-page__billings-rule">
-                            Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <p>privacy policy</p>.
+                            Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <p @click="router.push({name: 'privacy'})">privacy policy</p>.
                         </div>
                         <Field v-slot="{ field }" name="agree" type="checkbox" :value="true" :unchecked-value="false">
                             <label class="cart-page__billings-rule-label">
                                 <input type="checkbox" name="agree" v-bind="field" :value="true" />
-                                <span>I have read and agree to the website <p>terms and conditions</p></span>
+                                <span>I have read and agree to the website <p @click="router.push({name: 'terms'})">terms and conditions</p></span>
                             </label>
                         </Field>
                         <ErrorMessage name="agree"/>
@@ -168,6 +168,7 @@ async function onSubmitOrder() {
         color: #383838;
         margin-top: 25px;
         p {
+            cursor: pointer;
             display: inline;
             font-weight: 500;
             text-decoration: underline;
@@ -232,6 +233,7 @@ async function onSubmitOrder() {
             margin: 0 0 0 18px;
         }
         p {
+            cursor: pointer;
             color: black;
             text-decoration: underline;
         }

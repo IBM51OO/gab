@@ -3,7 +3,7 @@
         <div class="container">
             <div class="footer__logo">
                 <div class="footer__logo-icon">
-                    <img src="../img/svg/logow.svg" alt="">
+                    <LogoSvg />
                 </div>
                 <div class="footer__visa-logo">
                     <img src="../img/payments.png" alt="">
@@ -61,6 +61,9 @@
         </div>
     </div>
 </template>
+<script setup>
+import LogoSvg from '@/img/svg/logow.svg?component';
+</script>
 <style lang="scss">
 .footer {
     padding-top: 40px;

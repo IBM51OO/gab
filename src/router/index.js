@@ -12,6 +12,8 @@ import UserProfilePage from "@/views/UserProfilePage.vue";
 import CartPage from "@/views/CartPage.vue";
 import CoursePage from "@/views/CoursePage.vue";
 import guest from "@/router/middleware/isGuest.js";
+import TermsPage from "@/views/TermsPage.vue";
+import PrivacyPolicyPage from "@/views/PrivacyPolicyPage.vue";
 
 
 const router = createRouter({
@@ -95,6 +97,22 @@ const router = createRouter({
             path: '/course/:id/detail',
             name: 'cart-item',
             component: CoursePage,
+            meta: {
+                layout: 'DefaultLayout',
+            },
+        },
+        {
+            path: '/terms',
+            name: 'terms',
+            component: TermsPage,
+            meta: {
+                layout: 'DefaultLayout',
+            },
+        },
+        {
+            path: '/privacy-policy',
+            name: 'privacy',
+            component: PrivacyPolicyPage,
             meta: {
                 layout: 'DefaultLayout',
             },

@@ -57,10 +57,12 @@ import {useRoute, useRouter} from "vue-router";
 import api from "@/services/client.js";
 import {computed, onMounted, ref} from "vue";
 import {notify} from "@kyvg/vue3-notification";
+import {useMainStore} from "@/stores/main.js";
 const router = useRouter();
 const route = useRoute();
 const course = ref();
 const groups = ref();
+const mainStore = useMainStore();
 const currentGroup = computed(() => groups.value && groups.value.find((el) => el.id === course.value?.group))
 onMounted(() => {
     fetchGroups();
@@ -77,6 +79,10 @@ const fetchPreviewCourse = async (id) => {
     course.value = await api.get(`/courses/${id}`);
 }
 const addToCart = async () => {
+    if (!mainStore.isAuth) {
+        router.push({name: 'sign-in'})
+        return;
+    }
     try {
         await api.put('/add-to-basket', {}, {
             params: {
