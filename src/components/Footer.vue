@@ -40,7 +40,7 @@
                         </div>
                         <ul class="footer__legal-information-list">
                             <li>Privacy Policy</li>
-                            <li>CourTerms & Conditionses</li>
+                            <li>Terms & Condition</li>
                         </ul>
                     </div>
                     <div class="footer__contacts">
@@ -49,7 +49,7 @@
                         </div>
                         <ul>
                             <li>
-                                mail@mail.com
+                                info@fitshpere.pro
                             </li>
                         </ul>
                     </div>
