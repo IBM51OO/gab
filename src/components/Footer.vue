@@ -39,8 +39,8 @@
                             Legal Information
                         </div>
                         <ul class="footer__legal-information-list">
-                            <li>Privacy Policy</li>
-                            <li>Terms & Condition</li>
+                            <li @click="router.push({name: 'privacy'})">Privacy Policy</li>
+                            <li @click="router.push({name: 'terms'})">Terms & Condition</li>
                         </ul>
                     </div>
                     <div class="footer__contacts">
@@ -80,6 +80,11 @@ const router = useRouter();
     &__logo {
         display: flex;
         justify-content: space-between;
+    }
+    &__legal-information-list {
+        li {
+            cursor: pointer;
+        }
     }
     &__subscribe-title {
         font-size: 20px;
