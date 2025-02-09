@@ -22,7 +22,7 @@
                             <ErrorMessage name="password"/>
                         </div>
                         <div class="sign-in__forgot-password-button" @click="isSignIn = false">
-                            Забыли пароль
+                            Forgot password
                         </div>
                         <button>Log in</button>
                     </Form>
