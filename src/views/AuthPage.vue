@@ -254,6 +254,7 @@ async function onSubmitSignUpVerify(data) {
         notify({
             title: "Code verified",
         });
+        await onSubmitSignIn({email: user.email, password: user.password})
     } catch (e) {
         notify({
             type: 'error',
