@@ -82,6 +82,14 @@ onMounted(() => {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: 20px;
+            @include mqm(768) {
+                margin-bottom: 30px;
+            }
+            @include mqm(1024) {
+                padding: 60px 15px;
+                margin-bottom: 30px;
+            }
         }
         &__course-info {
             display: flex;
