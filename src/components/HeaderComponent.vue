@@ -179,6 +179,7 @@ const burderItems = reactive([
             background-image: url("../img/transform@1024.png");
             background-size: cover;
             min-height: 449px;
+            background-position: 50%;
         }
     }
     .transform-content {
