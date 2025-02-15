@@ -41,3 +41,33 @@
     font-style: normal;
     font-display: swap;
 }
+@font-face {
+    font-family: 'AtkinsonHyperlegible';
+    src: url('./fonts/Aktinson/AtkinsonHyperlegible-BoldItalic.eot');
+    src: url('./fonts/Aktinson/AtkinsonHyperlegible-BoldItalic.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/Aktinson/AtkinsonHyperlegible-BoldItalic.woff2') format('woff2'),
+    url('./fonts/Aktinson/AtkinsonHyperlegible-BoldItalic.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('./fonts/Inter/Inter18pt-Regular.eot');
+    src: url('./fonts/Inter/Inter18pt-Regular.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/Inter/Inter18pt-Regular.woff2') format('woff2'),
+    url('./fonts/Inter/Inter18pt-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('./fonts/Inter/Inter18pt-Medium.eot');
+    src: url('./fonts/Inter/Inter18pt-Medium.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/Inter/Inter18pt-Medium.woff2') format('woff2'),
+    url('./fonts/Inter/Inter18pt-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}

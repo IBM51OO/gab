@@ -161,18 +161,26 @@ const burderItems = reactive([
         @include mqm(1024) {
             display: flex;
         }
+        &__img-bg {
+            position: absolute;
+            background-image: url("../img/ec.jpg");
+            background-repeat: no-repeat;
+        }
         &__img {
             height: 220px;
             width: 100%;
+            margin-top: 20px;
             img {
                 width: 100%;
                 height: 100%;
+                object-fit: cover;
             }
             @include mqm(1024) {
                 flex: 51%;
                 img {
                     display: none;
                 }
+                display: none;
             }
         }
         @include mqm(1024) {
@@ -184,46 +192,42 @@ const burderItems = reactive([
     }
     .transform-content {
         margin-top: 10px;
-        padding-bottom: 100px;
+        @include mqm(1024) {
+            padding-bottom: 100px;
+        }
         img {
             width: 100%;
             height: 100%;
         }
         &__title-second {
+            background: #1969AD;
+            background: linear-gradient(to right, #1969AD 3%, #7EB8E8 30%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             @include mqm(1024) {
                 display: block;
             }
         }
         &__title-first {
-            color: #000000;
             display: block;
             position: relative;
+            background: #1969AD;
+            background: linear-gradient(to right, #1969AD 3%, #7EB8E8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             @include mqm(1024) {
                 display: inline-block;
-                &::before {
-                    content: '';
-                    display: block;
-                    background-image: url("../img/bridge.png");
-                    height: 18px;
-                    background-repeat: no-repeat;
-                    position: absolute;
-                    width: 40px;
-                    left: -50px;
-                    top: 50%;
-                    transform: translate(0, -50%);
-                }
             }
         }
         &__title {
-            font-size: 32px;
+            font-size: 40px;
             font-weight: 700;
-            color: #576C7E;
-            line-height: 34px;
+            font-family: 'AtkinsonHyperlegible',serif;
+            line-height: 40px;
             position: relative;
             @include mqm(1024) {
-                font-size: 50px;
-                line-height: 51px;
-                text-align: right;
+                font-size: 64px;
+                line-height: 64px;
             }
         }
         &__slogan {
@@ -240,65 +244,100 @@ const burderItems = reactive([
             font-size: 14px;
             color: #000;
             margin-bottom: 25px;
+            font-family: 'Inter', sans-serif;
+            max-width: 619px;
+            @include mqm(1024) {
+                font-size: 16px;
+            }
         }
         &__explore-button {
-            background-color: #576C7E;
-            color: #fff;
-            border-radius: 10px;
-            max-width: 246px;
+            position: relative;
+            color: #1969AD;
+            border: 1px solid #1969AD;
+            font-size: 20px;
+            border-radius: 20px;
+            font-family: 'Inter', sans-serif;
+            max-width: 278px;
+            font-weight: 500;
             padding: 22px 0;
             line-height: 16px;
             cursor: pointer;
             text-align: center;
-            @include mqm(1024) {
-                margin-left: auto;
-            }
+        }
+        &__explore-button::before {
+            position: absolute;
+            content: "";
+            inset: 0; /* same as { tp: 0; right: 0; bottom: 0; left: 0; } */
+            background: rgb(26,105,173);
+            background: linear-gradient(90deg, rgba(26,105,173,1) 0%, rgba(11,43,71,1) 100%);
+            z-index: -1;
+            opacity: 0;
+            border-radius: 20px;
+            transition: opacity 0.25s linear;
+        }
+        &__explore-button:hover {
+            color: #fff;
+        }
+        &__explore-button:hover::before {
+            opacity: 1;
         }
         @include mqm(1024) {
             padding: 50px 80px 50px 0;
             display: block;
-            text-align: right;
         }
     }
     .fitness-backed {
-        background-color: #576C7E;
+        background: rgb(11,70,119);
+        background: linear-gradient(225deg, rgba(11,70,119,1) 0%, rgba(76,142,200,1) 100%);
+        border-bottom-right-radius: 30px;
+        border-bottom-left-radius: 30px;
         padding: 30px 20px 100px 20px;
         @include mqm(1024) {
             display: flex;
-            padding: 100px 0;
+            padding: 100px 80px;
             flex-direction: row;
-            justify-content: center;
+            justify-content: space-between;
         }
         &__content {
             @include mqm(1024) {
-                max-width: 522px;
+                max-width: 580px;
                 margin-left: 128px;
                 text-align: right;
             }
         }
         &__description {
-            color: #fff;
-            margin-top: 15px;
+            margin-top: 30px;
             font-size: 14px;
             font-weight: 400;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
             @include mqm(1024) {
+                max-width: 507px;
+                margin-left: auto;
                 margin-top: 50px;
+                font-size: 18px;
             }
         }
         &__learn-more-button {
             margin-top: 40px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
             cursor: pointer;
             text-align: center;
-            color: #576C7E;
-            border-radius: 10px;
+            color: #1969AD;
+            border-radius: 20px;
             background-color: #fff;
             padding: 23px 0;
-            font-size: 20px;
+            font-size: 15px;
             line-height: 14px;
             margin-left: auto;
             width: 100%;
+            margin: 40px auto 0 auto;
+            max-width: 272px;
             @include mqm(1024) {
-                max-width: 369px;
+                margin: 40px 0 auto auto;
+                font-size: 20px;
+                max-width: 410px;
             }
         }
         &__img {
@@ -307,44 +346,39 @@ const burderItems = reactive([
             margin-top: 30px;
             @include mqm(1024) {
                 width: auto;
+                height: 522px;
                 margin-top: 0;
             }
             img {
-                border-radius: 10px;
+                border-radius: 30px;
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
             }
         }
         &__title-desk {
+            font-family: 'AtkinsonHyperlegible',serif;
+            font-weight: 700;
             display: none;
             color: #fff;
             @include mqm(1024) {
-                display: block;
+                display: inline;
                 text-align: right;
-                font-size: 50px;
-                line-height: 52px;
+                font-size: 64px;
+                line-height: 64px;
                 font-weight: 700;
                 span {
                     display: block;
                 }
             }
         }
-        &__slogan {
-            color: #fff;
-            font-family: 'Roboto-Italic';
-            margin-top: 30px;
-            font-weight: normal;
-            font-size: 19px;
-            @include mqm(1024) {
-                font-size: 20px;
-            }
-        }
         &__title {
-            font-size: 32px;
+            font-family: 'AtkinsonHyperlegible',serif;
+            font-weight: 700;
+            font-size: 40px;
             color: #fff;
             font-weight: 700;
-            line-height: 32px;
+            line-height: 40px;
             text-align: left;
             span {
                 display: block;

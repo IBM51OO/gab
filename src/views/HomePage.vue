@@ -2,29 +2,22 @@
     <div class="main-page">
         <div class="transform-block">
             <div class="transform-banner">
-                <div class="transform-banner__img">
-                    <img src="../img/transform.png" alt="">
-                </div>
                 <div class="container">
                     <div class="transform-content">
                         <div class="transform-content__title">
                             <span class="transform-content__title-first">Transform Your</span><span
-                            class="transform-content__title-second">Fitness Journey Today</span>
-                        </div>
-                        <div class="transform-content__slogan">
-                            Scientifically Proven Workouts. Certified Trainers. Tailored for Your Goals.
+                            class="transform-content__title-second">Fitness Journey</span>
                         </div>
                         <div class="transform-content__description">
-                            At FitSphere, we believe fitness is more than just working out—it's about finding the
-                            perfect balance for your body and mind. Our programs are built on a foundation of scientific
-                            research, ensuring you achieve your goals effectively and safely. Whether you're a beginner
-                            or looking to take your training to the next level, FitSphere has a program tailored just
-                            for you.
+                            At FitSphere, we believe fitness is more than just working out—it's about finding the perfect balance for your body and mind. Our programs are built on a foundation of scientific research, ensuring you achieve your goals effectively and safely. Whether you're a beginner or looking to take your training to the next level, FitSphere has a program tailored just for you.
                         </div>
                         <div class="transform-content__explore-button" @click="router.push({name: 'courses'})">
                             Explore Courses
                         </div>
                     </div>
+                </div>
+                <div class="transform-banner__img">
+                    <img src="../img/transform@1024.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -33,14 +26,11 @@
                 Your Fitness <span>Backed By Science</span>
             </div>
             <div class="fitness-backed__img">
-                <img src="../img/backed.png" alt="">
+                <img src="../img/backed.jpg" alt="">
             </div>
             <div class="fitness-backed__content">
                 <div class="fitness-backed__title-desk">
-                    Your Fitness <span>Backed By Science</span>
-                </div>
-                <div class="fitness-backed__slogan">
-                    Explore a unique fitness experience tailored to your goals.
+                    <span>Your Fitness</span> <span>Backed By Science</span>
                 </div>
                 <div class="fitness-backed__description">
                     At FitSphere, we go beyond traditional workouts. Our certified trainers craft programs based on the
@@ -266,6 +256,14 @@ const swiperOptions = reactive({
         padding: 0 20px;
         @include mqm(1024) {
             padding: 0 80px;
+        }
+    }
+    .transform-block {
+        @include mqm(1024) {
+            background-image: url("../img/transform@1024.jpg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: right 50%;
         }
     }
 }
