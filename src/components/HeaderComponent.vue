@@ -392,12 +392,19 @@ const burderItems = reactive([
         margin-top: 40px;
     }
     .experts-block {
+        overflow: hidden;
         padding-top: 100px;
         padding-bottom: 100px;
+        font-family: 'AtkinsonHyperlegible',serif;
         &__title {
-            font-size: 32px;
-            line-height: 32px;
+            font-size: 40px;
+            line-height: 40px;
             text-align: left;
+            background: #1969AD;
+            letter-spacing: 3px;
+            background: linear-gradient(to right, #1969AD 3%, #7EB8E8 90%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             font-weight: 700;
             color: #576C7E;
             span {
@@ -407,20 +414,25 @@ const burderItems = reactive([
                 font-size: 50px;
                 line-height: 52px;
                 max-width: 846px;
-                margin: 0 auto;
                 span {
                     display: block;
                 }
             }
         }
         .expert-skills {
+            font-family: 'Inter', sans-serif;
             padding-left: 25px;
-            margin-top: 20px;
-            &__item {
+            color: #fff;
+            font-size: 14px;
+            margin-top: 10px;
+            @include mqm(1024) {
+                font-size: 16px;
                 margin-top: 20px;
+            }
+            &__item {
                 &::marker {
                     font-size: 14px;
-                    color: #000;
+                    color: #fff;
                 }
             }
         }
@@ -429,12 +441,28 @@ const burderItems = reactive([
                 display: flex;
                 gap: 20px;
                 justify-content: space-between;
-                align-items: flex-start;
             }
         }
         .expert {
+            border: 2px solid #4887BD;
+            border-radius: 30px;
+            overflow: hidden;
+            width: 100%;
+            cursor: pointer;
+            transition: 500ms all ease;
             &:not(:first-child) {
                 margin-top: 50px;
+            }
+            img {
+                transition: 500ms all ease;
+            }
+            &:hover .expert-image img {
+                transition: 500ms all ease;
+                transform: scale(1.1);
+            }
+            &:hover .expert-description {
+                transition: 500ms all ease;
+                background-color: #1969AD;
             }
             @include mqm(1024) {
                 &:not(:first-child) {
@@ -443,47 +471,65 @@ const burderItems = reactive([
             }
         }
         .expert-description {
-            margin-top: 20px;
+            transition: 500ms all ease;
+            padding: 20px 40px;
+            background-color: #4887BD;
+            height: 100%;
             &__name {
-                color: #000;
-                font-weight: 500;
+                color: #fff;
                 font-size: 20px;
+                font-family: 'Inter', sans-serif;
+                font-weight: 500;
             }
         }
         .expert-image {
             height: 364px;
+            overflow: hidden;
             img {
                 height: 100%;
                 width: 100%;
-                object-fit: cover;
+                object-fit: contain;
             }
         }
     }
     .inspiring-stories {
-        background-color: #576C7E;
+        overflow: hidden;
+        background: rgb(11, 70, 119);
+        background: linear-gradient(225deg, rgb(11, 70, 119) 0%, rgb(76, 142, 200) 100%);
+        border-bottom-right-radius: 30px;
+        border-bottom-left-radius: 30px;
         padding-bottom: 50px;
         &__title {
-            padding: 50px 0;
+            font-family: 'AtkinsonHyperlegible',serif;
+            padding: 80px 0 50px 0;
             font-size: 32px;
             font-weight: 700;
             line-height: 31px;
             color: #fff;
             @include mqm(1024) {
-                max-width: 846px;
                 text-align: center;
                 margin: 0 auto;
-                font-size: 50px;
+                font-size: 48px;
                 letter-spacing: -1px;
             }
         }
         &__slider-item-img {
             height: 255px;
+            overflow: hidden;
+            border-radius: 30px;
         }
         &__slider-item {
+            overflow: hidden;
+            cursor: pointer;
+            &:hover img {
+                transform: scale(1.1);
+            }
             img {
+                transition: 500ms all ease-in;
                 height: 100%;
                 width: 100%;
                 object-fit: cover;
+                border-radius: 30px;
             }
         }
         .swiper {
@@ -502,6 +548,7 @@ const burderItems = reactive([
             padding-bottom: 50px;
         }
         .person-name {
+            font-family: 'Inter', sans-serif;
             font-size: 20px;
             color: #fff;
             font-weight: 500;
@@ -509,6 +556,7 @@ const burderItems = reactive([
             margin-top: 30px;
         }
         .person-description {
+            font-family: 'Inter', sans-serif;
             font-size: 16px;
             margin-top: 15px;
             color: #fff;
