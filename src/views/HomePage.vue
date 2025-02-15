@@ -22,17 +22,17 @@
             </div>
         </div>
         <div class="fitness-backed">
-            <div class="fitness-backed__title displayBox" data-aos="zoom-in">
+            <div class="fitness-backed__title displayBox" data-aos="zoom-in" data-aos-duration="1000">
                 Your Fitness <span>Backed By Science</span>
             </div>
-            <div class="fitness-backed__img displayBox" data-aos="zoom-in">
+            <div class="fitness-backed__img displayBox" data-aos="zoom-in" data-aos-duration="1000">
                 <img src="../img/backed.jpg" alt="">
             </div>
             <div class="fitness-backed__content">
-                <div class="fitness-backed__title-desk displayBox" data-aos="zoom-in">
+                <div class="fitness-backed__title-desk displayBox" data-aos="zoom-in" data-aos-duration="1000">
                     <span>Your Fitness</span> <span>Backed By Science</span>
                 </div>
-                <div class="fitness-backed__description displayBox" data-aos="zoom-in">
+                <div class="fitness-backed__description displayBox" data-aos="zoom-in" data-aos-duration="1000">
                     At FitSphere, we go beyond traditional workouts. Our certified trainers craft programs based on the
                     latest research in sports science, ensuring that every exercise is efficient and results-driven.
                     Whether it's strength training, cardio, or yoga, our courses provide you with everything you need to
