@@ -685,6 +685,8 @@ const burderItems = reactive([
     }
     .primary-button {
         cursor: pointer;
+        position: relative;
+        z-index: 3;
         background: rgb(26,105,173);
         border-radius: 20px;
         color: #fff;
@@ -695,6 +697,8 @@ const burderItems = reactive([
     }
     .primary-button-hover {
         cursor: pointer;
+        position: relative;
+        z-index: 3;
         border: 1px solid #1969AD;
         color: #1969AD;
         position: relative;
