@@ -203,7 +203,7 @@
                             class="mySwiper"
                         >
                             <swiper-slide>
-                                <div class="inspiring-stories__slider-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150">
+                                <div class="inspiring-stories__slider-item" data-aos-offset="200" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150">
                                     <div class="inspiring-stories__slider-item-img">
                                         <img src="../img/inspire/insp1.png" alt="">
                                     </div>
@@ -218,7 +218,7 @@
                                 </div>
                             </swiper-slide>
                             <swiper-slide>
-                                <div class="inspiring-stories__slider-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                                <div class="inspiring-stories__slider-item" data-aos-offset="200" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                                     <div class="inspiring-stories__slider-item-img">
                                         <img src="../img/inspire/insp2.png" alt="">
                                     </div>
@@ -233,7 +233,7 @@
                                 </div>
                             </swiper-slide>
                             <swiper-slide>
-                                <div class="inspiring-stories__slider-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="350">
+                                <div class="inspiring-stories__slider-item" data-aos-offset="200" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="350">
                                     <div class="inspiring-stories__slider-item-img">
                                         <img src="../img/inspire/insp3.png" alt="">
                                     </div>
@@ -267,9 +267,45 @@
                 </div>
             </div>
         </div>
-<!--        <div class="fitness-explore">-->
-<!--            .fitness-explore__title-->
-<!--        </div>-->
+        <div class="fitness-explore">
+            <div class="container">
+                <div class="fitness-explore__title" data-aos="fade-up" data-aos-duration="1000">
+                    Explore Some of Our Top Courses
+                </div>
+                <div class="fitness-explore__description" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    From strength training to cardio, mobility, and specialized fitness programs – our expertly crafted courses help you achieve your goals efficiently. Whether you're a beginner or an advanced athlete, there's a perfect program for you!
+                </div>
+                <div class="fitness-explore__items" v-if="courses">
+                    <div class="fitness-explore__item" data-aos="fade-right" data-aos-duration="1000" @click="router.push(`/course/${courses[0].id}`)">
+                        <div class="fitness-explore__item-img">
+                            <img src="../img/33.png" alt="">
+                        </div>
+                        <div class="fitness-explore__item-title">
+                            {{ courses[0].name }}
+                        </div>
+                    </div>
+                    <div class="fitness-explore__item" data-aos="fade-up" data-aos-duration="1000" @click="router.push(`/course/${courses[1].id}`)">
+                        <div class="fitness-explore__item-img">
+                            <img src="../img/11.png" alt="">
+                        </div>
+                        <div class="fitness-explore__item-title">
+                            {{ courses[1].name }}
+                        </div>
+                    </div>
+                    <div class="fitness-explore__item" data-aos="fade-left" data-aos-duration="1000" @click="router.push(`/course/${courses[2].id}`)">
+                        <div class="fitness-explore__item-img">
+                            <img src="../img/11.png" alt="">
+                        </div>
+                        <div class="fitness-explore__item-title">
+                            {{ courses[2].name }}
+                        </div>
+                    </div>
+                </div>
+                <div class="fitness-explore__all-courses" @click="router.push({name: 'courses'})">
+                    View All Courses
+                </div>
+            </div>
+        </div>
         <div class="get-start">
             <div class="container">
                 <div class="get-start__content">
@@ -284,10 +320,10 @@
                             <img src="../img/getstart.png" alt="">
                         </div>
                         <div class="get-start__buttons">
-                            <div class="get-start__sign-in-button get-start-button" @click="router.push({name: 'sign-in'})">
+                            <div class="get-start__sign-in-button get-start-button primary-button" @click="router.push({name: 'sign-in'})">
                                 Sign Up Now
                             </div>
-                            <div class="get-start__explore-button get-start-button" @click="router.push({name: 'courses'})">
+                            <div class="get-start__explore-button get-start-button primary-button-hover" @click="router.push({name: 'courses'})">
                                 Explore Courses
                             </div>
                         </div>
@@ -308,9 +344,12 @@ import { Pagination } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
-import {reactive} from "vue";
+import {onMounted, reactive, ref} from "vue";
 import {useRouter} from "vue-router";
+import api from "@/services/client.js";
 const router = useRouter();
+const courses = ref();
+const BaseUrl = ref(import.meta.env.VITE_BASE_API);
 const swiperOptions = reactive({
     breakpoints: {
         0: {
@@ -323,6 +362,12 @@ const swiperOptions = reactive({
             spaceBetween: 26,
         }
     }
+})
+async function fetchCourses() {
+    courses.value = (await api.get('/courses')).filter((el) => el.id === '1e9178c8aa7642dab6b0f70a0a8db0da' || el.id === 'ef150c4738d54d61afcc242cdff3fc77' || el.id === 'd58faf1ae0c84d66873a6356d7c871dc');
+}
+onMounted(() => {
+    fetchCourses();
 })
 </script>
 <style lang="scss">
@@ -453,6 +498,97 @@ const swiperOptions = reactive({
             @include mqm(1024) {
                 padding: 0 188px;
             }
+        }
+    }
+    .fitness-explore {
+        overflow: hidden;
+        background-color: rgba(72, 135, 189, 0.1);
+        box-shadow: 0px -5px 8px -4px rgba(0, 0, 0, 0.27) inset;
+        padding-bottom: 20px;
+        @include mqm(1024) {
+            padding-bottom: 50px;
+        }
+        &__title {
+            padding: 80px 0 20px 0;
+            font-family: 'AtkinsonHyperlegible',serif;
+            font-size: 40px;
+            background: #1969AD;
+            letter-spacing: 1px;
+            background: linear-gradient(to right, #1969AD 3%, #7EB8E8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 40px;
+            text-align: center;
+            @include mqm(1024) {
+                font-size: 48px;
+                line-height: 48px;
+                text-align: center;
+            }
+        }
+        &__item {
+            cursor: pointer;
+        }
+        &__description {
+            max-width: 625px;
+            margin: 0 auto;
+            font-family: 'Inter', sans-serif;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        &__items {
+            @include mqm(1024) {
+                display: flex;
+                gap: 100px;
+            }
+        }
+        &__item-title {
+            text-align: center;
+            font-family: 'Roboto-Regular', sans-serif;
+            font-weight: 500;
+            font-size: 20px;
+            margin: 30px auto;
+            letter-spacing: 1px;
+            @include mqm(1024) {
+                margin: 0 auto;
+                max-width: 305px;
+                margin-top: 20px;
+            }
+        }
+        &__all-courses {
+            position: relative;
+            margin: 50px auto;
+            padding: 14px 0;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            border: 1px solid #1969AD;
+            border-radius: 20px;
+            color: #1969AD;
+            font-size: 20px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            background-color: #fff;
+            @include mqm(1024) {
+                max-width: 262px;
+            }
+        }
+        &__all-courses::before {
+            position: absolute;
+            content: "";
+            inset: 0; /* same as { tp: 0; right: 0; bottom: 0; left: 0; } */
+            background: rgb(26,105,173);
+            background: linear-gradient(90deg, rgba(26,105,173,1) 0%, rgba(11,43,71,1) 100%);
+            z-index: -1;
+            opacity: 0;
+            border-radius: 20px;
+            transition: opacity 0.25s linear;
+        }
+        &__all-courses:hover {
+            color: #fff;
+            background-color: transparent;
+        }
+        &__all-courses:hover::before {
+            opacity: 1;
         }
     }
 }

@@ -567,10 +567,14 @@ const burderItems = reactive([
         padding-top: 50px;
         padding-bottom: 100px;
         &__title {
-            font-size: 32px;
-            font-weight: 700;
-            line-height: 34px;
-            color: #000;
+            font-family: 'AtkinsonHyperlegible',serif;
+            font-size: 40px;
+            background: #1969AD;
+            letter-spacing: 1px;
+            background: linear-gradient(to right, #1969AD 3%, #7EB8E8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 40px;
             span {
                 color: #576C7E;
             }
@@ -594,8 +598,8 @@ const burderItems = reactive([
         }
         &__content-left {
             @include mqm(1024) {
-                padding-right: 60px;
-                max-width: 481px;
+                padding-right: 90px;
+                max-width: 539px;
             }
         }
         &__buttons {
@@ -604,27 +608,22 @@ const burderItems = reactive([
             height: 60px;
             gap: 20px;
             align-items: center;
-            margin-top: 50px;
+            margin-top: 20px;
             @include mqm(1024) {
                 margin-top: 80px;
             }
             .get-start-button {
-                font-size: 16px;
+                font-size: 20px;
                 cursor: pointer;
-                padding: 23px 0;
+                padding: 21px 0;
                 line-height: 19px;
                 font-weight: 500;
                 text-align: center;
-                border-radius: 10px;
                 width: 100%;
                 @include mqm(1024) {
                     font-size: 20px;
                 }
             }
-        }
-        &__sign-in-button {
-            background-color: #576C7E;
-            color: #fff;
         }
         &__explore-button {
             box-shadow: 0px 0px 11px -1px rgba(0,0,0,0.35);
@@ -633,7 +632,7 @@ const burderItems = reactive([
 
         }
         &__preview {
-            height: 353px;
+            height: 413px;
             margin-top: 50px;
             @include mqm(1024) {
                 display: none;
@@ -646,10 +645,47 @@ const burderItems = reactive([
             }
         }
         &__description {
-            font-family: 'Roboto-Italic';
-            font-size: 18px;
-            line-height: 17px;
+            font-family: 'Inter', sans-serif;
+            font-size: 20px;
+            line-height: 21px;
             margin-top: 20px;
+        }
+    }
+    .primary-button {
+        background: rgb(26,105,173);
+        border-radius: 20px;
+        color: #fff;
+        font-size: 20px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        background: linear-gradient(90deg, rgba(26,105,173,1) 0%, rgba(11,43,71,1) 100%);
+    }
+    .primary-button-hover {
+        border: 1px solid #1969AD;
+        color: #1969AD;
+        position: relative;
+        border-radius: 20px;
+        &::before {
+            position: absolute;
+            content: "";
+            inset: 0; /* same as { tp: 0; right: 0; bottom: 0; left: 0; } */
+            background: rgb(26,105,173);
+            background: linear-gradient(90deg, rgba(26,105,173,1) 0%, rgba(11,43,71,1) 100%);
+            z-index: -1;
+            opacity: 0;
+            border-radius: 20px;
+            transition: opacity 0.25s linear;
+        }
+        &:hover {
+            color: #fff;
+            background-color: transparent;
+        }
+        &:hover {
+            color: #fff;
+            background-color: transparent;
+        }
+        &:hover::before {
+            opacity: 1;
         }
     }
 </style>
