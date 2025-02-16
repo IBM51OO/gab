@@ -268,6 +268,9 @@ function logout() {
         }
     }
     &__course-price {
+        color: #606060;
+        font-family: 'Inter', sans-serif;
+        font-style: italic;
         margin-right: 30px;
         min-width: 50px;
         @include mqm(1024) {
