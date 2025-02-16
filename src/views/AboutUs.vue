@@ -173,6 +173,9 @@ const router = useRouter();
         &__preview {
             height: auto;
             margin-top: 30px;
+            img {
+                max-height: 413px;
+            }
             @include mqm(1024) {
                 height: 413px;
                 margin-top: 50px;
@@ -236,6 +239,7 @@ const router = useRouter();
                 margin-top: 40px;
                 img {
                     width: 100%;
+                    max-height: 413px;
                 }
                 @include mqm(1024) {
                     display: none;
@@ -298,6 +302,10 @@ const router = useRouter();
             }
             &--mob {
                 margin-top: 40px;
+                img {
+                    width: 100%;
+                    max-height: 413px;
+                }
                 @include mqm(1024) {
                     display: none;
                 }
