@@ -37,7 +37,7 @@
                         </router-link>
                     </li>
                     <li>
-                        <router-link to="/sign-in" v-if="!mainStore.getIsAuth">
+                        <router-link to="/sign-in" v-if="!mainStore.getIsAuth" class="sign-in-button primary-button">
                             Login / My Account
                         </router-link>
                         <router-link to="/profile" v-else>
@@ -118,7 +118,7 @@ const burderItems = reactive([
         &__wallet {
             &.active {
                 font-size: 24px;
-                font-weight: 700;
+                font-weight: 700 !important;
             }
         }
         .container {
@@ -134,18 +134,30 @@ const burderItems = reactive([
             display: none;
             align-items: center;
             list-style-type: none;
+            .header__wallet {
+                font-weight: 400;
+            }
             li {
+                font-family: 'Inter', sans-serif;
+                font-weight: 700;
+                font-size: 14px;
                 padding-right: 30px;
                 &:not(:first-child) {
                     cursor: pointer;
                 }
                 a {
+                    display: block;
                     text-decoration: none;
                     color: #000000;
                     &.router-link-active {
-                        font-weight: 700;
+                        border-bottom: 2px solid #1A69AD;
                     }
                 }
+            }
+            .sign-in-button {
+                font-size: 14px;
+                padding: 15px 30px;
+                color: #fff;
             }
             @include mqm(1024) {
                 display: flex;
@@ -184,10 +196,10 @@ const burderItems = reactive([
             }
         }
         @include mqm(1024) {
-            background-image: url("../img/transform@1024.png");
-            background-size: cover;
-            min-height: 449px;
-            background-position: 50%;
+            //background-image: url("../img/transform@1024.png");
+            //background-size: cover;
+            //min-height: 449px;
+            //background-position: 50%;
         }
     }
     .transform-content {
@@ -565,6 +577,7 @@ const burderItems = reactive([
     }
     .get-start {
         padding-top: 50px;
+        position: relative;
         padding-bottom: 100px;
         &__title {
             font-family: 'AtkinsonHyperlegible',serif;
@@ -581,6 +594,19 @@ const burderItems = reactive([
             @include mqm(1024) {
                 font-size: 50px;
                 line-height: 51px;
+            }
+        }
+        &__blick {
+            display: none;
+            position: absolute;
+            height: 240px;
+            width: 240px;
+            border-radius: 50%;
+            object-fit: cover;
+            right: 0;
+            top: -50%;
+            @include mqm(1024) {
+                display: block;
             }
         }
         &__content {

@@ -154,6 +154,21 @@
             </div>
         </div>
         <div class="fitness-reasons">
+            <div class="fitness-reasons__blick">
+                <svg width="538" height="939" viewBox="0 0 538 939" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_f_797_166)">
+                        <circle cx="469.5" cy="469.5" r="119.5" fill="#2471B2"/>
+                    </g>
+                    <defs>
+                        <filter id="filter0_f_797_166" x="0" y="0" width="939" height="939" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                            <feGaussianBlur stdDeviation="175" result="effect1_foregroundBlur_797_166"/>
+                        </filter>
+                    </defs>
+                </svg>
+
+            </div>
             <div class="container-wise">
                 <div class="fitness-reasons__title" data-aos="fade-left" data-aos-duration="1000">
                     3 Reasons to Choose Us for Your Fitness Journey
@@ -268,6 +283,21 @@
             </div>
         </div>
         <div class="fitness-explore">
+            <div class="fitness-explore__blick">
+                <svg width="518" height="939" viewBox="0 0 518 939" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_f_797_169)">
+                        <circle cx="469.5" cy="469.5" r="119.5" fill="#2471B2"/>
+                    </g>
+                    <defs>
+                        <filter id="filter0_f_797_169" x="0" y="0" width="939" height="939" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                            <feGaussianBlur stdDeviation="175" result="effect1_foregroundBlur_797_169"/>
+                        </filter>
+                    </defs>
+                </svg>
+
+            </div>
             <div class="container">
                 <div class="fitness-explore__title" data-aos="fade-up" data-aos-duration="1000">
                     Explore Some of Our Top Courses
@@ -307,6 +337,21 @@
             </div>
         </div>
         <div class="get-start">
+            <div class="get-start__blick">
+                <svg width="518" height="939" viewBox="0 0 518 939" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_f_826_355)">
+                        <circle cx="469.5" cy="469.5" r="119.5" fill="#2471B2"/>
+                    </g>
+                    <defs>
+                        <filter id="filter0_f_826_355" x="0" y="0" width="939" height="939" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                            <feGaussianBlur stdDeviation="175" result="effect1_foregroundBlur_826_355"/>
+                        </filter>
+                    </defs>
+                </svg>
+
+            </div>
             <div class="container">
                 <div class="get-start__content">
                     <div class="get-start__content-left">
@@ -380,10 +425,10 @@ onMounted(() => {
     }
     .transform-block {
         @include mqm(1024) {
-            background-image: url("../img/transform@1024.jpg");
+            background-image: url("../img/transform@1024.png");
             background-repeat: no-repeat;
-            background-size: contain;
-            background-position: right 50%;
+            background-size: 830px;
+            background-position: right 20%;
         }
     }
     .fitness-advantages {
@@ -427,6 +472,7 @@ onMounted(() => {
         }
     }
     .fitness-reasons {
+        position: relative;
         overflow: hidden;
         &__title {
             font-family: 'AtkinsonHyperlegible',serif;
@@ -444,6 +490,15 @@ onMounted(() => {
                 margin: 0 auto 10px auto;
             }
         }
+        &__blick {
+            position: absolute;
+            height: 239px;
+            right: 0;
+            display: none;
+            @include mqm(1024) {
+                display: block;
+            }
+        }
         &__item {
             display: flex;
             align-items: center;
@@ -457,6 +512,9 @@ onMounted(() => {
                 background-color: #1969AD;
             }
             &:hover .fitness-reasons__label  {
+                color: #fff;
+            }
+            &:hover .fitness-reasons__value  {
                 color: #fff;
             }
             @include mqm(1024) {
@@ -486,6 +544,7 @@ onMounted(() => {
             padding-bottom: 50px;
         }
         &__value {
+            transition: 500ms all ease;
             font-family: 'Inter', sans-serif;
             font-size: 16px;
             max-width: 733px;
@@ -502,11 +561,20 @@ onMounted(() => {
     }
     .fitness-explore {
         overflow: hidden;
+        position: relative;
         background-color: rgba(72, 135, 189, 0.1);
         box-shadow: 0px -5px 8px -4px rgba(0, 0, 0, 0.27) inset;
         padding-bottom: 20px;
         @include mqm(1024) {
             padding-bottom: 50px;
+        }
+        &__blick {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            @include mqm(1024) {
+                top: -45%;
+            }
         }
         &__title {
             padding: 80px 0 20px 0;
