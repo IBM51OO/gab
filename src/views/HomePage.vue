@@ -475,7 +475,8 @@ onMounted(() => {
         position: relative;
         overflow: hidden;
         &__title {
-            font-family: 'AtkinsonHyperlegible',serif;
+            font-family: 'AtkinsonHyperlegible',sans-serif;
+            font-style: italic;
             font-size: 40px;
             background: #1969AD;
             background: linear-gradient(to right, #1969AD 3%, #7EB8E8 100%);
@@ -578,7 +579,8 @@ onMounted(() => {
         }
         &__title {
             padding: 80px 0 20px 0;
-            font-family: 'AtkinsonHyperlegible',serif;
+            font-family: 'AtkinsonHyperlegible',sans-serif;
+            font-style: italic;
             font-size: 40px;
             background: #1969AD;
             letter-spacing: 1px;

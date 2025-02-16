@@ -234,7 +234,8 @@ const burderItems = reactive([
         &__title {
             font-size: 40px;
             font-weight: 700;
-            font-family: 'AtkinsonHyperlegible',serif;
+            font-family: 'AtkinsonHyperlegible',sans-serif;
+            font-style: italic;
             line-height: 40px;
             position: relative;
             @include mqm(1024) {
@@ -369,7 +370,8 @@ const burderItems = reactive([
             }
         }
         &__title-desk {
-            font-family: 'AtkinsonHyperlegible',serif;
+            font-family: 'AtkinsonHyperlegible',sans-serif;
+            font-style: italic;
             font-weight: 700;
             display: none;
             color: #fff;
@@ -385,7 +387,8 @@ const burderItems = reactive([
             }
         }
         &__title {
-            font-family: 'AtkinsonHyperlegible',serif;
+            font-family: 'AtkinsonHyperlegible',sans-serif;
+            font-style: italic;
             font-weight: 700;
             font-size: 40px;
             color: #fff;
@@ -407,7 +410,8 @@ const burderItems = reactive([
         overflow: hidden;
         padding-top: 100px;
         padding-bottom: 100px;
-        font-family: 'AtkinsonHyperlegible',serif;
+        font-family: 'AtkinsonHyperlegible',sans-serif;
+        font-style: italic;
         &__title {
             font-size: 40px;
             line-height: 40px;
@@ -512,7 +516,8 @@ const burderItems = reactive([
         border-bottom-left-radius: 30px;
         padding-bottom: 50px;
         &__title {
-            font-family: 'AtkinsonHyperlegible',serif;
+            font-family: 'AtkinsonHyperlegible',sans-serif;
+            font-style: italic;
             padding: 80px 0 50px 0;
             font-size: 32px;
             font-weight: 700;
@@ -580,7 +585,8 @@ const burderItems = reactive([
         position: relative;
         padding-bottom: 100px;
         &__title {
-            font-family: 'AtkinsonHyperlegible',serif;
+            font-family: 'AtkinsonHyperlegible',sans-serif;
+            font-style: italic;
             font-size: 40px;
             background: #1969AD;
             letter-spacing: 1px;

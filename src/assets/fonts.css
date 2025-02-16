@@ -52,6 +52,17 @@
     font-display: swap;
 }
 @font-face {
+    font-family: 'AtkinsonHyperlegible';
+    src: url('./fonts/Aktinson/AtkinsonHyperlegible-Regular.eot');
+    src: url('./fonts/Aktinson/AtkinsonHyperlegible-Regular.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/Aktinson/AtkinsonHyperlegible-Regular.woff2') format('woff2'),
+    url('./fonts/Aktinson/AtkinsonHyperlegible-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
     font-family: 'Inter';
     src: url('./fonts/Inter/Inter18pt-Regular.eot');
     src: url('./fonts/Inter/Inter18pt-Regular.eot?#iefix') format('embedded-opentype'),
