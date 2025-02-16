@@ -105,7 +105,7 @@
 </template>
 <script setup>
 import {ErrorMessage, Field, Form} from "vee-validate";
-import {computed, onMounted, reactive, ref} from "vue";
+import {computed, onMounted, reactive, ref, watch} from "vue";
 import ArrowRight from "@/img/svg/arrow-right.svg";
 import {useMainStore} from "@/stores/main.js";
 import {useCookies} from "vue3-cookies";
@@ -119,7 +119,7 @@ const BaseUrl = ref(import.meta.env.VITE_BASE_API);
 const currentCurrency = computed(() => mainStore.currency);
 const currentMenuActive = computed(() => mainStore.getCurrentPersonalPage);
 const isMobile = computed(() => window.innerWidth < 1024);
-const currentValue = computed(() => currentCurrency.value === 'EUR' ? '€': '$');
+const currentValue = computed(() => currentCurrency.value === 'EUR' ? '€': '£');
 const router = useRouter();
 const isEmailCodeSend = ref(false);
 const courses = ref([])
@@ -132,6 +132,11 @@ const userProfile = reactive({
     firstName: user.value.first_name,
     lastName: user.value.second_name,
 });
+watch(user, () => {
+    userProfile.email = user.value.email;
+    userProfile.firstName = user.value.first_name;
+    userProfile.lastName = user.value.second_name;
+}, { once: true, deep: true })
 const changePassword = async () => {
     if (userProfile.newPassword !== userProfile.confirmNewPassword) {
         notify({
@@ -235,6 +240,9 @@ function logout() {
     padding-bottom: 50px;
 }
 .user-profile {
+    &__left-menu {
+        margin-right: 30px;
+    }
     padding-top: 40px;
     @include mqm(1024) {
         width: 100%;

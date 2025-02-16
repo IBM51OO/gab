@@ -70,7 +70,7 @@ const groups = ref();
 const currentCourses = computed(() => courses.value && courses.value.filter((el) => el.group === route.params.id))
 const currentCurrency = computed(() => mainStore.currency);
 const currentGroup = computed(() => groups.value && groups.value.find((el) => el.id === route.params.id))
-const currentValue = computed(() => currentCurrency.value === 'EUR' ? '€': '$');
+const currentValue = computed(() => currentCurrency.value === 'EUR' ? '€': '£');
 async function fetchCourses() {
     courses.value = await api.get('/courses');
     console.log(courses.value)
@@ -170,6 +170,7 @@ async function fetchGroups() {
             padding: 30px;
             display: flex;
             flex-direction: column;
+            background-color: #fff;
             justify-content: space-between;
             border-radius: 30px;
             box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.35);

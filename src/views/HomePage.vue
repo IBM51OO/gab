@@ -324,7 +324,7 @@
                     </div>
                     <div class="fitness-explore__item" data-aos="fade-left" data-aos-duration="1000" @click="router.push(`/course/${courses[2].id}`)">
                         <div class="fitness-explore__item-img">
-                            <img src="../img/11.png" alt="">
+                            <img src="../img/22.png" alt="">
                         </div>
                         <div class="fitness-explore__item-title">
                             {{ courses[2].name }}

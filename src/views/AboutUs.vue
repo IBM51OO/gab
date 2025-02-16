@@ -273,6 +273,10 @@ const router = useRouter();
             max-width: 832px;
         }
         .our-mission__image {
+            border-radius: unset;
+            img {
+                border-radius: unset;
+            }
             height: auto;
             @include mqm(1024) {
                 height: 353px;
@@ -280,6 +284,7 @@ const router = useRouter();
         }
     }
     &--five {
+        margin-top: 0 !important;
         .our-mission__wrapper {
             order: 1 !important;
             max-width: 100%;
