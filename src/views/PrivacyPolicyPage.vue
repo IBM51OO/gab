@@ -101,8 +101,13 @@ const terms = ref([
 <style lang="scss">
 .terms {
     &__title {
-        color: #000;
-        font-weight: 500;
+        background: #1969AD;
+        font-style: italic;
+        font-family: 'AtkinsonHyperlegible',serif;
+        font-weight: 700;
+        background: linear-gradient(to right, #1969AD 3%, #7EB8E8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         font-size: 20px;
         @include mqm(1024) {
             text-align: center;
@@ -124,7 +129,7 @@ const terms = ref([
         @include mqm(1024) {
             max-width: 670px;
             margin: 0 auto;
-            border-left: 3px solid #576C7E;
+            border-left: 3px solid #1A69AD;
             padding-left: 50px;
         }
         &__item {

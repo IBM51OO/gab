@@ -22,9 +22,9 @@
                             <ErrorMessage name="password"/>
                         </div>
                         <div class="sign-in__forgot-password-button" @click="isSignIn = false">
-                            Forgot password
+                            Forgot your password?
                         </div>
-                        <button>Log in</button>
+                        <button class="primary-button">Log in</button>
                     </Form>
                     <Form :validation-schema="schemaForgot" @submit="onSubmitForgot" v-else-if="!forgotPasswordData.email">
                         <div class="sign-in__email">
@@ -41,7 +41,7 @@
                             <Field name="newPassword" type="password"/>
                             <ErrorMessage name="newPassword"/>
                         </div>
-                        <button>Submit</button>
+                        <button class="primary-button sign-up-verify__new-password-button">Submit</button>
                     </Form>
                     <Form :validation-schema="schemaSubmitForgot" @submit="onSubmitForgotCode" v-else>
                         <div class="sign-in__code-otp">
@@ -51,7 +51,7 @@
                             <Field name="codeForgot"/>
                             <ErrorMessage name="codeForgot"/>
                         </div>
-                        <button>Submit</button>
+                        <button class="primary-button">Submit</button>
                     </Form>
                 </div>
                 <hr v-if="!isVerify">
@@ -81,7 +81,7 @@
                             <Field name="passwordConfirmation" type="password"/>
                             <ErrorMessage name="passwordConfirmation"/>
                         </div>
-                        <button>Sign up</button>
+                        <button class="primary-button">Sign up</button>
                     </Form>
                 </div>
                 <div class="sign-up-verify" v-else>
@@ -93,7 +93,7 @@
                             <Field name="code" type="password"/>
                             <ErrorMessage name="code"/>
                         </div>
-                        <button>Verify</button>
+                        <button class="primary-button">Verify</button>
                     </Form>
                 </div>
             </div>
@@ -288,6 +288,10 @@ async function onSubmitSignUpVerify(data) {
         &__new-password {
             margin-top: 10px;
         }
+        &__new-password-button {
+            display: block;
+            margin: 30px auto 10px auto;
+        }
     }
     hr {
         margin: 50px 95px;
@@ -306,18 +310,22 @@ async function onSubmitSignUpVerify(data) {
     }
 
     button {
-        border-radius: 10px;
-        box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.35);
-        text-align: center;
-        padding: 23px 0;
+        //border-radius: 10px;
+        //box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.35);
+        //text-align: center;
+        //padding: 23px 0;
         border: none;
         width: 100%;
+        font-family: 'Inter', sans-serif;
+        max-width: 305px;
+        padding: 15px 0;
+        border-radius: 20px;
         font-size: 20px;
         font-weight: 500;
-        color: #576C7E;
-        line-height: 14px;
+        //color: #576C7E;
+        //line-height: 14px;
         margin-top: 30px;
-        background: #fff;
+        //background: #fff;
         cursor: pointer;
     }
 }

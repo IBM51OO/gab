@@ -11,9 +11,11 @@
                 <div class="course-item__content" v-html="currentPageContent.text" />
                 <div class="course-item__buttons">
                     <div class="course-item__prev-button" v-if="currentPage > 1" @click="changePage(currentPage - 1)">
-                        <PrevIcon />
+                        <svg width="30" height="16" viewBox="0 0 30 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.292893 7.29289C-0.0976311 7.68342 -0.0976311 8.31658 0.292893 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292893 7.29289ZM1 9H30V7H1V9Z" fill="#1969AD"/>
+                        </svg>
                     </div>
-                    <div class="course-item__next-button" v-if="currentPage !== course.pages.length" @click="changePage(currentPage + 1)">
+                    <div class="course-item__next-button primary-button" v-if="currentPage !== course.pages.length" @click="changePage(currentPage + 1)">
                         Next
                     </div>
                 </div>
@@ -98,24 +100,19 @@ const fetchCurse = async (id) => {
         }
     }
     &__next-button {
-        background-color: #576C7E;
-        height: 60px;
-        border-radius: 10px;
-        cursor: pointer;
         display: flex;
-        justify-content: center;
-        align-items: center;
         width: 100%;
-        color: #fff;
-        font-size: 20px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
     &__prev-button {
-        box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.35);
+        border: 1px solid #1969AD;
         display: flex;
         align-items: center;
         cursor: pointer;
         justify-content: center;
-        border-radius: 10px;
+        border-radius: 20px;
         margin-right: 20px;
         width: 100%;
         max-width: 55px;

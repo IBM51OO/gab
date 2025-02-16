@@ -27,6 +27,23 @@ const changeCurrentPage = (name) => {
 <style lang="scss">
 .left-menu {
     display: none;
+    border: 1px solid #1A69AD;
+    border-radius: 30px;
+    margin-left: 30px;
+    padding: 30px;
+    position: relative;
+    min-width: 271px;
+    &:before {
+        position: absolute;
+        content: 'menu';
+        display: block;
+        left: -33px;
+        writing-mode: vertical-lr;
+        color: #1A69AD;
+        font-size: 20px;
+        top: 50%;
+        transform: translate(0, -50%) rotate(180deg);
+    }
     @include mqm(1024) {
         display: block;
     }
@@ -37,10 +54,12 @@ const changeCurrentPage = (name) => {
             font-size: 20px;
             cursor: pointer;
             font-weight: 500;
-            color: rgba(0, 0, 0, 0.3);
-            margin-top: 30px;
+            color: rgba(26, 105, 173, 0.5);
+            &:not(:first-child) {
+                margin-top: 30px;
+            }
             &.active {
-                color: #000;
+                color: #1A69AD;
             }
         }
     }

@@ -139,8 +139,8 @@ const burderItems = reactive([
             }
             li {
                 font-family: 'Inter', sans-serif;
-                font-weight: 700;
                 font-size: 14px;
+                font-weight: 500;
                 padding-right: 30px;
                 &:not(:first-child) {
                     cursor: pointer;
@@ -684,6 +684,7 @@ const burderItems = reactive([
         }
     }
     .primary-button {
+        cursor: pointer;
         background: rgb(26,105,173);
         border-radius: 20px;
         color: #fff;
@@ -693,6 +694,7 @@ const burderItems = reactive([
         background: linear-gradient(90deg, rgba(26,105,173,1) 0%, rgba(11,43,71,1) 100%);
     }
     .primary-button-hover {
+        cursor: pointer;
         border: 1px solid #1969AD;
         color: #1969AD;
         position: relative;

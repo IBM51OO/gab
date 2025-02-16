@@ -7,13 +7,13 @@
                 </div>
                 <div class="user-profile__content">
                     <div class="user-profile__courses" v-if="currentMenuActive === 'my' || isMobile">
-                        <div class="page-name">
-                            My courses
-                        </div>
                         <div class="user-profile__courses-empty" v-if="!courses.length">
                             <img src="../img/empty.png" alt="">
                             <div class="user-profile__courses-empty-label">
                                 It's empty here for now. Purchase our courses, and they'll appear here!
+                            </div>
+                            <div class="user-profile__courses-empty-button primary-button">
+                                Explore Courses
                             </div>
                         </div>
                         <div class="user-profile__courses-list" v-else>
@@ -26,7 +26,14 @@
                                         {{ item.name }}
                                     </div>
                                 </div>
-                                <arrow-right class="breadcrumbs__arrow-right-icon" />
+                                <div class="user-profile__course-right">
+                                    <div class="user-profile__course-price">
+                                        {{ item.prices.find((el) => el.currency === currentCurrency).amount }} {{ currentValue }}
+                                    </div>
+                                    <svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1L11 11L1 21" stroke="black"/>
+                                    </svg>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -89,7 +96,7 @@
                         <div class="user-profile__logout-label">
                             Are you sure you want to exit your account?
                         </div>
-                        <button class="user-profile__logout" @click="logout">Logout</button>
+                        <button class="user-profile__logout primary-button" @click="logout">Logout</button>
                     </div>
                 </div>
             </div>
@@ -109,8 +116,10 @@ import {notify} from "@kyvg/vue3-notification";
 const mainStore = useMainStore();
 const user = computed(() => mainStore.getUser);
 const BaseUrl = ref(import.meta.env.VITE_BASE_API);
+const currentCurrency = computed(() => mainStore.currency);
 const currentMenuActive = computed(() => mainStore.getCurrentPersonalPage);
 const isMobile = computed(() => window.innerWidth < 1024);
+const currentValue = computed(() => currentCurrency.value === 'EUR' ? '€': '$');
 const router = useRouter();
 const isEmailCodeSend = ref(false);
 const courses = ref([])
@@ -226,25 +235,46 @@ function logout() {
     padding-bottom: 50px;
 }
 .user-profile {
+    padding-top: 40px;
     @include mqm(1024) {
         width: 100%;
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
     }
+    &__first-name-label {
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+    }
     &__content {
         max-width: 860px;
         width: 100%;
         margin: 0 auto;
     }
+    &__course-right {
+        display: flex;
+        align-items: center;
+        svg {
+            flex: 0 0 auto;
+            margin-right: 20px;
+        }
+    }
+    &__course-price {
+        margin-right: 30px;
+        min-width: 50px;
+        @include mqm(1024) {
+            margin-right: 30px;
+        }
+    }
+    &__courses-empty-button {
+        padding: 15px 0;
+        max-width: 413px;
+        width: 100%;
+        text-align: center;
+        margin-top: 60px;
+    }
     .page-name {
         margin-bottom: 0;
-    }
-    &__courses-list {
-        margin-top: 30px;
-    }
-    &__courses {
-        margin-top: 25px;
     }
     &__courses-empty {
         display: flex;
@@ -321,36 +351,42 @@ function logout() {
         justify-content: space-between;
         box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.35);
         padding: 10px;
-        border-radius: 15px;
+        border-radius: 30px;
         &:not(:first-child) {
             margin-top: 30px;
         }
         @include mqm(1024) {
             justify-content: space-between;
+            height: 150px;
             padding: 10px 20px 10px 10px;
         }
     }
     &__course-title {
         padding-left: 20px;
         font-size: 16px;
-        font-weight: 500;
+        font-weight: 700;
         color: #000;
+        font-family: 'Inter', sans-serif;
         padding-right: 40px;
         @include mqm(1024) {
-            font-size: 20px;
+            font-size: 24px;
             font-weight: 700;
         }
     }
     &__course-img {
         height: 70px;
         width: 70px;
-        border-radius: 10px;
+        border-radius: 25px;
         flex: 0 0 auto;
         img {
             height: 100%;
-            border-radius: 10px;
+            border-radius: 25px;
             width: 100%;
             object-fit: cover;
+        }
+        @include mqm(1024) {
+            height: 130px;
+            width: 130px;
         }
     }
 }

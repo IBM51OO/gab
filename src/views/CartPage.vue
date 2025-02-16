@@ -68,7 +68,7 @@
                             </label>
                         </Field>
                         <ErrorMessage name="agree"/>
-                        <button>Place order</button>
+                        <button class="primary-button">Place order</button>
                     </Form>
                 </div>
             </div>
@@ -209,18 +209,22 @@ async function onSubmitOrder() {
         }
 
         button {
-            border-radius: 10px;
             box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.35);
             text-align: center;
             padding: 23px 0;
             border: none;
-            width: 100%;
             font-size: 20px;
             font-weight: 500;
-            color: #576C7E;
             line-height: 14px;
             margin-top: 40px;
             background-color: #fff;
+            border-radius: 20px;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            @include mqm(1024) {
+                max-width: 301px;
+            }
         }
     }
     &__billings-rule-label {

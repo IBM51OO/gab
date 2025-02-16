@@ -26,6 +26,9 @@
                         <div class="our-mission__title">
                             Why Choose FitSphere?
                         </div>
+                        <div class="our-mission__image--mob">
+                            <img src="../img/aboutus2.png" alt="">
+                        </div>
                         <div class="our-mission__slogan">
                             Your Fitness Journey Starts Here
                         </div>
@@ -57,6 +60,9 @@
                     <div class="our-mission__wrapper" data-aos="fade-right" data-aos-duration="1000">
                         <div class="our-mission__title">
                             Our Unique Approach
+                        </div>
+                        <div class="our-mission__image--mob">
+                            <img src="../img/aboutus4.png" alt="">
                         </div>
                         <div class="our-mission__slogan">
                             Science Meets Fitness
@@ -121,8 +127,10 @@ const router = useRouter();
     overflow: hidden;
     .fitness-text-logo {
         display: block;
-        margin: 60px auto 100px auto;
         transition: 500ms all ease;
+        @include mqm(1024) {
+            margin: 60px auto 80px auto;
+        }
         &:hover {
             transform: rotate(2deg);
         }
@@ -141,6 +149,7 @@ const router = useRouter();
         text-align: center;
         margin: 0 0 30px 0;
         background: #1969AD;
+        font-style: italic;
         font-family: 'AtkinsonHyperlegible',serif;
         font-weight: 700;
         background: linear-gradient(to right, #1969AD 3%, #7EB8E8 100%);
@@ -149,13 +158,25 @@ const router = useRouter();
     }
     .get-start {
         padding-top: 0;
+        padding-bottom: 40px;
         &__buttons {
-            margin-top: 40px;
+            margin-top: 10px;
+            @include mqm(1024) {
+                margin-top: 40px;
+            }
         }
         .get-start-button {
             line-height: 14px;
             font-size: 20px;
             font-weight: 500;
+        }
+        &__preview {
+            height: auto;
+            margin-top: 30px;
+            @include mqm(1024) {
+                height: 413px;
+                margin-top: 50px;
+            }
         }
         &__title {
             span {
@@ -166,6 +187,7 @@ const router = useRouter();
         }
         &__description {
             max-width: 410px;
+            line-height: 28px;
         }
         &__content-right-img {
             border-radius: 30px;
@@ -196,13 +218,43 @@ const router = useRouter();
         padding: 80px 80px;
         box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.2) inset;
         .our-mission__title {
-            text-align: right;
+            text-align: left;
+            @include mqm(1024) {
+                text-align: right;
+            }
+        }
+        .our-mission__image {
+            border-radius: 30px;
+            display: none;
+            img {
+                border-radius: 30px;
+            }
+            @include mqm(1024) {
+                display: block;
+            }
+            &--mob {
+                margin-top: 40px;
+                img {
+                    width: 100%;
+                }
+                @include mqm(1024) {
+                    display: none;
+                }
+            }
         }
         .our-mission__description {
-            text-align: right;
+            margin-bottom: 0;
+            @include mqm(1024) {
+                text-align: right;
+                margin-bottom: 40px;
+            }
         }
         .our-mission__slogan {
-            text-align: right;
+            margin-top: 35px;
+            @include mqm(1024) {
+                margin-top: 15px;
+                text-align: right;
+            }
         }
     }
     &--third {
@@ -220,6 +272,12 @@ const router = useRouter();
         .our-mission__wrapper {
             max-width: 832px;
         }
+        .our-mission__image {
+            height: auto;
+            @include mqm(1024) {
+                height: 353px;
+            }
+        }
     }
     &--five {
         .our-mission__wrapper {
@@ -227,17 +285,36 @@ const router = useRouter();
             max-width: 100%;
         }
         .our-mission__image {
+            margin-top: 10px;
             order: 2 !important;
+            display: none;
+            @include mqm(1024) {
+                display: block;
+            }
+            &--mob {
+                margin-top: 40px;
+                @include mqm(1024) {
+                    display: none;
+                }
+            }
+        }
+        background-color: rgba(72, 135, 189, 0.1);
+        margin: 0 -80px;
+        padding: 80px 80px;
+        box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.2) inset;
+        .our-mission__description {
+            margin-bottom: 0;
         }
     }
     &:not(:first-child) {
         margin-top: 60px;
     }
     &__title {
-        font-size: 32px;
-        line-height: 32px;
+        font-size: 40px;
+        line-height: 40px;
         font-family: 'AtkinsonHyperlegible',sans-serif;
         font-style: italic;
+        letter-spacing: 1px;
         font-weight: 700;
         background: linear-gradient(to right, #1969AD 3%, #7EB8E8 100%);
         -webkit-background-clip: text;
@@ -253,8 +330,9 @@ const router = useRouter();
         }
     }
     &__slogan {
-        font-size: 18px;
-        line-height: 16px;
+        font-size: 20px;
+        line-height: 20px;
+        letter-spacing: 1px;
         color: #000;
         font-family: 'AtkinsonHyperlegible',sans-serif;
         margin-top: 15px;
@@ -264,14 +342,20 @@ const router = useRouter();
     }
     &__description {
         margin-top: 25px;
-        font-size: 18px;
+        font-size: 16px;
         font-family: 'Inter', sans-serif;
         color: #000;
         margin-bottom: 40px;
+        @include mqm(1024) {
+            font-size: 18px;
+        }
     }
     &__image {
-        height: 414px;
+        height: 353px;
         flex: 0 0 auto;
+        @include mqm(1024) {
+            height: 414px;
+        }
         img {
             height: 100%;
             border-radius: 30px;

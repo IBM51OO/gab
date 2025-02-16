@@ -3,7 +3,9 @@
         <div class="container">
             <div class="breadcrumbs">
                 <router-link to="/courses">
-                    <arrow-right class="breadcrumbs__arrow-left-icon" />
+                    <svg width="13" height="22" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 1L2 11L12 21" stroke="#2E79B9" stroke-width="2"/>
+                    </svg>
                     <div class="breadcrumbs__title">{{ currentGroup.name }}</div>
                 </router-link>
             </div>
@@ -20,7 +22,7 @@
                             {{ course.description }}
                         </div>
                     </div>
-                    <div class="course-detail__add-to-cart course-detail__add-to-cart--desktop button--secondary" @click="addToCart">
+                    <div class="course-detail__add-to-cart course-detail__add-to-cart--desktop primary-button-hover" @click="addToCart">
                         Add to cart
                     </div>
                 </div>
@@ -43,9 +45,9 @@
                         Basic Tools and Equipment for Beginners
                         Building Your Routine
                     </div>
-                    <div class="course-detail__add-to-cart course-detail__add-to-cart--mobile button--secondary" @click="addToCart">
-                        Add to cart
-                    </div>
+                </div>
+                <div class="course-detail__add-to-cart course-detail__add-to-cart--mobile primary-button-hover" @click="addToCart">
+                    Add to cart
                 </div>
             </div>
         </div>
@@ -104,6 +106,19 @@ const addToCart = async () => {
 </script>
 <style lang="scss">
 .course-detail {
+    .breadcrumbs {
+        background: #1969AD;
+        font-style: italic;
+        font-family: "AtkinsonHyperlegible", serif;
+        font-weight: 700;
+        background: linear-gradient(to right, #1969AD 3%, #7EB8E8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    margin-top: 20px;
+    @include mqm(1024) {
+        margin-top: 30px;
+    }
     &__left {
         @include mqm(1024) {
             flex: 65%;
@@ -111,10 +126,22 @@ const addToCart = async () => {
     }
     &__title {
         margin-top: 10px;
-        font-size: 30px;
+        font-size: 24px;
+        line-height: 50px;
         font-weight: 700;
+        font-family: 'Inter', sans-serif;
+        @include mqm(1024) {
+            font-size: 50px;
+        }
+    }
+    &__description-label {
+        font-size: 18px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        margin-top: 40px;
     }
     &__content {
+        font-family: 'Inter', sans-serif;
         font-size: 14px;
     }
     &__row {
@@ -124,10 +151,13 @@ const addToCart = async () => {
         }
     }
     &__right {
+        margin-top: 30px;
+        padding: 1px 20px 30px 20px;
         @include mqm(1024) {
             border: 1px solid rgba(0, 0, 0, 0.3);
             padding: 20px;
             flex: 35%;
+            margin-top: 0;
         }
     }
     &__add-to-cart {
@@ -148,12 +178,27 @@ const addToCart = async () => {
         }
         &--desktop {
             display: none;
+            max-width: 413px;
+            text-align: center;
             @include mqm(1024) {
                 display: flex;
+                justify-content: center;
+                font-family: 'Inter', sans-serif;
+                font-weight: 500;
+                font-size: 20px;
+                padding: 14px 0;
             }
         }
         &--mobile {
             display: flex;
+            width: 100%;
+            max-width: 100% !important;
+            justify-content: center;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 20px;
+            padding: 14px 0;
+            margin-bottom: 40px;
             @include mqm(1024) {
                 display: none;
             }
@@ -161,12 +206,20 @@ const addToCart = async () => {
     }
     &__content-label {
         margin: 30px 0;
-        font-size: 16px;
-        color: #000;
+        font-size: 24px;
+        color: #fff;
         font-weight: 500;
+        font-family: 'Inter', sans-serif;
         @include mqm(1024) {
             margin-top: 0;
         }
+    }
+    &__content {
+        color: #fff;
+    }
+    &__right {
+        border-radius: 30px;
+        background: linear-gradient(90deg, rgba(26,105,173,1) 0%, rgba(11,43,71,1) 100%);
     }
     &__description-label {
         font-size: 16px;

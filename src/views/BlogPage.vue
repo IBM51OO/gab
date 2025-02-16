@@ -19,7 +19,7 @@
                         <div class="blog-card__description">
                             <p>{{ item.content }}</p>
                         </div>
-                        <div class="blog-card__button" @click="() => {show = true; activePost = blogList.find((el) => el.id === item.id)}">
+                        <div class="blog-card__button primary-button-hover" @click="() => {show = true; activePost = blogList.find((el) => el.id === item.id)}">
                             Read
                         </div>
                     </div>
@@ -116,6 +116,7 @@ onMounted(() => {
 </script>
 <style lang="scss">
 .blog-page {
+    margin-bottom: 100px;
     .container {
         padding: 0 20px;
         @include mqm(1024) {
@@ -124,9 +125,15 @@ onMounted(() => {
     }
     .page-name {
         font-size: 20px;
-        font-weight: 500;
+        text-align: center;
         margin: 0 0 30px 0;
-        color: #000000;
+        background: #1969AD;
+        font-style: italic;
+        font-family: 'AtkinsonHyperlegible',serif;
+        font-weight: 700;
+        background: linear-gradient(to right, #1969AD 3%, #7EB8E8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
     .popup {
         &__title {
@@ -241,20 +248,21 @@ onMounted(() => {
         }
         &__button {
             padding: 23px 0;
-            border-radius: 10px;
-            box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.35);
+            border-radius: 20px;
             line-height: 14px;
-            font-size: 20px;
-            color: #576C7E;
+            border: 1px solid #1969AD;
+            font-family: 'Inter', sans-serif;
             font-weight: 500;
+            font-size: 20px;
+            color: #1969AD;
             text-align: center;
+            min-width: 246px;
             margin-top: 30px;
             cursor: pointer;
             @include mqm(1024) {
-                max-width: 313px;
+                max-width: 246px;
                 margin-left: auto;
                 margin-top: 30px;
-                min-width: 313px;
             }
         }
     }
