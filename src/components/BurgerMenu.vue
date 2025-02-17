@@ -9,9 +9,9 @@
                 <ul id="menu">
                     <li v-for="(item, index) in items" :key="index">
                         <a :href="item.href" v-if="item.href">
-                            <label for="menuCheckbox" onclick="this.parentNode.click();"> {{ item.label }}</label>
+                            <label for="menuCheckbox" onclick="this.parentNode.click();" v-html="item.label" />
                         </a>
-                        <label for="menuCheckbox" @click="onRouteNav(this, item.name)">{{ item.label }}</label>
+                        <label for="menuCheckbox" @click="onRouteNav(this, item.name)" v-html="item.label" />
                     </li>
                     <li class="logo">
                         <logo-svg class="header-logo-icon" />
@@ -33,6 +33,7 @@
         },
     })
     const onRouteNav = (self, name) => {
+        if (name === 'wallets') return;
         router.push({name})
     }
 </script>
@@ -55,7 +56,7 @@
             display: flex;
             justify-content: center;
             position: absolute;
-            bottom: 100px;
+            bottom: 50px;
             left: 50%;
             transform: translate(-50%, 0);
         }
@@ -193,6 +194,12 @@
             font-family: 'Roboto-Regular',serif;
             font-weight: bold;
             font-size: 18px;
+            p {
+                display: inline;
+                &.active {
+                    font-size: 28px;
+                }
+            }
         }
 
         /*

@@ -53,7 +53,7 @@
 <script setup>
 import LogoSvg from '@/img/logo.svg?component';
 import BurgerMenu from "@/components/BurgerMenu.vue";
-import {reactive} from "vue";
+import {onMounted, reactive} from "vue";
 import {useMainStore} from "@/stores/main.js";
 import {useRouter} from "vue-router";
 const router = useRouter();
@@ -61,6 +61,28 @@ const mainStore = useMainStore();
 const setActiveCurrency = (currency) => {
     mainStore.changeCurrency(currency);
 }
+onMounted(() => {
+    if (mainStore.getCurrency === 'EUR') {
+        document.querySelector('.wallet-eur').classList.add('active');
+        document.querySelector('.wallet-fr').classList.remove('active');
+    } else {
+        document.querySelector('.wallet-fr').classList.add('active');
+        document.querySelector('.wallet-eur').classList.remove('active');
+    }
+    document.querySelectorAll('.header-wallet-mob').forEach((el) => {
+        el.addEventListener('click', () => {
+            if (el.innerHTML === '£') {
+                setActiveCurrency('GBP');
+                document.querySelector('.wallet-fr').classList.add('active');
+                document.querySelector('.wallet-eur').classList.remove('active');
+            } else {
+                setActiveCurrency('EUR');
+                document.querySelector('.wallet-eur').classList.add('active');
+                document.querySelector('.wallet-fr').classList.remove('active');
+            }
+        })
+    })
+})
 const burderItems = reactive([
     {
         name: 'home',
@@ -85,9 +107,12 @@ const burderItems = reactive([
     {
         name: 'sign-in',
         label: 'Login / My Account',
+    },
+    {
+        name: 'wallets',
+        label: '<p class="wallet-eur header-wallet-mob">€</p> / <p class="wallet-fr header-wallet-mob">£</p>',
     }
 ])
-
 </script>
 <style lang="scss">
     .header {
@@ -97,7 +122,7 @@ const burderItems = reactive([
         width: 100%;
         display: flex;
         padding: 20px 20px;
-        z-index: 3;
+        z-index: 999;
         @include mqm(1024) {
             padding: 12px 80px;
         }
