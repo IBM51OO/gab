@@ -218,7 +218,7 @@ async function fetchGroups() {
             font-weight: 700;
             color: #1969AD;
             font-size: 24px;
-            min-width: 68px;
+            min-width: 100px;
             span {
                 font-family: 'Inter', sans-serif;
                 font-size: 14px;
