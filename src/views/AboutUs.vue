@@ -151,7 +151,7 @@
                         <div class="our-mission__slogan">
                             Training that’s designed with precision, based on research, and built for results
                         </div>
-                        <div class="our-mission__description">
+                        <div class="our-mission__description our-mission__description--second">
                             At FitSphere, we don’t believe in guesswork or outdated fitness myths. Every program we offer is rooted in the latest scientific research in sports physiology, biomechanics, and nutrition. Our expert team collaborates with fitness professionals, sports scientists, and medical specialists to create workouts that maximize efficiency and safety.
                             <br><br>
                             We apply evidence-based training principles to help our clients achieve sustainable, long-term results—whether it's muscle growth, fat loss, endurance improvement, or recovery optimization. Unlike generic workout plans, our courses adapt to individual needs, ensuring that every rep, every set, and every movement brings you closer to your goals
@@ -741,6 +741,12 @@ const router = useRouter();
         font-family: 'Inter', sans-serif;
         color: #000;
         margin-bottom: 10px;
+        &--second {
+            margin-bottom: 70px;
+            @include mqm(1024) {
+                margin-bottom: 40px;
+            }
+        }
         @include mqm(1024) {
             margin-bottom: 40px;
             font-size: 18px;
