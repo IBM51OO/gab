@@ -30,21 +30,7 @@
                     <div class="course-detail__content-label">
                         Table of Contents:
                     </div>
-                    <div class="course-detail__content">
-                        What is Fitness?
-                        Redefining Fitness for Beginners
-                        Physical, Mental, and Emotional Dimensions
-                        Common Myths and Misconceptions
-                        The Benefits of Fitness
-                        Immediate and Long-Term Physical Benefits
-                        Mental Clarity and Emotional Balance
-                        Fitness as a Tool for Disease Prevention
-                        Preparing for Your Journey
-                        Overcoming Self-Doubt and Fear
-                        Creating a Supportive Environment
-                        Basic Tools and Equipment for Beginners
-                        Building Your Routine
-                    </div>
+                    <div class="course-detail__content" v-html="course.content" />
                 </div>
                 <div class="course-detail__add-to-cart course-detail__add-to-cart--mobile primary-button-hover" @click="addToCart">
                     Add to cart

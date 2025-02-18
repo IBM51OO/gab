@@ -429,6 +429,15 @@ onMounted(() => {
             background-repeat: no-repeat;
             background-size: 830px;
             background-position: right 20%;
+            @include mqm(1000) {
+                background-position: right 5%;
+            }
+            @include mqm(1089) {
+                background-position: right 10%;
+            }
+            @include mqm(1400) {
+                background-position: right 20%;
+            }
         }
     }
     .fitness-advantages {

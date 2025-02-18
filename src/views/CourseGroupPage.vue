@@ -1,5 +1,5 @@
 <template>
-    <div class="course-group" v-if="currentCourses">
+    <div class="course-group" v-if="currentCourses && currentGroup">
         <div class="container">
             <div class="breadcrumbs">
                 <router-link to="/courses">

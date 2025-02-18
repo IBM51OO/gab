@@ -283,8 +283,9 @@ const burderItems = reactive([
             color: #000;
             margin-bottom: 25px;
             font-family: 'Inter', sans-serif;
-            max-width: 619px;
+            max-width: 100%;
             @include mqm(1024) {
+                max-width: 48%;
                 font-size: 16px;
             }
         }
