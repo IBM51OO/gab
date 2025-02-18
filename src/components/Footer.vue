@@ -87,6 +87,8 @@ const router = useRouter();
         position: absolute;
         height: 280px;
         bottom: 0;
+        pointer-events: none;
+        z-index: -1;
     }
 }
 .footer {

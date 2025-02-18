@@ -113,7 +113,7 @@
                         </div>
                         <div class="expert-description">
                             <div class="expert-description__name">
-                                James Rodriguez
+                                Eugenia Williams
                             </div>
                             <ul class="expert-skills">
                                 <li class="expert-skills__item">

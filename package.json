@@ -12,6 +12,7 @@
     "@kyvg/vue3-notification": "^3.4.1",
     "aos": "^2.3.4",
     "axios": "^1.7.9",
+    "jenesius-vue-modal": "^1.11.9",
     "pinia": "^2.3.0",
     "swiper": "^11.2.2",
     "universal-cookie": "^7.2.2",

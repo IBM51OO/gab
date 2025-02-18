@@ -21,37 +21,10 @@
                             <Field name="password" type="password"/>
                             <ErrorMessage name="password"/>
                         </div>
-                        <div class="sign-in__forgot-password-button" @click="isSignIn = false">
+                        <div class="sign-in__forgot-password-button" @click="openDeleteModal('1')">
                             Forgot your password?
                         </div>
                         <button class="primary-button">Log in</button>
-                    </Form>
-                    <Form :validation-schema="schemaForgot" @submit="onSubmitForgot" v-else-if="!forgotPasswordData.email">
-                        <div class="sign-in__email">
-                            <div class="sign-in__email-label">
-                                Email
-                            </div>
-                            <Field name="emailForgot" type="email"/>
-                            <ErrorMessage name="emailForgot"/>
-                        </div>
-                        <div class="sign-up-verify__new-password">
-                            <div class="sign-up____new-password-label">
-                                New Password
-                            </div>
-                            <Field name="newPassword" type="password"/>
-                            <ErrorMessage name="newPassword"/>
-                        </div>
-                        <button class="primary-button sign-up-verify__new-password-button">Submit</button>
-                    </Form>
-                    <Form :validation-schema="schemaSubmitForgot" @submit="onSubmitForgotCode" v-else>
-                        <div class="sign-in__code-otp">
-                            <div class="sign-in__code-otp-label">
-                                Code
-                            </div>
-                            <Field name="codeForgot"/>
-                            <ErrorMessage name="codeForgot"/>
-                        </div>
-                        <button class="primary-button">Submit</button>
                     </Form>
                 </div>
                 <hr v-if="!isVerify">
@@ -85,6 +58,9 @@
                     </Form>
                 </div>
                 <div class="sign-up-verify" v-else>
+                    <div class="page-name">
+                        Register
+                    </div>
                     <Form :validation-schema="schemaSignUpVerify" @submit="onSubmitSignUpVerify">
                         <div class="sign-up-verify__code">
                             <div class="sign-up__email-label">
@@ -106,6 +82,8 @@ import * as yup from 'yup';
 import api from "@/services/client.js";
 import {computed, reactive, ref} from "vue";
 import {notify} from "@kyvg/vue3-notification";
+import {openModal} from "jenesius-vue-modal";
+import PasswordReset from "@/components/PasswordReset.vue";
 import {useCookies} from "vue3-cookies";
 import {useMainStore} from "@/stores/main.js";
 import {useRouter} from "vue-router";
@@ -123,10 +101,8 @@ const forgotPasswordData = reactive({
     code: null,
     newPassword: null,
 })
+const modal = ref();
 const mainStore = useMainStore();
-const schemaSubmitForgot = yup.object({
-    codeForgot: yup.string().required('Code is a required field'),
-});
 const schemaSignUp = yup.object({
     email: yup.string().email().required('E-mail is a required field'),
     password: yup.string()
@@ -135,6 +111,14 @@ const schemaSignUp = yup.object({
         .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.'),
     passwordConfirmation: yup.string().required('Confirmation is a required field').oneOf([yup.ref('password'), null], 'Passwords must match')
 });
+async function openDeleteModal(id) {
+    modal.value = await openModal(PasswordReset);
+    modal.value.on('delete', async (v) => {
+        await deleteCourse(id);
+        await fetchCourses();
+        modal.value.close();
+    })
+}
 const schemaSignUpVerify = yup.object({
     code: yup.string()
         .required('This field is required')
@@ -151,48 +135,6 @@ const schemaForgot = yup.object({
     emailForgot: yup.string().email().required('E-mail is a required field'),
 });
 const isSignIn = ref(true);
-async function onSubmitForgotCode(data) {
-    try {
-        const r = await api.post('/forgot-password', {
-            email: forgotPasswordData.email,
-            new_password: forgotPasswordData.newPassword,
-        }, {
-            params: {
-                code: data.codeForgot,
-            }
-        });
-        isSignIn.value = true;
-        forgotPasswordData.email = null;
-        forgotPasswordData.newPassword = null;
-        forgotPasswordData.code = null;
-        // const rr = await api.get('/me');
-        // console.log(rr);
-    } catch (e) {
-        notify({
-            type: 'error',
-            title: "Server Error. Try Again",
-        });
-    }
-}
-async function onSubmitForgot(data) {
-    forgotPasswordData.email = data.emailForgot;
-    forgotPasswordData.newPassword = data.newPassword;
-    console.log(data)
-    if (!data.newPassword) return;
-    try {
-        const r = await api.post('/forgot-password', {
-            email: forgotPasswordData.email,
-            new_password: forgotPasswordData.newPassword,
-        });
-        // const rr = await api.get('/me');
-        // console.log(rr);
-    } catch (e) {
-        notify({
-            type: 'error',
-            title: "Server Error. Try Again",
-        });
-    }
-}
 async function onSubmitSignIn(data) {
     try {
         const r = await api.post('/login', {
@@ -285,6 +227,8 @@ async function onSubmitSignUpVerify(data) {
     }
     .sign-up-verify {
         width: 100%;
+        max-width: 580px;
+        padding-top: 50px;
         &__new-password {
             margin-top: 10px;
         }

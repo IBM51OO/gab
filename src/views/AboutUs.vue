@@ -52,8 +52,72 @@
                             <br><br>
                             Our experts continuously update their knowledge to stay ahead of the latest trends and innovations in the fitness industry. With FitSphere, you’re not just getting a workout—you’re getting the guidance and support of some of the best in the business                    </div>
                     </div>
-                    <div class="our-mission__image">
-                        <img src="../img/aboutus3.png" alt="">
+                    <div class="experts-block">
+                        <div class="container">
+                            <div class="experts-list">
+                                <div class="expert" data-aos="fade-right" data-aos-duration="1000">
+                                    <div class="expert-image">
+                                        <img src="../img/1.png" alt="">
+                                    </div>
+                                    <div class="expert-description">
+                                        <div class="expert-description__name">
+                                            Max Carter
+                                        </div>
+                                        <ul class="expert-skills">
+                                            <li class="expert-skills__item">
+                                                Certified Strength and Conditioning Specialist (CSCS)
+                                            </li>
+                                            <li class="expert-skills__item">
+                                                8+ years of experience in functional training and injury prevention
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="expert" data-aos="fade-up" data-aos-duration="1000">
+                                    <div class="expert-image">
+                                        <img src="../img/2.png" alt="">
+                                    </div>
+                                    <div class="expert-description">
+                                        <div class="expert-description__name">
+                                            Eugenia Williams
+                                        </div>
+                                        <ul class="expert-skills">
+                                            <li class="expert-skills__item">
+                                                Registered Yoga Teacher (RYT-500)
+                                            </li>
+                                            <li class="expert-skills__item">
+                                                Expert in mobility, flexibility, and mindfulness practices
+                                            </li>
+                                            <li class="expert-skills__item">
+                                                Conducted over 2,000 yoga sessions worldwide
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="expert" data-aos="fade-left" data-aos-duration="1000">
+                                    <div class="expert-image" >
+                                        <img src="../img/3.png" alt="">
+                                    </div>
+                                    <div class="expert-description">
+                                        <div class="expert-description__name">
+                                            Oliver Smith
+                                        </div>
+                                        <ul class="expert-skills">
+                                            <li class="expert-skills__item">
+                                                Certified Personal Trainer (CPT) by NASM
+                                            </li>
+                                            <li class="expert-skills__item">
+                                                Specializes in weight loss and high-intensity interval training (HIIT)
+                                            </li>
+                                            <li class="expert-skills__item">
+                                                Helped over 500 clients achieve their fitness goals
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
                 <div class="our-mission our-mission--five">
@@ -62,7 +126,10 @@
                             Our Unique Approach
                         </div>
                         <div class="our-mission__image--mob">
-                            <img src="../img/aboutus4.png" alt="">
+                            <picture>
+                                <source media="(min-width: 1024px)" srcset="../img/aboutus4.png">
+                                <img src="../img/mob1.png" alt="">
+                            </picture>
                         </div>
                         <div class="our-mission__slogan">
                             Science Meets Fitness
@@ -74,6 +141,93 @@
                     </div>
                     <div class="our-mission__image">
                         <img src="../img/aboutus4.png" alt="">
+                    </div>
+                </div>
+                <div class="our-mission our-mission--third">
+                    <div class="our-mission__wrapper" data-aos="fade-right" data-aos-duration="1000">
+                        <div class="our-mission__title">
+                            Our Science-Backed Training Philosophy
+                        </div>
+                        <div class="our-mission__slogan">
+                            Training that’s designed with precision, based on research, and built for results
+                        </div>
+                        <div class="our-mission__description">
+                            At FitSphere, we don’t believe in guesswork or outdated fitness myths. Every program we offer is rooted in the latest scientific research in sports physiology, biomechanics, and nutrition. Our expert team collaborates with fitness professionals, sports scientists, and medical specialists to create workouts that maximize efficiency and safety.
+                            <br><br>
+                            We apply evidence-based training principles to help our clients achieve sustainable, long-term results—whether it's muscle growth, fat loss, endurance improvement, or recovery optimization. Unlike generic workout plans, our courses adapt to individual needs, ensuring that every rep, every set, and every movement brings you closer to your goals
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="our-comm">
+                <div class="our-comm__left">
+                    <div class="our-comm__title">
+                        Our Community: A Global Network of Motivated Individuals
+                    </div>
+                    <div class="our-comm__subtitle">
+                        A diverse and driven community united by a passion for fitness
+                    </div>
+                    <div class="our-comm__text">
+                        At FitSphere, we welcome people from all backgrounds, fitness levels, and goals. Whether you're just starting your journey or fine-tuning your peak performance, you're part of a movement dedicated to self-improvement and well-being.<br>
+                        Our courses are designed for everyone—from beginners taking their first steps in fitness to seasoned athletes looking for an extra edge. We believe that motivation comes not just from within but also from knowing that you’re part of something bigger—a global network of individuals striving to be their best selves.<br>
+                        With thousands of users worldwide, FitSphere connects people from different walks of life who share a common goal: to push their limits, stay active, and make fitness an integral part of their lifestyle. No matter where you are, you belong here
+                    </div>
+                </div>
+                <div class="our-comm__right">
+                    <div class="our-comm__key-points">
+                        <div class="our-comm__key-points-title">
+                            Key Points
+                        </div>
+                        <div class="our-comm__key-points-list">
+                            <div class="our-comm__key-item">
+                                <div class="our-comm__key-item-img">
+                                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <rect width="36" height="36" fill="url(#pattern0_941_257)"/>
+                                        <defs>
+                                            <pattern id="pattern0_941_257" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                                <use xlink:href="#image0_941_257" transform="translate(-0.00900901) scale(0.00900901)"/>
+                                            </pattern>
+                                            <image id="image0_941_257" width="113" height="111" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHEAAABvCAYAAADboi87AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAVsSURBVHgB7Z2NVdswEIDPnYBu4E5QOkHpBnSCsgF0AsIEbSegG0AnCJ0g7QShE5ANrnf4DHm8xCc5snUS972nF96LLZ39If+cLaWBBCDiEX2cUnlPpaVyTOVISm3cUvnaNM09GKGBkYi4cyonUl4TGyofrIiMlrgl7wLq7Gmh3JHET2CAKIkk8BJcXs+GJL4FAwRJJHktfdxAd65zBJI4+nSUkjfaAiTwC32swAW+5BcYYfA/SQ6fC3BeYurCZm9PdIE7YXl3YEjgXkjgKcbzQOWayhmVY7mKdXLAFzEiJJQ1lQuXZgiREtrzLsCxBUm5DBS4xu62w7GEHEZDWLlAo2B3UeI9sFQCe+GDC7RJf594ErDslfl7o9eMnOcGD6Pg2CXwUHoGjl2wy7AMngvBMQ2fE7WnE7fgZEeOmEt8zqbdPF1oyhd+KDUMdrnoXanQ7o4B9TSbP0fMyIDAniWgjie2MxEg8LE3qhLByUKgwEfegGMO7E5hSwh7Ie2X90RjxPRA3LqwcYlGGCHwuF/RJRpgtEBZ2SVm5iCBUoFLzMjBAqUSl5iJJAKlIpeYgWQCpTKXODNJBUqFLnFGkguUSl3iTEwiUCp2iTMwmUCp3CVOzKQCpQGXOCGTC5RGXOJEzCJQGnKJEzCbQGnMJSZmVoHSoEtMyOwCpVGXmIgsAqVhl5iAbAKlcZd4IFkFSgAu8QCyC5QgXOJITAiUQFziCMwIlGCyScShQSKGMSVQAsoiEffPlzP9Rh+AOYESVC6JN0rTX8AYJgVKYLkkhmBmsiOzAiW4XBJDd8glZMa0QAkwl8QlhpNNpHmBEmQuiW3EzmG+wcwUIVACzSJR2maRawyHL4ZmGfRajEAJNptEaT9W5GpqkUUJlICzSpQYYkXysi1MQHECJejsEiWOI9RntppUZJECGS1SmBERqSUBJhFZrEBGixYyQM1+x3AO3qFFC2S0iCET1PQC4xiVpiteIKNFDRkZITIqTVeFQEaLHDKD3Uz/MQRld6oRyGjRgwFQnwkySmRVAhltC8AIkTue+ZagHvsCGW0rwBB4YJquZIGoTJVZjEQGR6bpKhA4OFXmIGAQHJemK/YQisMJkGWjibLyQ48vwe4wuYS0v+u4ofKJNvkPGEJxtCmyJ/ZgfJpuCLMXMVrgRUvswbg0XVECGS34KiQyGJ/dKUIgo21ANRKZESKLuA/UNqIqiQyGp+nWJQhktA2pTiKDzzfGu+Dexz12lnd1UqA5KvYWIwTsMhrHUvj24Z7KHW3SBgpCdVSzxFrQHPls/BXgEivAJVaAS6wAl1gBLrECXGIFuMQKcIkV4BIrgCUO5hFLShTXSMj+VyUSLTg5aZXv71mi9lJQEc/cKkbb/48S/ykLfQQnJ9r+/xvSE0/9vJiVU+X7P/1rfxpRQ8acNGDYQKK2X3ipLLgGZ3ZQf8t9xcv194m/lfpa743zQvv7HPQr0x/bK/AhVRur8IAFzEVaAxg+21b7csWQdzbXLnJaMHyw0PWulUN6I7NykdMgAkPn8mn3VRL6BvXaRaYF44brLbTKQv8TuNf6xU4CaD+eY/j4Sf1OAeOnsFxTOQMnCuxOXxcYN1g2/OIS42er6Bu4lnV5aLVnebbA5yHnZ7KfYjpKz87sTTPQ6II+sk/d7Dxx1TTNYtcXg6/ou0gz7BXIqOMspAvzPYkfHueHn/V+JYE/hxYKGiwjJ1Oe5KAFZy746dJnEnivLRj0jg1XROUd/XkFztRw7+PD54cQgUz0sDXplQsqo6amdPbC8jih/T12/OTosYci84QKZ9v9FY7x3EH3FClaXk+SAaRbQlnme+jOnS0422yk8Lnun3zephi1/B+s8RWJKHPlfQAAAABJRU5ErkJggg=="/>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <div class="our-comm__key-item-title">
+                                    For all fitness levels – from complete beginners to experienced athletes
+                                </div>
+                            </div>
+                            <div class="our-comm__key-item">
+                                <div class="our-comm__key-item-img">
+                                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <rect width="36" height="36" fill="url(#pattern0_941_257)"/>
+                                        <defs>
+                                            <pattern id="pattern0_941_257" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                                <use xlink:href="#image0_941_257" transform="translate(-0.00900901) scale(0.00900901)"/>
+                                            </pattern>
+                                            <image id="image0_941_257" width="113" height="111" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHEAAABvCAYAAADboi87AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAVsSURBVHgB7Z2NVdswEIDPnYBu4E5QOkHpBnSCsgF0AsIEbSegG0AnCJ0g7QShE5ANrnf4DHm8xCc5snUS972nF96LLZ39If+cLaWBBCDiEX2cUnlPpaVyTOVISm3cUvnaNM09GKGBkYi4cyonUl4TGyofrIiMlrgl7wLq7Gmh3JHET2CAKIkk8BJcXs+GJL4FAwRJJHktfdxAd65zBJI4+nSUkjfaAiTwC32swAW+5BcYYfA/SQ6fC3BeYurCZm9PdIE7YXl3YEjgXkjgKcbzQOWayhmVY7mKdXLAFzEiJJQ1lQuXZgiREtrzLsCxBUm5DBS4xu62w7GEHEZDWLlAo2B3UeI9sFQCe+GDC7RJf594ErDslfl7o9eMnOcGD6Pg2CXwUHoGjl2wy7AMngvBMQ2fE7WnE7fgZEeOmEt8zqbdPF1oyhd+KDUMdrnoXanQ7o4B9TSbP0fMyIDAniWgjie2MxEg8LE3qhLByUKgwEfegGMO7E5hSwh7Ie2X90RjxPRA3LqwcYlGGCHwuF/RJRpgtEBZ2SVm5iCBUoFLzMjBAqUSl5iJJAKlIpeYgWQCpTKXODNJBUqFLnFGkguUSl3iTEwiUCp2iTMwmUCp3CVOzKQCpQGXOCGTC5RGXOJEzCJQGnKJEzCbQGnMJSZmVoHSoEtMyOwCpVGXmIgsAqVhl5iAbAKlcZd4IFkFSgAu8QCyC5QgXOJITAiUQFziCMwIlGCyScShQSKGMSVQAsoiEffPlzP9Rh+AOYESVC6JN0rTX8AYJgVKYLkkhmBmsiOzAiW4XBJDd8glZMa0QAkwl8QlhpNNpHmBEmQuiW3EzmG+wcwUIVACzSJR2maRawyHL4ZmGfRajEAJNptEaT9W5GpqkUUJlICzSpQYYkXysi1MQHECJejsEiWOI9RntppUZJECGS1SmBERqSUBJhFZrEBGixYyQM1+x3AO3qFFC2S0iCET1PQC4xiVpiteIKNFDRkZITIqTVeFQEaLHDKD3Uz/MQRld6oRyGjRgwFQnwkySmRVAhltC8AIkTue+ZagHvsCGW0rwBB4YJquZIGoTJVZjEQGR6bpKhA4OFXmIGAQHJemK/YQisMJkGWjibLyQ48vwe4wuYS0v+u4ofKJNvkPGEJxtCmyJ/ZgfJpuCLMXMVrgRUvswbg0XVECGS34KiQyGJ/dKUIgo21ANRKZESKLuA/UNqIqiQyGp+nWJQhktA2pTiKDzzfGu+Dexz12lnd1UqA5KvYWIwTsMhrHUvj24Z7KHW3SBgpCdVSzxFrQHPls/BXgEivAJVaAS6wAl1gBLrECXGIFuMQKcIkV4BIrgCUO5hFLShTXSMj+VyUSLTg5aZXv71mi9lJQEc/cKkbb/48S/ykLfQQnJ9r+/xvSE0/9vJiVU+X7P/1rfxpRQ8acNGDYQKK2X3ipLLgGZ3ZQf8t9xcv194m/lfpa743zQvv7HPQr0x/bK/AhVRur8IAFzEVaAxg+21b7csWQdzbXLnJaMHyw0PWulUN6I7NykdMgAkPn8mn3VRL6BvXaRaYF44brLbTKQv8TuNf6xU4CaD+eY/j4Sf1OAeOnsFxTOQMnCuxOXxcYN1g2/OIS42er6Bu4lnV5aLVnebbA5yHnZ7KfYjpKz87sTTPQ6II+sk/d7Dxx1TTNYtcXg6/ou0gz7BXIqOMspAvzPYkfHueHn/V+JYE/hxYKGiwjJ1Oe5KAFZy746dJnEnivLRj0jg1XROUd/XkFztRw7+PD54cQgUz0sDXplQsqo6amdPbC8jih/T12/OTosYci84QKZ9v9FY7x3EH3FClaXk+SAaRbQlnme+jOnS0422yk8Lnun3zephi1/B+s8RWJKHPlfQAAAABJRU5ErkJggg=="/>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <div class="our-comm__key-item-title">
+                                    A worldwide movement – people from different countries, cultures, and backgrounds
+                                </div>
+                            </div>
+                            <div class="our-comm__key-item">
+                                <div class="our-comm__key-item-img">
+                                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <rect width="36" height="36" fill="url(#pattern0_941_257)"/>
+                                        <defs>
+                                            <pattern id="pattern0_941_257" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                                <use xlink:href="#image0_941_257" transform="translate(-0.00900901) scale(0.00900901)"/>
+                                            </pattern>
+                                            <image id="image0_941_257" width="113" height="111" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHEAAABvCAYAAADboi87AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAVsSURBVHgB7Z2NVdswEIDPnYBu4E5QOkHpBnSCsgF0AsIEbSegG0AnCJ0g7QShE5ANrnf4DHm8xCc5snUS972nF96LLZ39If+cLaWBBCDiEX2cUnlPpaVyTOVISm3cUvnaNM09GKGBkYi4cyonUl4TGyofrIiMlrgl7wLq7Gmh3JHET2CAKIkk8BJcXs+GJL4FAwRJJHktfdxAd65zBJI4+nSUkjfaAiTwC32swAW+5BcYYfA/SQ6fC3BeYurCZm9PdIE7YXl3YEjgXkjgKcbzQOWayhmVY7mKdXLAFzEiJJQ1lQuXZgiREtrzLsCxBUm5DBS4xu62w7GEHEZDWLlAo2B3UeI9sFQCe+GDC7RJf594ErDslfl7o9eMnOcGD6Pg2CXwUHoGjl2wy7AMngvBMQ2fE7WnE7fgZEeOmEt8zqbdPF1oyhd+KDUMdrnoXanQ7o4B9TSbP0fMyIDAniWgjie2MxEg8LE3qhLByUKgwEfegGMO7E5hSwh7Ie2X90RjxPRA3LqwcYlGGCHwuF/RJRpgtEBZ2SVm5iCBUoFLzMjBAqUSl5iJJAKlIpeYgWQCpTKXODNJBUqFLnFGkguUSl3iTEwiUCp2iTMwmUCp3CVOzKQCpQGXOCGTC5RGXOJEzCJQGnKJEzCbQGnMJSZmVoHSoEtMyOwCpVGXmIgsAqVhl5iAbAKlcZd4IFkFSgAu8QCyC5QgXOJITAiUQFziCMwIlGCyScShQSKGMSVQAsoiEffPlzP9Rh+AOYESVC6JN0rTX8AYJgVKYLkkhmBmsiOzAiW4XBJDd8glZMa0QAkwl8QlhpNNpHmBEmQuiW3EzmG+wcwUIVACzSJR2maRawyHL4ZmGfRajEAJNptEaT9W5GpqkUUJlICzSpQYYkXysi1MQHECJejsEiWOI9RntppUZJECGS1SmBERqSUBJhFZrEBGixYyQM1+x3AO3qFFC2S0iCET1PQC4xiVpiteIKNFDRkZITIqTVeFQEaLHDKD3Uz/MQRld6oRyGjRgwFQnwkySmRVAhltC8AIkTue+ZagHvsCGW0rwBB4YJquZIGoTJVZjEQGR6bpKhA4OFXmIGAQHJemK/YQisMJkGWjibLyQ48vwe4wuYS0v+u4ofKJNvkPGEJxtCmyJ/ZgfJpuCLMXMVrgRUvswbg0XVECGS34KiQyGJ/dKUIgo21ANRKZESKLuA/UNqIqiQyGp+nWJQhktA2pTiKDzzfGu+Dexz12lnd1UqA5KvYWIwTsMhrHUvj24Z7KHW3SBgpCdVSzxFrQHPls/BXgEivAJVaAS6wAl1gBLrECXGIFuMQKcIkV4BIrgCUO5hFLShTXSMj+VyUSLTg5aZXv71mi9lJQEc/cKkbb/48S/ykLfQQnJ9r+/xvSE0/9vJiVU+X7P/1rfxpRQ8acNGDYQKK2X3ipLLgGZ3ZQf8t9xcv194m/lfpa743zQvv7HPQr0x/bK/AhVRur8IAFzEVaAxg+21b7csWQdzbXLnJaMHyw0PWulUN6I7NykdMgAkPn8mn3VRL6BvXaRaYF44brLbTKQv8TuNf6xU4CaD+eY/j4Sf1OAeOnsFxTOQMnCuxOXxcYN1g2/OIS42er6Bu4lnV5aLVnebbA5yHnZ7KfYjpKz87sTTPQ6II+sk/d7Dxx1TTNYtcXg6/ou0gz7BXIqOMspAvzPYkfHueHn/V+JYE/hxYKGiwjJ1Oe5KAFZy746dJnEnivLRj0jg1XROUd/XkFztRw7+PD54cQgUz0sDXplQsqo6amdPbC8jih/T12/OTosYci84QKZ9v9FY7x3EH3FClaXk+SAaRbQlnme+jOnS0422yk8Lnun3zephi1/B+s8RWJKHPlfQAAAABJRU5ErkJggg=="/>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <div class="our-comm__key-item-title">
+                                    Driven by progress – a shared passion for self-improvement and personal growth
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -138,6 +292,223 @@ const router = useRouter();
             margin: 0 auto;
         }
     }
+    .experts-list {
+        margin-top: 40px;
+    }
+    .our-comm {
+        background-color: rgba(72, 135, 189, 0.1);
+        margin: 0 -80px;
+        padding: 80px 80px;
+        box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.2) inset;
+        gap: 120px;
+        @include mqm(1024) {
+            display: flex;
+        }
+        &__left {
+            flex: 55%;
+        }
+        &__subtitle {
+            font-size: 20px;
+            line-height: 20px;
+            letter-spacing: 1px;
+            color: #000;
+            font-family: "AtkinsonHyperlegible", sans-serif;
+            margin-top: 15px;
+            @include mqm(1024) {
+                line-height: 24px;
+                font-size: 24px;
+            }
+        }
+        &__right {
+            flex: 45%;
+            margin-top: 50px;
+            @include mqm(1024) {
+                margin-top: 0;
+            }
+        }
+        &__key-points-title {
+            font-family: 'AtkinsonHyperlegible',sans-serif;
+            font-style: normal;
+            background: #1969AD;
+            letter-spacing: 3px;
+            background: linear-gradient(to right, #1969AD 3%, #7EB8E8 90%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 24px;
+            color: #576C7E;
+            text-align: center;
+            margin-bottom: 25px;
+            @include mqm(1024) {
+                margin-bottom: 50px;
+            }
+        }
+        &__key-item-title {
+            color: #fff;
+            font-family: 'AtkinsonHyperlegible',sans-serif;
+            font-style: normal;
+            font-size: 16px;
+            line-height: 20px;
+            font-weight: 400;
+            @include mqm(1024) {
+                font-size: 20px;
+                line-height: 26px;
+            }
+        }
+        &__key-item-img {
+            margin-right: 20px;
+            flex: 0 0 auto;
+        }
+        &__key-item {
+            background: rgb(26, 105, 173);
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(90deg, rgba(26, 105, 173, 1) 0%, rgba(11, 43, 71, 1) 100%);
+        }
+        &__key-points-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        &__key-points {
+            background-color: #fff;
+            border-radius: 30px;
+            padding: 30px 20px;
+            box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.24);
+            @include mqm(1024) {
+                padding: 40px;
+            }
+        }
+        &__title {
+            font-family: 'AtkinsonHyperlegible',sans-serif;
+            font-style: italic;
+            background: #1969AD;
+            letter-spacing: 3px;
+            background: linear-gradient(to right, #1969AD 3%, #7EB8E8 90%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 40px;
+            color: #576C7E;
+        }
+        &__text {
+            font-size: 16px;
+            margin-top: 25px;
+            font-family: 'Inter', sans-serif;
+            @include mqm(1024) {
+                font-size: 18px;
+            }
+        }
+    }
+    .experts-block {
+        overflow: hidden;
+        padding-top: 0;
+        padding-bottom: 80px;
+        font-family: 'AtkinsonHyperlegible',sans-serif;
+        font-style: italic;
+        @include mqm(1024) {
+            padding-top: 50px;
+        }
+        &__title {
+            font-size: 40px;
+            line-height: 40px;
+            text-align: left;
+            background: #1969AD;
+            letter-spacing: 3px;
+            background: linear-gradient(to right, #1969AD 3%, #7EB8E8 90%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            color: #576C7E;
+            span {
+                color: #000;
+            }
+            @include mqm(1024) {
+                font-size: 50px;
+                line-height: 52px;
+                max-width: 846px;
+                span {
+                    display: block;
+                }
+            }
+        }
+        .expert-skills {
+            font-family: 'Inter', sans-serif;
+            padding-left: 25px;
+            color: #fff;
+            font-size: 14px;
+            margin-top: 10px;
+            @include mqm(1024) {
+                font-size: 16px;
+                margin-top: 20px;
+            }
+            &__item {
+                &::marker {
+                    font-size: 14px;
+                    color: #fff;
+                }
+            }
+        }
+        .experts-list {
+            @include mqm(1024) {
+                display: flex;
+                gap: 20px;
+                justify-content: space-between;
+            }
+        }
+        .expert {
+            border: 2px solid #4887BD;
+            border-radius: 30px;
+            overflow: hidden;
+            width: 100%;
+            cursor: pointer;
+            transition: 500ms all ease;
+            &:not(:first-child) {
+                margin-top: 50px;
+            }
+            img {
+                transition: 500ms all ease;
+            }
+            &:hover .expert-image img {
+                transition: 500ms all ease;
+                transform: scale(1.1);
+            }
+            &:hover .expert-description {
+                transition: 500ms all ease;
+                background-color: #1969AD;
+            }
+            @include mqm(1024) {
+                &:not(:first-child) {
+                    margin-top: 0;
+                }
+            }
+        }
+        .expert-description {
+            transition: 500ms all ease;
+            padding: 20px 40px;
+            background-color: #4887BD;
+            height: 100%;
+            &__name {
+                color: #fff;
+                font-size: 20px;
+                font-family: 'Inter', sans-serif;
+                font-weight: 500;
+            }
+        }
+        .expert-image {
+            height: 364px;
+            overflow: hidden;
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+            }
+        }
+    }
     .container {
         padding: 0 20px;
         @include mqm(1024) {
@@ -174,7 +545,10 @@ const router = useRouter();
             height: auto;
             margin-top: 30px;
             img {
-                max-height: 413px;
+                border-radius: 30px;
+                height: 413px;
+                width: auto;
+                margin: 0 auto;
             }
             @include mqm(1024) {
                 height: 413px;
@@ -214,6 +588,10 @@ const router = useRouter();
                 order: 1;
             }
         }
+    }
+    img {
+        object-fit: cover;
+        border-radius: 30px;
     }
     &--second {
         background-color: rgba(72, 135, 189, 0.1);
@@ -274,7 +652,11 @@ const router = useRouter();
             text-align: center;
         }
         .our-mission__wrapper {
-            max-width: 832px;
+            max-width: 920px;
+            margin: 0 auto;
+            //@include mqm(1024) {
+            //    max-width: 832px;
+            //}
         }
         .our-mission__image {
             border-radius: unset;
@@ -358,8 +740,9 @@ const router = useRouter();
         font-size: 16px;
         font-family: 'Inter', sans-serif;
         color: #000;
-        margin-bottom: 40px;
+        margin-bottom: 10px;
         @include mqm(1024) {
+            margin-bottom: 40px;
             font-size: 18px;
         }
     }
