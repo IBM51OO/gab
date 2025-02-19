@@ -84,6 +84,8 @@ const fetchCurse = async (id) => {
         }
     }
     &__content {
+        font-family: 'Inter', sans-serif;
+        line-height: 200%;
         font-size: 14px;
         margin-top: 12px;
         @include mqm(1024) {
