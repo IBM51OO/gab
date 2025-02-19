@@ -30,7 +30,8 @@ watch(show, (newShow) => {
     height: 100%;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.25);
-    top: 0;
+    top: 110px;
+    z-index: 999;
     left: 0;
     transform: translate(0, 100%);
     z-index: 4;
@@ -51,19 +52,16 @@ watch(show, (newShow) => {
             height: 25px;
             width: 25px;
         }
+        top: 110px;
     }
     .popup-wrapper {
         padding: 20px;
-        position: fixed;
-        top: 100px;
         background-color: #fff;
         border-radius: 30px;
         box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.35);
         height: fit-content;
         width: 100%;
         max-width: 90%;
-        left: 50%;
-        transform: translate(-50%, 0);
         @include mqm(1024) {
             padding: 40px;
         }
