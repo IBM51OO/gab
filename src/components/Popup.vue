@@ -56,10 +56,14 @@ watch(show, (newShow) => {
         position: fixed;
         top: 100px;
         background-color: #fff;
-        border-radius: 20px;
+        border-radius: 30px;
         box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.35);
         height: fit-content;
+        overflow-y: auto;
         width: 100%;
+        max-width: 90%;
+        left: 50%;
+        transform: translate(-50%, 0);
         @include mqm(1024) {
             padding: 40px;
         }

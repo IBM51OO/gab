@@ -188,7 +188,7 @@ onMounted(() => {
     }
     .blog-card {
         padding: 20px;
-        border-radius: 15px;
+        border-radius: 30px;
         box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.35);
         @include mqm(1024) {
             display: flex;
@@ -199,6 +199,7 @@ onMounted(() => {
             }
         }
         &__description {
+            overflow: hidden;
             display: none;
             margin-top: 20px;
             font-size: 14px;
