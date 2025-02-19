@@ -26,7 +26,7 @@ watch(show, (newShow) => {
 .popup {
     position: fixed;
     -webkit-overflow-scrolling: touch;
-    overflow-y: scroll;
+    overflow-y: auto;
     height: 100%;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.25);

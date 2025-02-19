@@ -136,7 +136,7 @@ async function onSubmitForgot(data) {
         font-family: 'AtkinsonHyperlegible',serif;
         font-weight: 700;
         background: linear-gradient(to right, #1969AD 3%, #7EB8E8 100%);
-        -webkit-background-clip: text;
+        -webkit-background-clip: text;з
         -webkit-text-fill-color: transparent;
         text-align: center;
         font-size: 20px;
