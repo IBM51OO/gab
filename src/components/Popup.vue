@@ -58,7 +58,7 @@ watch(show, (newShow) => {
         background-color: #fff;
         border-radius: 20px;
         box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.35);
-        height: 100%;
+        height: fit-content;
         width: 100%;
         @include mqm(1024) {
             padding: 40px;

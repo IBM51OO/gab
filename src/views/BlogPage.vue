@@ -7,7 +7,7 @@
             <div class="blog-list">
                 <div class="blog-card" v-for="item in blogList" :key="item.id">
                     <div class="blog-card__image" >
-                        <img :src="`${BaseUrl}/image/${item.images[0]}`" alt="">
+                        <img :src="`${BaseUrl}/image/${item.images[item.images.length - 1]}`" alt="">
                     </div>
                     <div class="blog-card__content">
                         <div class="blog-card__title">
@@ -16,9 +16,7 @@
                         <div class="blog-card__slogan">
                             {{ item.slogan }}
                         </div>
-                        <div class="blog-card__description">
-                            <p>{{ item.content }}</p>
-                        </div>
+                        <div class="blog-card__description" v-html="`${item.content.slice(0, 1000)}...`"/>
                         <div class="blog-card__button primary-button-hover" @click="() => {show = true; activePost = blogList.find((el) => el.id === item.id)}">
                             Read
                         </div>
@@ -182,7 +180,8 @@ onMounted(() => {
         &__post-descr {
             margin-top: 20px;
             font-size: 14px;
-            line-height: 16px;
+            font-family: 'Inter', sans-serif;
+            line-height: 20px;
             color: #000;
 
         }
