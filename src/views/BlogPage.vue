@@ -40,9 +40,7 @@
                     <div class="popup__slogan">
                         {{ activePost.quote }}
                     </div>
-                    <div class="popup__post-descr">
-                        {{ activePost.content }}
-                    </div>
+                    <div class="popup__post-descr" v-html="activePost.content"/>
                 </div>
             </popup>
         </div>
