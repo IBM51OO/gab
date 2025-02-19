@@ -182,7 +182,7 @@ onMounted(() => {
         &__post-descr {
             margin-top: 20px;
             font-size: 14px;
-            line-height: 13px;
+            line-height: 16px;
             color: #000;
 
         }
