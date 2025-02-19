@@ -30,11 +30,10 @@ watch(show, (newShow) => {
     height: 100%;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.25);
-    top: 110px;
+    top: 0;
     z-index: 999;
     left: 0;
     transform: translate(0, 100%);
-    z-index: 4;
     box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.35);
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
     &--show {
@@ -44,7 +43,7 @@ watch(show, (newShow) => {
         position: absolute;
         cursor: pointer;
         justify-content: right;
-        right: 20px;
+        right: 6%;
         border-bottom-left-radius: 10px;
         padding: 23px;
         background-color: #fff;
@@ -52,7 +51,7 @@ watch(show, (newShow) => {
             height: 25px;
             width: 25px;
         }
-        top: 110px;
+        top: 19px;
     }
     .popup-wrapper {
         padding: 20px;
@@ -62,6 +61,7 @@ watch(show, (newShow) => {
         height: fit-content;
         width: 100%;
         max-width: 90%;
+        margin: 0 auto;
         @include mqm(1024) {
             padding: 40px;
         }
