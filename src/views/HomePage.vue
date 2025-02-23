@@ -437,7 +437,7 @@ async function openBannerModal() {
 onMounted(() => {
     setTimeout(() => {
         openBannerModal();
-    },1000)
+    },10000)
     fetchGroups();
     fetchCourses();
 })
