@@ -15,6 +15,9 @@ import CloseIcon from "@/img/svg/close.svg?component";
 import {watch} from "vue";
 const show = defineModel()
 function closePopup() {
+    document.body.style.position = 'relative';
+    document.body.style.height = '100%';
+    document.body.style.overflow = 'unset';
     show.value = false;
 }
 watch(show, (newShow) => {

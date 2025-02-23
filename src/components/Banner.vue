@@ -28,6 +28,7 @@
 <style lang="scss">
     .modal-container {
         z-index: 999;
+        background-color: #0000009e !important;
     }
     .banner {
         position: relative;
