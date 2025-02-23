@@ -8,7 +8,7 @@
                 <span>📌 Buy 2 courses – Get 30% OFF!</span>
                 <span>📌 Buy 3 courses – Get 50% OFF!</span>
             </div>
-            <div class="banner__button">
+            <div class="banner__button" @click="toGroup">
                 Explore Courses
             </div>
         </div>
@@ -119,9 +119,15 @@
 </style>
 <script setup>
 import {closeModal} from "jenesius-vue-modal";
+import {useRouter} from "vue-router";
+const router = useRouter();
 function closeBanner() {
     document.body.style.height = '100%';
     document.body.style.overflow = 'unset';
     closeModal();
 };
+function toGroup() {
+    router.push({name: 'courses'})
+    closeModal();
+}
 </script>
