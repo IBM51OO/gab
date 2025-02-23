@@ -17,7 +17,7 @@
                             </span>
                             </div>
                             <div class="cart-page__item-price">
-                                {{ item.price }}
+                                {{ item.prices.find((el) => el.currency === currentValue).amount }} {{ currencySign }}
                             </div>
                         </div>
                     </div>
@@ -27,7 +27,10 @@
                             Subtotal:
                         </div>
                         <div class="cart-page__subtotal-value">
-                            {{ cartSubtotal }} {{ currentValue }}
+                            <div class="cart-page__subtotal-old-price" v-if="cartItems.length > 1">
+                                {{ cartSubtotal }} {{ currencySign }}
+                            </div>
+                            {{ cartSubtotalWithDiscount }} {{ currencySign }}
                         </div>
                     </div>
                     <div class="cart-delimeter cart-delimeter--bottom"></div>
@@ -99,9 +102,20 @@ const fetchCourses = async () => {
     courses.value = await api.get('/courses');
 }
 const user = computed(() => mainStore.getUser);
+const currencySign = computed(() => mainStore.getCurrency === 'EUR' ? '€' : '£');
 const currentValue = computed(() => mainStore.getCurrency);
 const cartItems = computed(() => mainStore.getUser?.basket && courses.value.filter((el) => mainStore.getUser.basket.includes(el.id)))
 const cartSubtotal = computed(() => cartItems.value?.reduce((acc, curr) => curr.prices.find((el) => currentValue.value === el.currency).amount + acc, 0));
+const cartSubtotalWithDiscount = computed(() => {
+    if (cartItems.value.length === 2) {
+        return cartSubtotal.value - (cartSubtotal.value * 0.2);
+    } else {
+        if (cartItems.value.length > 2) {
+            return cartSubtotal.value - (cartSubtotal.value * 0.3);
+        }
+    }
+    return cartSubtotal.value;
+});
 async function onSubmitOrder() {
     try {
         await api.post('/order-from-basket', {}, {
@@ -130,12 +144,31 @@ async function onSubmitOrder() {
             padding: 0 180px;
         }
     }
+    &__subtotal-label {
+        font-family: 'Inter', sans-serif;
+    }
+    &__subtotal-value {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    &__subtotal-old-price {
+        color: #A72424;
+        font-size: 16px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        text-decoration: line-through;
+    }
     .page-name {
         margin-bottom: 10px;
         @include mqm(1024) {
             margin-bottom: 40px;
             text-align: center;
         }
+    }
+    &__item-price {
+        font-size: 20px;
+        font-family: 'Inter', sans-serif;
     }
     &__form {
         button {
@@ -269,9 +302,12 @@ async function onSubmitOrder() {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin: 24px 0 30px 0;
+        margin: 24px 0 40px 0;
         font-size: 20px;
         font-weight: 500;
+        @include mqm(1024) {
+            margin: 24px 0 30px 0;
+        }
     }
     .cart-delimeter {
         height: 1px;
@@ -279,6 +315,7 @@ async function onSubmitOrder() {
         width: 50%;
         margin: 0 auto;
         &--bottom {
+            display: none;
             @include mqm(1024) {
                 display: none;
             }
@@ -290,6 +327,12 @@ async function onSubmitOrder() {
     &__item-name {
         max-width: 180px;
         display: inline-block;
+        font-size: 16px;
+        font-family: 'Inter', sans-serif;
+    }
+    &__subtotal-value {
+        font-size: 20px;
+        font-family: 'Inter', sans-serif;
     }
 }
 </style>

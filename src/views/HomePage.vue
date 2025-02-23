@@ -336,6 +336,15 @@
                 </div>
             </div>
         </div>
+        <div class="courses-groups">
+            <div class="container">
+                <div class="courses-groups__list">
+                    <div class="courses-groups__item primary-button-hover" v-for="item in groups" :key="item.id" @click="router.push(`/course-group/${item.id}`)">
+                        {{ item.name }}
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="get-start">
             <div class="get-start__blick">
                 <svg width="518" height="939" viewBox="0 0 518 939" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -386,15 +395,20 @@
 <script setup>
 import {Swiper, SwiperSlide} from 'swiper/vue';
 import { Pagination } from 'swiper/modules';
+import Banner from "@/components/Banner.vue";
 
 import 'swiper/css';
 import 'swiper/css/pagination';
 import {onMounted, reactive, ref} from "vue";
 import {useRouter} from "vue-router";
 import api from "@/services/client.js";
+import {openModal} from "jenesius-vue-modal";
+import PasswordReset from "@/components/PasswordReset.vue";
 const router = useRouter();
 const courses = ref();
+const modal = ref();
 const BaseUrl = ref(import.meta.env.VITE_BASE_API);
+const groups = ref();
 const swiperOptions = reactive({
     breakpoints: {
         0: {
@@ -408,10 +422,21 @@ const swiperOptions = reactive({
         }
     }
 })
+async function fetchGroups() {
+    const response = await api.get('/groups');
+    groups.value = response;
+}
 async function fetchCourses() {
     courses.value = (await api.get('/courses')).filter((el) => el.id === '1e9178c8aa7642dab6b0f70a0a8db0da' || el.id === 'ef150c4738d54d61afcc242cdff3fc77' || el.id === 'd58faf1ae0c84d66873a6356d7c871dc');
 }
+async function openBannerModal() {
+    modal.value = await openModal(Banner);
+}
 onMounted(() => {
+    setTimeout(() => {
+        openBannerModal();
+    },1000)
+    fetchGroups();
     fetchCourses();
 })
 </script>
@@ -421,6 +446,33 @@ onMounted(() => {
         padding: 0 20px;
         @include mqm(1024) {
             padding: 0 80px;
+        }
+    }
+    .courses-groups {
+        margin-top: 60px;
+        margin-bottom: 40px;
+        @include mqm(1024) {
+            margin-top: 70px;
+            margin-bottom: 60px;
+        }
+        .container {
+            padding: 0 20px;
+            @include mqm(1024) {
+                padding: 0 210px;
+            }
+        }
+        &__list {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            @include mqm(1024) {
+                justify-content: space-between;
+            }
+        }
+        &__item {
+            padding: 17px 20px;
+            width: fit-content;
         }
     }
     .transform-block {
