@@ -10,7 +10,7 @@
                         <div class="cart-page__item" v-for="(item, index) in cartItems" :key="item.id">
                             <div class="cart-page__item-info">
                             <span class="cart-page__item-count">
-                            {{index}}.
+                            {{index + 1}}.
                             </span>
                                 <span class="cart-page__item-name">
                                 {{ item.name }}
