@@ -108,10 +108,10 @@ const cartItems = computed(() => mainStore.getUser?.basket && courses.value.filt
 const cartSubtotal = computed(() => cartItems.value?.reduce((acc, curr) => curr.prices.find((el) => currentValue.value === el.currency).amount + acc, 0));
 const cartSubtotalWithDiscount = computed(() => {
     if (cartItems.value.length === 2) {
-        return cartSubtotal.value - (cartSubtotal.value * 0.2);
+        return cartSubtotal.value - (cartSubtotal.value * 0.3);
     } else {
         if (cartItems.value.length > 2) {
-            return cartSubtotal.value - (cartSubtotal.value * 0.3);
+            return cartSubtotal.value - (cartSubtotal.value * 0.5);
         }
     }
     return cartSubtotal.value;
