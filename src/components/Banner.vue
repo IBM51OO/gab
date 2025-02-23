@@ -17,7 +17,7 @@
                 <img src="../img/banner.png" alt="">
             </div>
         </div>
-        <div class="close-button" @click="closeModal">
+        <div class="close-button" @click="closeBanner">
             <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <line x1="1.35355" y1="0.646447" x2="20.3536" y2="19.6464" stroke="black"/>
                 <line x1="0.646447" y1="19.6464" x2="19.6464" y2="0.646447" stroke="black"/>
@@ -119,4 +119,10 @@
 </style>
 <script setup>
 import {closeModal} from "jenesius-vue-modal";
+function closeBanner() {
+    document.body.style.position = 'relative';
+    document.body.style.height = '100%';
+    document.body.style.overflow = 'unset';
+    closeModal();
+};
 </script>
