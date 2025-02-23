@@ -431,7 +431,6 @@ async function fetchCourses() {
 }
 async function openBannerModal() {
     modal.value = await openModal(Banner);
-    document.body.style.position = 'fixed';
     document.body.style.height = '100%';
     document.body.style.overflow = 'hidden';
 }

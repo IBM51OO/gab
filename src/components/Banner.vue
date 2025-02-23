@@ -120,7 +120,6 @@
 <script setup>
 import {closeModal} from "jenesius-vue-modal";
 function closeBanner() {
-    document.body.style.position = 'relative';
     document.body.style.height = '100%';
     document.body.style.overflow = 'unset';
     closeModal();
