@@ -40,6 +40,34 @@
                     </div>
                 </div>
                 <div class="our-mission our-mission--third">
+                    <div class="blick-1">
+                        <svg width="518" height="904" viewBox="0 0 518 904" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g filter="url(#filter0_f_1028_224)">
+                                <circle cx="66" cy="452" r="102" fill="#2471B2"/>
+                            </g>
+                            <defs>
+                                <filter id="filter0_f_1028_224" x="-386" y="0" width="904" height="904" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                                    <feGaussianBlur stdDeviation="175" result="effect1_foregroundBlur_1028_224"/>
+                                </filter>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="blick-2">
+                        <svg width="518" height="904" viewBox="0 0 518 904" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g filter="url(#filter0_f_1028_223)">
+                                <circle cx="452" cy="452" r="102" fill="#2471B2"/>
+                            </g>
+                            <defs>
+                                <filter id="filter0_f_1028_223" x="0" y="0" width="904" height="904" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                                    <feGaussianBlur stdDeviation="175" result="effect1_foregroundBlur_1028_223"/>
+                                </filter>
+                            </defs>
+                        </svg>
+                    </div>
                     <div class="our-mission__wrapper" data-aos="fade-right" data-aos-duration="1000">
                         <div class="our-mission__title">
                             The Science Behind Our Courses
@@ -517,6 +545,32 @@ const router = useRouter();
     }
 }
 .our-mission {
+    position: relative;
+    .blick-1 {
+        position: absolute;
+        left: 0;
+        height: 296px;
+        display: none;
+        svg {
+            height: 400px;
+        }
+        @include mqm(1024) {
+            display: block;
+        }
+    }
+    .blick-2 {
+        position: absolute;
+        display: none;
+        right: 0;
+        height: 296px;
+        bottom: 0;
+        svg {
+            height: 296px;
+        }
+        @include mqm(1024) {
+            display: block;
+        }
+    }
     @include mqm(1024) {
         display: flex;
         justify-content: space-between;
