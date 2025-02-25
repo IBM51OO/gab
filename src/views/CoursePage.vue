@@ -1,5 +1,5 @@
 <template>
-    <div class="course-item" v-if="course">
+    <div class="course-item" v-if="course" id="courseItem">
         <div class="container">
             <div class="course-item__wrapper">
                 <div class="course-item__name">
@@ -29,7 +29,7 @@
 <script setup>
 import PrevIcon from "@/img/svg/prev.svg?component";
 import {useRoute} from "vue-router";
-import {computed, onMounted, ref} from "vue";
+import {computed, nextTick, onMounted, ref} from "vue";
 import api from "@/services/client.js";
 import {notify} from "@kyvg/vue3-notification";
 const route = useRoute();
@@ -41,6 +41,9 @@ onMounted(() => {
 });
 const changePage = (page) => {
     currentPage.value = page;
+    nextTick(() => {
+        document.getElementById('courseItem').scrollIntoView({ behavior: "smooth", block: "start" });
+    })
 }
 const fetchCurse = async (id) => {
     try {

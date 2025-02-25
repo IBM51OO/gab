@@ -541,6 +541,11 @@ const burderItems = reactive([
         border-bottom-right-radius: 30px;
         border-bottom-left-radius: 30px;
         padding-bottom: 50px;
+        .swiper {
+            .swiper-button-prev, .swiper-button-next {
+                display: none;
+            }
+        }
         &__title {
             font-family: 'AtkinsonHyperlegible',sans-serif;
             font-style: italic;

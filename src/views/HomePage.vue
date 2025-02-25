@@ -48,10 +48,10 @@
                 <div class="fitness-advantages__list">
                     <div class="fitness-advantages__item displayBox" data-aos="fade-up">
                         <div class="fitness-advantages__item-img">
-                            <img src="../img/2k.png" alt="">
+                            <img src="../img/mission.png" alt="">
                         </div>
                         <div class="fitness-advantages__item-name">
-                            2,000+ users trust our courses!
+                            Focus on Results
                         </div>
                     </div>
                     <div class="fitness-advantages__item displayBox" data-aos="fade-up">
@@ -82,7 +82,90 @@
 
             </div>
         </div>
-        <div class="experts-block">
+        <div class="our-comm-wrapper">
+            <div class="our-comm">
+                <div class="blick">
+                    <svg width="460" height="904" viewBox="0 0 460 904" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_f_826_356)">
+                            <circle cx="8" cy="452" r="102" fill="#2471B2"/>
+                        </g>
+                        <defs>
+                            <filter id="filter0_f_826_356" x="-444" y="0" width="904" height="904" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                                <feGaussianBlur stdDeviation="175" result="effect1_foregroundBlur_826_356"/>
+                            </filter>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="our-comm__left">
+                    <div class="our-comm__title">
+                        The Science Behind Our Courses
+                    </div>
+                    <div class="our-comm__subtitle">
+                        Every course is based on research, expert insights, and real-world results
+                    </div>
+                    <div class="our-comm__text">
+                        At FitSphere, we don’t rely on guesswork—we rely on science. Each program is developed using findings from sports physiology, biomechanics, and nutrition studies. We incorporate expert insights from certified trainers, sports scientists, and physical therapists to ensure maximum efficiency and safety.
+                    </div>
+                </div>
+                <div class="our-comm__right">
+                    <div class="our-comm__key-points">
+                        <div class="our-comm__key-points-title">
+                            Key Points
+                        </div>
+                        <div class="our-comm__key-points-list">
+                            <div class="our-comm__key-item" data-aos="fade-right" data-aos-duration="1000">
+                                <div class="our-comm__key-item-img">
+                                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <rect width="36" height="36" fill="url(#pattern0_941_257)"/>
+                                        <defs>
+                                            <pattern id="pattern0_941_257" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                                <use xlink:href="#image0_941_257" transform="translate(-0.00900901) scale(0.00900901)"/>
+                                            </pattern>
+                                            <image id="image0_941_257" width="113" height="111" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHEAAABvCAYAAADboi87AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAVsSURBVHgB7Z2NVdswEIDPnYBu4E5QOkHpBnSCsgF0AsIEbSegG0AnCJ0g7QShE5ANrnf4DHm8xCc5snUS972nF96LLZ39If+cLaWBBCDiEX2cUnlPpaVyTOVISm3cUvnaNM09GKGBkYi4cyonUl4TGyofrIiMlrgl7wLq7Gmh3JHET2CAKIkk8BJcXs+GJL4FAwRJJHktfdxAd65zBJI4+nSUkjfaAiTwC32swAW+5BcYYfA/SQ6fC3BeYurCZm9PdIE7YXl3YEjgXkjgKcbzQOWayhmVY7mKdXLAFzEiJJQ1lQuXZgiREtrzLsCxBUm5DBS4xu62w7GEHEZDWLlAo2B3UeI9sFQCe+GDC7RJf594ErDslfl7o9eMnOcGD6Pg2CXwUHoGjl2wy7AMngvBMQ2fE7WnE7fgZEeOmEt8zqbdPF1oyhd+KDUMdrnoXanQ7o4B9TSbP0fMyIDAniWgjie2MxEg8LE3qhLByUKgwEfegGMO7E5hSwh7Ie2X90RjxPRA3LqwcYlGGCHwuF/RJRpgtEBZ2SVm5iCBUoFLzMjBAqUSl5iJJAKlIpeYgWQCpTKXODNJBUqFLnFGkguUSl3iTEwiUCp2iTMwmUCp3CVOzKQCpQGXOCGTC5RGXOJEzCJQGnKJEzCbQGnMJSZmVoHSoEtMyOwCpVGXmIgsAqVhl5iAbAKlcZd4IFkFSgAu8QCyC5QgXOJITAiUQFziCMwIlGCyScShQSKGMSVQAsoiEffPlzP9Rh+AOYESVC6JN0rTX8AYJgVKYLkkhmBmsiOzAiW4XBJDd8glZMa0QAkwl8QlhpNNpHmBEmQuiW3EzmG+wcwUIVACzSJR2maRawyHL4ZmGfRajEAJNptEaT9W5GpqkUUJlICzSpQYYkXysi1MQHECJejsEiWOI9RntppUZJECGS1SmBERqSUBJhFZrEBGixYyQM1+x3AO3qFFC2S0iCET1PQC4xiVpiteIKNFDRkZITIqTVeFQEaLHDKD3Uz/MQRld6oRyGjRgwFQnwkySmRVAhltC8AIkTue+ZagHvsCGW0rwBB4YJquZIGoTJVZjEQGR6bpKhA4OFXmIGAQHJemK/YQisMJkGWjibLyQ48vwe4wuYS0v+u4ofKJNvkPGEJxtCmyJ/ZgfJpuCLMXMVrgRUvswbg0XVECGS34KiQyGJ/dKUIgo21ANRKZESKLuA/UNqIqiQyGp+nWJQhktA2pTiKDzzfGu+Dexz12lnd1UqA5KvYWIwTsMhrHUvj24Z7KHW3SBgpCdVSzxFrQHPls/BXgEivAJVaAS6wAl1gBLrECXGIFuMQKcIkV4BIrgCUO5hFLShTXSMj+VyUSLTg5aZXv71mi9lJQEc/cKkbb/48S/ykLfQQnJ9r+/xvSE0/9vJiVU+X7P/1rfxpRQ8acNGDYQKK2X3ipLLgGZ3ZQf8t9xcv194m/lfpa743zQvv7HPQr0x/bK/AhVRur8IAFzEVaAxg+21b7csWQdzbXLnJaMHyw0PWulUN6I7NykdMgAkPn8mn3VRL6BvXaRaYF44brLbTKQv8TuNf6xU4CaD+eY/j4Sf1OAeOnsFxTOQMnCuxOXxcYN1g2/OIS42er6Bu4lnV5aLVnebbA5yHnZ7KfYjpKz87sTTPQ6II+sk/d7Dxx1TTNYtcXg6/ou0gz7BXIqOMspAvzPYkfHueHn/V+JYE/hxYKGiwjJ1Oe5KAFZy746dJnEnivLRj0jg1XROUd/XkFztRw7+PD54cQgUz0sDXplQsqo6amdPbC8jih/T12/OTosYci84QKZ9v9FY7x3EH3FClaXk+SAaRbQlnme+jOnS0422yk8Lnun3zephi1/B+s8RWJKHPlfQAAAABJRU5ErkJggg=="/>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <div class="our-comm__key-item-title">
+                                    Backed by research – evidence-based fitness principles                                    </div>
+                            </div>
+                            <div class="our-comm__key-item" data-aos="fade-right" data-aos-duration="1000">
+                                <div class="our-comm__key-item-img">
+                                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <rect width="36" height="36" fill="url(#pattern0_941_257)"/>
+                                        <defs>
+                                            <pattern id="pattern0_941_257" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                                <use xlink:href="#image0_941_257" transform="translate(-0.00900901) scale(0.00900901)"/>
+                                            </pattern>
+                                            <image id="image0_941_257" width="113" height="111" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHEAAABvCAYAAADboi87AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAVsSURBVHgB7Z2NVdswEIDPnYBu4E5QOkHpBnSCsgF0AsIEbSegG0AnCJ0g7QShE5ANrnf4DHm8xCc5snUS972nF96LLZ39If+cLaWBBCDiEX2cUnlPpaVyTOVISm3cUvnaNM09GKGBkYi4cyonUl4TGyofrIiMlrgl7wLq7Gmh3JHET2CAKIkk8BJcXs+GJL4FAwRJJHktfdxAd65zBJI4+nSUkjfaAiTwC32swAW+5BcYYfA/SQ6fC3BeYurCZm9PdIE7YXl3YEjgXkjgKcbzQOWayhmVY7mKdXLAFzEiJJQ1lQuXZgiREtrzLsCxBUm5DBS4xu62w7GEHEZDWLlAo2B3UeI9sFQCe+GDC7RJf594ErDslfl7o9eMnOcGD6Pg2CXwUHoGjl2wy7AMngvBMQ2fE7WnE7fgZEeOmEt8zqbdPF1oyhd+KDUMdrnoXanQ7o4B9TSbP0fMyIDAniWgjie2MxEg8LE3qhLByUKgwEfegGMO7E5hSwh7Ie2X90RjxPRA3LqwcYlGGCHwuF/RJRpgtEBZ2SVm5iCBUoFLzMjBAqUSl5iJJAKlIpeYgWQCpTKXODNJBUqFLnFGkguUSl3iTEwiUCp2iTMwmUCp3CVOzKQCpQGXOCGTC5RGXOJEzCJQGnKJEzCbQGnMJSZmVoHSoEtMyOwCpVGXmIgsAqVhl5iAbAKlcZd4IFkFSgAu8QCyC5QgXOJITAiUQFziCMwIlGCyScShQSKGMSVQAsoiEffPlzP9Rh+AOYESVC6JN0rTX8AYJgVKYLkkhmBmsiOzAiW4XBJDd8glZMa0QAkwl8QlhpNNpHmBEmQuiW3EzmG+wcwUIVACzSJR2maRawyHL4ZmGfRajEAJNptEaT9W5GpqkUUJlICzSpQYYkXysi1MQHECJejsEiWOI9RntppUZJECGS1SmBERqSUBJhFZrEBGixYyQM1+x3AO3qFFC2S0iCET1PQC4xiVpiteIKNFDRkZITIqTVeFQEaLHDKD3Uz/MQRld6oRyGjRgwFQnwkySmRVAhltC8AIkTue+ZagHvsCGW0rwBB4YJquZIGoTJVZjEQGR6bpKhA4OFXmIGAQHJemK/YQisMJkGWjibLyQ48vwe4wuYS0v+u4ofKJNvkPGEJxtCmyJ/ZgfJpuCLMXMVrgRUvswbg0XVECGS34KiQyGJ/dKUIgo21ANRKZESKLuA/UNqIqiQyGp+nWJQhktA2pTiKDzzfGu+Dexz12lnd1UqA5KvYWIwTsMhrHUvj24Z7KHW3SBgpCdVSzxFrQHPls/BXgEivAJVaAS6wAl1gBLrECXGIFuMQKcIkV4BIrgCUO5hFLShTXSMj+VyUSLTg5aZXv71mi9lJQEc/cKkbb/48S/ykLfQQnJ9r+/xvSE0/9vJiVU+X7P/1rfxpRQ8acNGDYQKK2X3ipLLgGZ3ZQf8t9xcv194m/lfpa743zQvv7HPQr0x/bK/AhVRur8IAFzEVaAxg+21b7csWQdzbXLnJaMHyw0PWulUN6I7NykdMgAkPn8mn3VRL6BvXaRaYF44brLbTKQv8TuNf6xU4CaD+eY/j4Sf1OAeOnsFxTOQMnCuxOXxcYN1g2/OIS42er6Bu4lnV5aLVnebbA5yHnZ7KfYjpKz87sTTPQ6II+sk/d7Dxx1TTNYtcXg6/ou0gz7BXIqOMspAvzPYkfHueHn/V+JYE/hxYKGiwjJ1Oe5KAFZy746dJnEnivLRj0jg1XROUd/XkFztRw7+PD54cQgUz0sDXplQsqo6amdPbC8jih/T12/OTosYci84QKZ9v9FY7x3EH3FClaXk+SAaRbQlnme+jOnS0422yk8Lnun3zephi1/B+s8RWJKHPlfQAAAABJRU5ErkJggg=="/>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <div class="our-comm__key-item-title">
+                                    Expert-approved – insights from professionals and scientists                                    </div>
+                            </div>
+                            <div class="our-comm__key-item" data-aos="fade-right" data-aos-duration="1000">
+                                <div class="our-comm__key-item-img">
+                                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <rect width="36" height="36" fill="url(#pattern0_941_257)"/>
+                                        <defs>
+                                            <pattern id="pattern0_941_257" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                                <use xlink:href="#image0_941_257" transform="translate(-0.00900901) scale(0.00900901)"/>
+                                            </pattern>
+                                            <image id="image0_941_257" width="113" height="111" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHEAAABvCAYAAADboi87AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAVsSURBVHgB7Z2NVdswEIDPnYBu4E5QOkHpBnSCsgF0AsIEbSegG0AnCJ0g7QShE5ANrnf4DHm8xCc5snUS972nF96LLZ39If+cLaWBBCDiEX2cUnlPpaVyTOVISm3cUvnaNM09GKGBkYi4cyonUl4TGyofrIiMlrgl7wLq7Gmh3JHET2CAKIkk8BJcXs+GJL4FAwRJJHktfdxAd65zBJI4+nSUkjfaAiTwC32swAW+5BcYYfA/SQ6fC3BeYurCZm9PdIE7YXl3YEjgXkjgKcbzQOWayhmVY7mKdXLAFzEiJJQ1lQuXZgiREtrzLsCxBUm5DBS4xu62w7GEHEZDWLlAo2B3UeI9sFQCe+GDC7RJf594ErDslfl7o9eMnOcGD6Pg2CXwUHoGjl2wy7AMngvBMQ2fE7WnE7fgZEeOmEt8zqbdPF1oyhd+KDUMdrnoXanQ7o4B9TSbP0fMyIDAniWgjie2MxEg8LE3qhLByUKgwEfegGMO7E5hSwh7Ie2X90RjxPRA3LqwcYlGGCHwuF/RJRpgtEBZ2SVm5iCBUoFLzMjBAqUSl5iJJAKlIpeYgWQCpTKXODNJBUqFLnFGkguUSl3iTEwiUCp2iTMwmUCp3CVOzKQCpQGXOCGTC5RGXOJEzCJQGnKJEzCbQGnMJSZmVoHSoEtMyOwCpVGXmIgsAqVhl5iAbAKlcZd4IFkFSgAu8QCyC5QgXOJITAiUQFziCMwIlGCyScShQSKGMSVQAsoiEffPlzP9Rh+AOYESVC6JN0rTX8AYJgVKYLkkhmBmsiOzAiW4XBJDd8glZMa0QAkwl8QlhpNNpHmBEmQuiW3EzmG+wcwUIVACzSJR2maRawyHL4ZmGfRajEAJNptEaT9W5GpqkUUJlICzSpQYYkXysi1MQHECJejsEiWOI9RntppUZJECGS1SmBERqSUBJhFZrEBGixYyQM1+x3AO3qFFC2S0iCET1PQC4xiVpiteIKNFDRkZITIqTVeFQEaLHDKD3Uz/MQRld6oRyGjRgwFQnwkySmRVAhltC8AIkTue+ZagHvsCGW0rwBB4YJquZIGoTJVZjEQGR6bpKhA4OFXmIGAQHJemK/YQisMJkGWjibLyQ48vwe4wuYS0v+u4ofKJNvkPGEJxtCmyJ/ZgfJpuCLMXMVrgRUvswbg0XVECGS34KiQyGJ/dKUIgo21ANRKZESKLuA/UNqIqiQyGp+nWJQhktA2pTiKDzzfGu+Dexz12lnd1UqA5KvYWIwTsMhrHUvj24Z7KHW3SBgpCdVSzxFrQHPls/BXgEivAJVaAS6wAl1gBLrECXGIFuMQKcIkV4BIrgCUO5hFLShTXSMj+VyUSLTg5aZXv71mi9lJQEc/cKkbb/48S/ykLfQQnJ9r+/xvSE0/9vJiVU+X7P/1rfxpRQ8acNGDYQKK2X3ipLLgGZ3ZQf8t9xcv194m/lfpa743zQvv7HPQr0x/bK/AhVRur8IAFzEVaAxg+21b7csWQdzbXLnJaMHyw0PWulUN6I7NykdMgAkPn8mn3VRL6BvXaRaYF44brLbTKQv8TuNf6xU4CaD+eY/j4Sf1OAeOnsFxTOQMnCuxOXxcYN1g2/OIS42er6Bu4lnV5aLVnebbA5yHnZ7KfYjpKz87sTTPQ6II+sk/d7Dxx1TTNYtcXg6/ou0gz7BXIqOMspAvzPYkfHueHn/V+JYE/hxYKGiwjJ1Oe5KAFZy746dJnEnivLRj0jg1XROUd/XkFztRw7+PD54cQgUz0sDXplQsqo6amdPbC8jih/T12/OTosYci84QKZ9v9FY7x3EH3FClaXk+SAaRbQlnme+jOnS0422yk8Lnun3zephi1/B+s8RWJKHPlfQAAAABJRU5ErkJggg=="/>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <div class="our-comm__key-item-title">
+                                    Proven results – structured programs that work                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="experts-block" v-if="false">
             <div class="container">
                 <div class="experts-block__title" data-aos="fade-right" data-aos-duration="1000">
                     <span>Meet the Experts Who'll</span>
@@ -298,36 +381,38 @@
                 </svg>
 
             </div>
-            <div class="container">
+            <div class="containedr">
                 <div class="fitness-explore__title" data-aos="fade-up" data-aos-duration="1000">
                     Explore Some of Our Top Courses
                 </div>
                 <div class="fitness-explore__description" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                     From strength training to cardio, mobility, and specialized fitness programs – our expertly crafted courses help you achieve your goals efficiently. Whether you're a beginner or an advanced athlete, there's a perfect program for you!
                 </div>
-                <div class="fitness-explore__items" v-if="courses">
-                    <div class="fitness-explore__item" data-aos="fade-right" data-aos-duration="1000" @click="router.push(`/course/${courses[0].id}`)">
-                        <div class="fitness-explore__item-img">
-                            <img src="../img/33.png" alt="">
-                        </div>
-                        <div class="fitness-explore__item-title">
-                            {{ courses[0].name }}
-                        </div>
-                    </div>
-                    <div class="fitness-explore__item" data-aos="fade-up" data-aos-duration="1000" @click="router.push(`/course/${courses[1].id}`)">
-                        <div class="fitness-explore__item-img">
-                            <img src="../img/11.png" alt="">
-                        </div>
-                        <div class="fitness-explore__item-title">
-                            {{ courses[1].name }}
-                        </div>
-                    </div>
-                    <div class="fitness-explore__item" data-aos="fade-left" data-aos-duration="1000" @click="router.push(`/course/${courses[2].id}`)">
-                        <div class="fitness-explore__item-img">
-                            <img src="../img/22.png" alt="">
-                        </div>
-                        <div class="fitness-explore__item-title">
-                            {{ courses[2].name }}
+                <div class="fitness-explore__items" v-if="courses && groupBook">
+                    <swiper :modules="[Navigation]" :breakpoints="swiperExploreOptions.breakpoints" @swiper="initSwiper" :navigation="true">
+                        <swiper-slide v-for="item in groupBook" :key="item.id">
+                            <div class="fitness-explore__item" @click="router.push(`/course/${item.id}`)">
+                                <div class="fitness-explore__item-img">
+                                    <img :src="`${BaseUrl}/image/${item.images[item.images.length - 1]}`" alt="">
+                                </div>
+                                <div class="fitness-explore__item-title">
+                                    {{ item.name }}
+                                </div>
+                            </div>
+                        </swiper-slide>
+                    </swiper>
+                    <div class="fitness-explore__items-mobile-wrapper">
+                        <div class="container">
+                            <div class="fitness-explore__items-mobile">
+                                <div class="fitness-explore__item fitness-explore__item--mob" v-for="item in groupBook" :key="item.id" @click="router.push(`/course/${item.id}`)">
+                                    <div class="fitness-explore__item-img">
+                                        <img :src="`${BaseUrl}/image/${item.images[item.images.length - 1]}`" alt="">
+                                    </div>
+                                    <div class="fitness-explore__item-title">
+                                        {{ item.name }}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -394,12 +479,13 @@
 </template>
 <script setup>
 import {Swiper, SwiperSlide} from 'swiper/vue';
-import { Pagination } from 'swiper/modules';
+import { Pagination, Navigation } from 'swiper/modules';
 import Banner from "@/components/Banner.vue";
 
 import 'swiper/css';
 import 'swiper/css/pagination';
-import {onMounted, reactive, ref} from "vue";
+import 'swiper/css/navigation';
+import {computed, onMounted, reactive, ref} from "vue";
 import {useRouter} from "vue-router";
 import api from "@/services/client.js";
 import {openModal} from "jenesius-vue-modal";
@@ -422,24 +508,46 @@ const swiperOptions = reactive({
         }
     }
 })
+const swiperExploreOptions = reactive({
+    breakpoints: {
+        1024: {
+            centeredSlides: true,
+            slidesPerView: 3.3,
+            spaceBetween: 100,
+        }
+    }
+})
+const groupBook = ref();
 async function fetchGroups() {
     const response = await api.get('/groups');
+    groupBook.value = response.reduce((acc, group) => {
+        acc[group.id] = ''; // Устанавливаем значение пустой строки для каждого id
+        return acc;
+    }, {});
+    for (const key in groupBook.value) {
+        if (!groupBook.value[key]) {
+            groupBook.value[key] = courses.value.find((el) => el.group === key)
+        }
+    }
     groups.value = response;
 }
+function initSwiper(swiper) {
+    swiper.activeIndex = 3;
+}
 async function fetchCourses() {
-    courses.value = (await api.get('/courses')).filter((el) => el.id === '1e9178c8aa7642dab6b0f70a0a8db0da' || el.id === 'ef150c4738d54d61afcc242cdff3fc77' || el.id === 'd58faf1ae0c84d66873a6356d7c871dc');
+    courses.value = (await api.get('/courses'));
 }
 async function openBannerModal() {
     modal.value = await openModal(Banner);
     document.body.style.height = '100%';
     document.body.style.overflow = 'hidden';
 }
-onMounted(() => {
+onMounted(async () => {
     setTimeout(() => {
         openBannerModal();
     },10000)
-    fetchGroups();
-    fetchCourses();
+    await fetchCourses();
+    await fetchGroups();
 })
 </script>
 <style lang="scss">
@@ -475,6 +583,130 @@ onMounted(() => {
         &__item {
             padding: 17px 20px;
             width: fit-content;
+        }
+    }
+    .our-comm {
+        position: relative;
+        background-color: #fff;
+        box-shadow: 0px 5px 14px 2px rgba(0, 0, 0, 0.1);
+        gap: 120px;
+        padding: 80px 0;
+        @include mqm(1024) {
+            padding: 80px 80px;
+            display: flex;
+        }
+        &__left {
+            flex: 73%;
+        }
+        &__key-points-title {
+            font-family: 'AtkinsonHyperlegible',sans-serif;
+            font-style: normal;
+            background: #1969AD;
+            letter-spacing: 3px;
+            background: linear-gradient(to right, #1969AD 3%, #7EB8E8 90%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 24px;
+            color: #576C7E;
+            text-align: center;
+            padding: 0 20px;
+            margin-bottom: 25px;
+            @include mqm(1024) {
+                display: none;
+            }
+        }
+        &__subtitle {
+            font-size: 20px;
+            line-height: 20px;
+            letter-spacing: 1px;
+            color: #000;
+            font-family: "AtkinsonHyperlegible", sans-serif;
+            margin-top: 15px;
+            padding: 0 20px;
+            @include mqm(1024) {
+                padding: 0;
+                line-height: 24px;
+                font-size: 24px;
+            }
+        }
+        &__right {
+            flex: 45%;
+            margin-top: 50px;
+            padding: 0 40px;
+            @include mqm(1024) {
+                padding: 0;
+                margin-top: 0;
+            }
+        }
+        .blick {
+            position: absolute;
+            height: 239px;
+            left: -7%;
+            svg {
+                height: 300px;
+            }
+            display: none;
+            @include mqm(1024) {
+                display: block;
+            }
+        }
+        &__key-item-title {
+            color: #fff;
+            font-family: 'AtkinsonHyperlegible',sans-serif;
+            font-style: normal;
+            font-size: 16px;
+            line-height: 20px;
+            font-weight: 400;
+            @include mqm(1024) {
+                font-size: 20px;
+                line-height: 26px;
+            }
+        }
+        &__key-item-img {
+            margin-right: 20px;
+            flex: 0 0 auto;
+        }
+        &__key-item {
+            background: rgb(26, 105, 173);
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(90deg, rgba(26, 105, 173, 1) 0%, rgba(11, 43, 71, 1) 100%);
+        }
+        &__key-points-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        &__title {
+            font-family: 'AtkinsonHyperlegible',sans-serif;
+            font-style: italic;
+            background: #1969AD;
+            letter-spacing: 3px;
+            background: linear-gradient(to right, #1969AD 3%, #7EB8E8 90%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 40px;
+            color: #576C7E;
+            padding: 0 20px;
+            @include mqm(1024) {
+                padding: 0;
+            }
+        }
+        &__text {
+            font-size: 16px;
+            margin-top: 25px;
+            font-family: 'Inter', sans-serif;
+            padding: 0 20px;
+            @include mqm(1024) {
+                padding: 0;
+                font-size: 18px;
+            }
         }
     }
     .transform-block {
@@ -537,6 +769,11 @@ onMounted(() => {
     .fitness-reasons {
         position: relative;
         overflow: hidden;
+        background-color: rgba(72, 135, 189, 0.1);
+        padding-top: 60px;
+        @include mqm(1024) {
+            padding-top: 80px;
+        }
         &__title {
             font-family: 'AtkinsonHyperlegible',sans-serif;
             font-style: italic;
@@ -668,10 +905,55 @@ onMounted(() => {
             text-align: center;
             margin-bottom: 50px;
         }
+        &__items-mobile {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            row-gap: 30px;
+            column-gap: 20px;
+            //max-height: 166px;
+            .fitness-explore__item-title {
+                margin: 0;
+                margin-top: 20px;
+                font-size: 14px;
+                font-weight: 500;
+            }
+            .fitness-explore__item-img {
+                border-radius: 30px;
+                max-height: 166px;
+                height: 100%;
+                img {
+                    height: 100%;
+                    object-fit: cover;
+                    width: 100%;
+                    border-radius: 10px;
+                }
+            }
+            @include mqm(1024) {
+                display: none;
+            }
+        }
         &__items {
             @include mqm(1024) {
-                display: flex;
+                display: block;
                 gap: 100px;
+            }
+            .swiper {
+                display: none;
+                padding: 0 80px;
+                @include mqm(1024) {
+                    display: flex;
+                }
+                .swiper-slide {
+                    transition: 300ms opacity ease;
+                    opacity: 0.5;
+                    &-prev, &-active, &-next {
+                        opacity: 1;
+                    }
+                }
+                .swiper-button-prev, .swiper-button-next {
+                    transform: translate(0,-80%) scale(1, 1.6) !important;
+                    color: #fff;
+                }
             }
         }
         &__item-title {
@@ -689,11 +971,11 @@ onMounted(() => {
         }
         &__all-courses {
             position: relative;
-            margin: 50px auto;
+            margin: 50px 20px 50px 20px;
             padding: 14px 0;
             text-align: center;
             cursor: pointer;
-            width: 100%;
+            width: auto;
             border: 1px solid #1969AD;
             border-radius: 20px;
             color: #1969AD;
@@ -702,6 +984,8 @@ onMounted(() => {
             font-weight: 500;
             background-color: #fff;
             @include mqm(1024) {
+                width: 100%;
+                margin: 50px auto;
                 max-width: 262px;
             }
         }

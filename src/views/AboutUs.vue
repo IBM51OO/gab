@@ -42,81 +42,23 @@
                 <div class="our-mission our-mission--third">
                     <div class="our-mission__wrapper" data-aos="fade-right" data-aos-duration="1000">
                         <div class="our-mission__title">
-                            Meet Our Team
+                            The Science Behind Our Courses
                         </div>
                         <div class="our-mission__slogan">
-                            Certified Trainers, Passionate Experts
-                        </div>
-                        <div class="our-mission__description">
-                            Our team is the backbone of FitSphere. Each of our trainers is certified by leading fitness organizations and has extensive experience in their respective fields. From strength training specialists to yoga instructors, we’ve brought together a diverse group of professionals to create a holistic fitness experience
+                            Every course is built on research, expert insights, and real-world results </div>
+                        <br>
+                        <div class="our-mission__description our-mission__description--second">
+                            At FitSphere, we believe that fitness isn’t just about working hard—it’s about working smart. That’s why every course we create is based on scientific research, expert opinions, and proven methodologies.
                             <br><br>
-                            Our experts continuously update their knowledge to stay ahead of the latest trends and innovations in the fitness industry. With FitSphere, you’re not just getting a workout—you’re getting the guidance and support of some of the best in the business                    </div>
-                    </div>
-                    <div class="experts-block">
-                        <div class="container">
-                            <div class="experts-list">
-                                <div class="expert" data-aos="fade-right" data-aos-duration="1000">
-                                    <div class="expert-image">
-                                        <img src="../img/1.png" alt="">
-                                    </div>
-                                    <div class="expert-description">
-                                        <div class="expert-description__name">
-                                            Max Carter
-                                        </div>
-                                        <ul class="expert-skills">
-                                            <li class="expert-skills__item">
-                                                Certified Strength and Conditioning Specialist (CSCS)
-                                            </li>
-                                            <li class="expert-skills__item">
-                                                8+ years of experience in functional training and injury prevention
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="expert" data-aos="fade-up" data-aos-duration="1000">
-                                    <div class="expert-image">
-                                        <img src="../img/2.png" alt="">
-                                    </div>
-                                    <div class="expert-description">
-                                        <div class="expert-description__name">
-                                            Eugenia Williams
-                                        </div>
-                                        <ul class="expert-skills">
-                                            <li class="expert-skills__item">
-                                                Registered Yoga Teacher (RYT-500)
-                                            </li>
-                                            <li class="expert-skills__item">
-                                                Expert in mobility, flexibility, and mindfulness practices
-                                            </li>
-                                            <li class="expert-skills__item">
-                                                Conducted over 2,000 yoga sessions worldwide
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="expert" data-aos="fade-left" data-aos-duration="1000">
-                                    <div class="expert-image" >
-                                        <img src="../img/3.png" alt="">
-                                    </div>
-                                    <div class="expert-description">
-                                        <div class="expert-description__name">
-                                            Oliver Smith
-                                        </div>
-                                        <ul class="expert-skills">
-                                            <li class="expert-skills__item">
-                                                Certified Personal Trainer (CPT) by NASM
-                                            </li>
-                                            <li class="expert-skills__item">
-                                                Specializes in weight loss and high-intensity interval training (HIIT)
-                                            </li>
-                                            <li class="expert-skills__item">
-                                                Helped over 500 clients achieve their fitness goals
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
+                            Our team carefully studies findings from sports science, biomechanics, nutrition, and human physiology to ensure that each program is not only effective but also safe and optimized for real-world results. We take insights from peer-reviewed studies, recommendations from leading fitness professionals, and data from real athletes to design training routines that deliver measurable progress.
+                            <br><br>
+                            Each course is structured with precision, using:
+                            <br><br>
+                            <p>Scientific Research – Studies in sports physiology, biomechanics, and recovery techniques.</p>
+                            <p>Expert Insights – Input from certified trainers, sports scientists, and physical therapists.</p>
+                            <p>Practical Application – Real-world testing to ensure effectiveness and adaptability for<br> different fitness levels.</p>
+                            <br><br>
+                            By blending science with practical experience, we create programs that help you train smarter, avoid injuries, and achieve long-term success.
                         </div>
                     </div>
                 </div>
@@ -741,9 +683,36 @@ const router = useRouter();
         font-family: 'Inter', sans-serif;
         color: #000;
         margin-bottom: 10px;
+        padding: 0 10px;
+        @include mqm(1024) {
+            padding: 0;
+        }
+        p {
+            display: inline-block;
+            position: relative;
+            text-wrap: auto;
+            &::before {
+                position: absolute;
+                content: '';
+                height: 5px;
+                width: 5px;
+                box-sizing: content-box;
+                flex: 0 0 auto;
+                overflow: hidden;
+                transform: translate(-350%, 0);
+                border-radius: 100%;
+                background-color: #000;
+                margin-top: 12px;
+                @include mqm(1024) {
+                    left: 0;
+                }
+            }
+        }
         &--second {
             margin-bottom: 70px;
             @include mqm(1024) {
+                max-width: 846px !important;
+                margin: 0 auto;
                 margin-bottom: 40px;
             }
         }
