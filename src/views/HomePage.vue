@@ -21,6 +21,71 @@
                 </div>
             </div>
         </div>
+        <div class="fitness-explore">
+            <div class="fitness-explore__blick">
+                <svg width="518" height="939" viewBox="0 0 518 939" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_f_797_169)">
+                        <circle cx="469.5" cy="469.5" r="119.5" fill="#2471B2"/>
+                    </g>
+                    <defs>
+                        <filter id="filter0_f_797_169" x="0" y="0" width="939" height="939" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                            <feGaussianBlur stdDeviation="175" result="effect1_foregroundBlur_797_169"/>
+                        </filter>
+                    </defs>
+                </svg>
+
+            </div>
+            <div class="containedr">
+                <div class="fitness-explore__title" data-aos="fade-up" data-aos-duration="1000">
+                    Explore Some of Our Top Courses
+                </div>
+                <div class="fitness-explore__description" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    From strength training to cardio, mobility, and specialized fitness programs – our expertly crafted courses help you achieve your goals efficiently. Whether you're a beginner or an advanced athlete, there's a perfect program for you!
+                </div>
+                <div class="fitness-explore__items" v-if="courses && groupBook">
+                    <swiper :modules="[Navigation]" :breakpoints="swiperExploreOptions.breakpoints" @swiper="initSwiper" :navigation="true">
+                        <swiper-slide v-for="item in groupBook" :key="item.id">
+                            <div class="fitness-explore__item" @click="router.push(`/course/${item.id}`)">
+                                <div class="fitness-explore__item-img">
+                                    <img :src="`${BaseUrl}/image/${item.images[item.images.length - 1]}`" alt="">
+                                </div>
+                                <div class="fitness-explore__item-title">
+                                    {{ item.name }}
+                                </div>
+                            </div>
+                        </swiper-slide>
+                    </swiper>
+                    <div class="fitness-explore__items-mobile-wrapper">
+                        <div class="container">
+                            <div class="fitness-explore__items-mobile">
+                                <div class="fitness-explore__item fitness-explore__item--mob" v-for="item in groupBook" :key="item.id" @click="router.push(`/course/${item.id}`)">
+                                    <div class="fitness-explore__item-img">
+                                        <img :src="`${BaseUrl}/image/${item.images[item.images.length - 1]}`" alt="">
+                                    </div>
+                                    <div class="fitness-explore__item-title">
+                                        {{ item.name }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fitness-explore__all-courses" @click="router.push({name: 'courses'})">
+                    View All Courses
+                </div>
+            </div>
+        </div>
+        <div class="courses-groups">
+            <div class="container">
+                <div class="courses-groups__list">
+                    <div class="courses-groups__item primary-button-hover" v-for="item in groups" :key="item.id" @click="router.push(`/course-group/${item.id}`)">
+                        {{ item.name }}
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="fitness-backed">
             <div class="fitness-backed__title displayBox" data-aos="zoom-in" data-aos-duration="1000">
                 Your Fitness <span>Backed By Science</span>
@@ -236,54 +301,6 @@
 
             </div>
         </div>
-        <div class="fitness-reasons">
-            <div class="fitness-reasons__blick">
-                <svg width="538" height="939" viewBox="0 0 538 939" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g filter="url(#filter0_f_797_166)">
-                        <circle cx="469.5" cy="469.5" r="119.5" fill="#2471B2"/>
-                    </g>
-                    <defs>
-                        <filter id="filter0_f_797_166" x="0" y="0" width="939" height="939" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                            <feGaussianBlur stdDeviation="175" result="effect1_foregroundBlur_797_166"/>
-                        </filter>
-                    </defs>
-                </svg>
-
-            </div>
-            <div class="container-wise">
-                <div class="fitness-reasons__title" data-aos="fade-left" data-aos-duration="1000">
-                    3 Reasons to Choose Us for Your Fitness Journey
-                </div>
-                <div class="fitness-reasons__list">
-                    <div class="fitness-reasons__item" data-aos="fade-left" data-aos-duration="1000">
-                        <div class="fitness-reasons__label">
-                            Expertly Designed Courses
-                        </div>
-                        <div class="fitness-reasons__value">
-                            Our fitness programs are crafted by professional trainers with years of experience, ensuring scientifically backed workouts that maximize results for all fitness levels.
-                        </div>
-                    </div>
-                    <div class="fitness-reasons__item" data-aos-delay="50" data-aos="fade-left" data-aos-duration="1000">
-                        <div class="fitness-reasons__label">
-                            Comprehensive & Structured Approach
-                        </div>
-                        <div class="fitness-reasons__value">
-                            We offer step-by-step training plans, covering strength, cardio, mobility, and specialized goal-based programs, helping you achieve long-term progress without confusion.
-                        </div>
-                    </div>
-                    <div class="fitness-reasons__item" data-aos-delay="100" data-aos="fade-left" data-aos-duration="1000">
-                        <div class="fitness-reasons__label">
-                            Flexible & Accessible for Everyone
-                        </div>
-                        <div class="fitness-reasons__value">
-                            Whether you're a beginner or an advanced athlete, our courses provide customizable, time-efficient workouts that fit into any schedule, making fitness easy, effective, and sustainable.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="inspiring-stories">
             <div class="container">
                 <div class="inspiring-stories__title" data-aos="fade-left" data-aos-duration="1000">
@@ -365,67 +382,51 @@
                 </div>
             </div>
         </div>
-        <div class="fitness-explore">
-            <div class="fitness-explore__blick">
-                <svg width="518" height="939" viewBox="0 0 518 939" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g filter="url(#filter0_f_797_169)">
+
+        <div class="fitness-reasons">
+            <div class="fitness-reasons__blick">
+                <svg width="538" height="939" viewBox="0 0 538 939" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_f_797_166)">
                         <circle cx="469.5" cy="469.5" r="119.5" fill="#2471B2"/>
                     </g>
                     <defs>
-                        <filter id="filter0_f_797_169" x="0" y="0" width="939" height="939" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <filter id="filter0_f_797_166" x="0" y="0" width="939" height="939" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
                             <feFlood flood-opacity="0" result="BackgroundImageFix"/>
                             <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                            <feGaussianBlur stdDeviation="175" result="effect1_foregroundBlur_797_169"/>
+                            <feGaussianBlur stdDeviation="175" result="effect1_foregroundBlur_797_166"/>
                         </filter>
                     </defs>
                 </svg>
 
             </div>
-            <div class="containedr">
-                <div class="fitness-explore__title" data-aos="fade-up" data-aos-duration="1000">
-                    Explore Some of Our Top Courses
+            <div class="container-wise">
+                <div class="fitness-reasons__title" data-aos="fade-left" data-aos-duration="1000">
+                    3 Reasons to Choose Us for Your Fitness Journey
                 </div>
-                <div class="fitness-explore__description" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                    From strength training to cardio, mobility, and specialized fitness programs – our expertly crafted courses help you achieve your goals efficiently. Whether you're a beginner or an advanced athlete, there's a perfect program for you!
-                </div>
-                <div class="fitness-explore__items" v-if="courses && groupBook">
-                    <swiper :modules="[Navigation]" :breakpoints="swiperExploreOptions.breakpoints" @swiper="initSwiper" :navigation="true">
-                        <swiper-slide v-for="item in groupBook" :key="item.id">
-                            <div class="fitness-explore__item" @click="router.push(`/course/${item.id}`)">
-                                <div class="fitness-explore__item-img">
-                                    <img :src="`${BaseUrl}/image/${item.images[item.images.length - 1]}`" alt="">
-                                </div>
-                                <div class="fitness-explore__item-title">
-                                    {{ item.name }}
-                                </div>
-                            </div>
-                        </swiper-slide>
-                    </swiper>
-                    <div class="fitness-explore__items-mobile-wrapper">
-                        <div class="container">
-                            <div class="fitness-explore__items-mobile">
-                                <div class="fitness-explore__item fitness-explore__item--mob" v-for="item in groupBook" :key="item.id" @click="router.push(`/course/${item.id}`)">
-                                    <div class="fitness-explore__item-img">
-                                        <img :src="`${BaseUrl}/image/${item.images[item.images.length - 1]}`" alt="">
-                                    </div>
-                                    <div class="fitness-explore__item-title">
-                                        {{ item.name }}
-                                    </div>
-                                </div>
-                            </div>
+                <div class="fitness-reasons__list">
+                    <div class="fitness-reasons__item" data-aos="fade-left" data-aos-duration="1000">
+                        <div class="fitness-reasons__label">
+                            Expertly Designed Courses
+                        </div>
+                        <div class="fitness-reasons__value">
+                            Our fitness programs are crafted by professional trainers with years of experience, ensuring scientifically backed workouts that maximize results for all fitness levels.
                         </div>
                     </div>
-                </div>
-                <div class="fitness-explore__all-courses" @click="router.push({name: 'courses'})">
-                    View All Courses
-                </div>
-            </div>
-        </div>
-        <div class="courses-groups">
-            <div class="container">
-                <div class="courses-groups__list">
-                    <div class="courses-groups__item primary-button-hover" v-for="item in groups" :key="item.id" @click="router.push(`/course-group/${item.id}`)">
-                        {{ item.name }}
+                    <div class="fitness-reasons__item" data-aos-delay="50" data-aos="fade-left" data-aos-duration="1000">
+                        <div class="fitness-reasons__label">
+                            Comprehensive & Structured Approach
+                        </div>
+                        <div class="fitness-reasons__value">
+                            We offer step-by-step training plans, covering strength, cardio, mobility, and specialized goal-based programs, helping you achieve long-term progress without confusion.
+                        </div>
+                    </div>
+                    <div class="fitness-reasons__item" data-aos-delay="100" data-aos="fade-left" data-aos-duration="1000">
+                        <div class="fitness-reasons__label">
+                            Flexible & Accessible for Everyone
+                        </div>
+                        <div class="fitness-reasons__value">
+                            Whether you're a beginner or an advanced athlete, our courses provide customizable, time-efficient workouts that fit into any schedule, making fitness easy, effective, and sustainable.
+                        </div>
                     </div>
                 </div>
             </div>
@@ -560,10 +561,10 @@ onMounted(async () => {
     }
     .courses-groups {
         margin-top: 60px;
-        margin-bottom: 40px;
+        margin-bottom: 60px;
         @include mqm(1024) {
-            margin-top: 70px;
-            margin-bottom: 60px;
+            margin-top: 80px;
+            margin-bottom: 80px;
         }
         .container {
             padding: 0 20px;

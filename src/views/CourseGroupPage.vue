@@ -1,14 +1,6 @@
 <template>
     <div class="course-group" v-if="currentCourses && currentGroup">
         <div class="container">
-            <div class="breadcrumbs">
-                <router-link to="/courses">
-                    <svg width="13" height="22" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 1L2 11L12 21" stroke="#2E79B9" stroke-width="2"/>
-                    </svg>
-                    <div class="breadcrumbs__title">{{ currentGroup.name }}</div>
-                </router-link>
-            </div>
             <svg class="background-svg" width="501" height="939" viewBox="0 0 501 939" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g filter="url(#filter0_f_854_2008)">
                     <circle cx="31.5" cy="469.5" r="119.5" fill="#2471B2"/>
@@ -21,6 +13,34 @@
                     </filter>
                 </defs>
             </svg>
+            <div class="breadcrumbs breadcrumbs--desk">
+                <router-link to="/courses">
+                    <svg width="13" height="22" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 1L2 11L12 21" stroke="#2E79B9" stroke-width="2"/>
+                    </svg>
+                    <div class="breadcrumbs__title">{{ currentGroup.name }}</div>
+                </router-link>
+            </div>
+            <div class="course-group__header">
+                <div class="course-group__header-left">
+                    <img :src="`${BaseUrl}/image/${currentGroup.images[currentGroup.images.length - 1]}`" alt="">
+                </div>
+                <div class="course-group__header-right">
+                    <div class="breadcrumbs breadcrumbs--mob">
+                        <router-link to="/courses">
+                            <svg width="13" height="22" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 1L2 11L12 21" stroke="#2E79B9" stroke-width="2"/>
+                            </svg>
+                            <div class="breadcrumbs__title">{{ currentGroup.name }}</div>
+                        </router-link>
+                    </div>
+                    <div class="course-group__header-right-text">
+                        Our Beginner's Fitness courses are designed specifically for those new to exercise or returning after a long break. These programs introduce you to essential movements, exercises, and fitness routines in a gradual and accessible way. Whether you’re aiming to lose weight, gain strength, or simply become more active, we make sure you start with the right foundation.
+
+                        These courses cover basic strength training, bodyweight exercises, flexibility, and cardio. You’ll also get expert advice on how to build consistency, stay motivated, and avoid injury. By the end of the course, you’ll have the knowledge, confidence, and habits to continue progressing toward your fitness goals.
+                    </div>
+                </div>
+            </div>
             <div class="course-group__list">
                 <div class="course-group__course" v-for="course in currentCourses" :key="course.id" @click="router.push(`/course/${course.id}`)">
                     <div>
@@ -63,6 +83,7 @@ import {useRoute, useRouter} from "vue-router";
 import api from "@/services/client.js";
 import {useMainStore} from "@/stores/main.js";
 const route = useRoute();
+const BaseUrl = ref(import.meta.env.VITE_BASE_API);
 const group = ref();
 const courses = ref(null);
 const mainStore = useMainStore();
@@ -92,6 +113,18 @@ async function fetchGroups() {
 </script>
 <style lang="scss">
     .breadcrumbs {
+        &--desk {
+            display: flex;
+            @include mqm(1024) {
+                display: none;
+            }
+        }
+        &--mob {
+            display: none;
+            @include mqm(1024) {
+                display: flex;
+            }
+        }
         a {
             display: flex;
             align-items: center;
@@ -115,18 +148,51 @@ async function fetchGroups() {
                 padding: 0 80px;
             }
         }
+        &__header {
+            display: flex;
+            gap: 55px;
+            flex-direction: column;
+            @include mqm(1024) {
+                flex-direction: row;
+            }
+        }
+        &__header-left {
+            img {
+                height: 100%;
+                width: 100%;
+                border-radius: 25px;
+                max-height: 500px;
+                object-fit: cover;
+            }
+        }
+        &__header-right {
+            @include mqm(1024) {
+                max-width: 50%;
+            }
+        }
+        &__header-left {
+            width: 100%;
+            @include mqm(1024) {
+                max-width: 413px;
+            }
+        }
         &__list {
             display: grid;
             grid-template-columns: 1fr;
             gap: 20px;
+            margin-top: 50px;
             @include mqm(1024) {
                 grid-template-columns: 1fr 1fr 1fr;
             }
         }
+        &__header-right-text {
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+            line-height: 140%;
+        }
         .breadcrumbs {
             padding: 10px 0 30px 0;
             a {
-                justify-content: center;
                 background: #1969AD;
                 font-style: italic;
                 font-family: 'AtkinsonHyperlegible',serif;
