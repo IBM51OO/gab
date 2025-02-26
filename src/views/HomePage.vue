@@ -44,7 +44,7 @@
                     From strength training to cardio, mobility, and specialized fitness programs – our expertly crafted courses help you achieve your goals efficiently. Whether you're a beginner or an advanced athlete, there's a perfect program for you!
                 </div>
                 <div class="fitness-explore__items">
-                    <swiper :modules="[Navigation]" :breakpoints="swiperExploreOptions.breakpoints" :navigation="true" v-if="courses && groupBook">
+                    <swiper :modules="[Navigation]" :breakpoints="swiperExploreOptions.breakpoints" @swiper="initSwiper" :navigation="true" v-if="courses && groupBook">
                         <swiper-slide v-for="item in groupBook" :key="item.id">
                             <div class="fitness-explore__item" @click="router.push(`/course/${item.id}`)">
                                 <div class="fitness-explore__item-img">
