@@ -21,7 +21,7 @@
                 </div>
             </div>
         </div>
-        <div class="fitness-explore">
+        <div class="fitness-explore" v-if="courses && groupBook">
             <div class="fitness-explore__blick">
                 <svg width="518" height="939" viewBox="0 0 518 939" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_f_797_169)">
@@ -35,7 +35,6 @@
                         </filter>
                     </defs>
                 </svg>
-
             </div>
             <div class="containedr">
                 <div class="fitness-explore__title" data-aos="fade-up" data-aos-duration="1000">
@@ -44,8 +43,8 @@
                 <div class="fitness-explore__description" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                     From strength training to cardio, mobility, and specialized fitness programs – our expertly crafted courses help you achieve your goals efficiently. Whether you're a beginner or an advanced athlete, there's a perfect program for you!
                 </div>
-                <div class="fitness-explore__items" v-if="courses && groupBook">
-                    <swiper :modules="[Navigation]" :breakpoints="swiperExploreOptions.breakpoints" @swiper="initSwiper" :navigation="true">
+                <div class="fitness-explore__items">
+                    <swiper :modules="[Navigation]" :breakpoints="swiperExploreOptions.breakpoints" :navigation="true" v-if="courses && groupBook">
                         <swiper-slide v-for="item in groupBook" :key="item.id">
                             <div class="fitness-explore__item" @click="router.push(`/course/${item.id}`)">
                                 <div class="fitness-explore__item-img">
@@ -77,7 +76,7 @@
                 </div>
             </div>
         </div>
-        <div class="courses-groups">
+        <div class="courses-groups" v-if="courses && groupBook">
             <div class="container">
                 <div class="courses-groups__list">
                     <div class="courses-groups__item primary-button-hover" v-for="item in groups" :key="item.id" @click="router.push(`/course-group/${item.id}`)">
@@ -86,15 +85,15 @@
                 </div>
             </div>
         </div>
-        <div class="fitness-backed">
-            <div class="fitness-backed__title displayBox" data-aos="zoom-in" data-aos-duration="1000">
+        <div class="fitness-backed" v-if="courses && groupBook">
+            <div class="fitness-backed__title" data-aos="zoom-in" data-aos-duration="1000">
                 Your Fitness <span>Backed By Science</span>
             </div>
-            <div class="fitness-backed__img displayBox" data-aos="zoom-in" data-aos-duration="1000">
+            <div class="fitness-backed__img" data-aos="zoom-in" data-aos-duration="1000">
                 <img src="../img/backed.jpg" alt="">
             </div>
             <div class="fitness-backed__content">
-                <div class="fitness-backed__title-desk displayBox" data-aos="zoom-in" data-aos-duration="1000">
+                <div class="fitness-backed__title-desk" data-aos="zoom-in" data-aos-duration="1000">
                     <span>Your Fitness</span> <span>Backed By Science</span>
                 </div>
                 <div class="fitness-backed__description displayBox" data-aos="zoom-in" data-aos-duration="1000">
@@ -108,7 +107,7 @@
                 </div>
             </div>
         </div>
-        <div class="fitness-advantages">
+        <div class="fitness-advantages" v-if="courses && groupBook">
             <div class="container">
                 <div class="fitness-advantages__list">
                     <div class="fitness-advantages__item displayBox" data-aos="fade-up">
@@ -147,7 +146,7 @@
 
             </div>
         </div>
-        <div class="our-comm-wrapper">
+        <div class="our-comm-wrapper" v-if="courses && groupBook">
             <div class="our-comm">
                 <div class="blick">
                     <svg width="460" height="904" viewBox="0 0 460 904" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -230,78 +229,7 @@
                 </div>
             </div>
         </div>
-        <div class="experts-block" v-if="false">
-            <div class="container">
-                <div class="experts-block__title" data-aos="fade-right" data-aos-duration="1000">
-                    <span>Meet the Experts Who'll</span>
-                    Guide Your Fitness Journey
-                </div>
-                <div class="experts-list">
-                    <div class="expert" data-aos="fade-right" data-aos-duration="1000">
-                        <div class="expert-image">
-                            <img src="../img/1.png" alt="">
-                        </div>
-                        <div class="expert-description">
-                            <div class="expert-description__name">
-                                Max Carter
-                            </div>
-                            <ul class="expert-skills">
-                                <li class="expert-skills__item">
-                                    Certified Strength and Conditioning Specialist (CSCS)
-                                </li>
-                                <li class="expert-skills__item">
-                                    8+ years of experience in functional training and injury prevention
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="expert" data-aos="fade-up" data-aos-duration="1000">
-                        <div class="expert-image">
-                            <img src="../img/2.png" alt="">
-                        </div>
-                        <div class="expert-description">
-                            <div class="expert-description__name">
-                                Eugenia Williams
-                            </div>
-                            <ul class="expert-skills">
-                                <li class="expert-skills__item">
-                                    Registered Yoga Teacher (RYT-500)
-                                </li>
-                                <li class="expert-skills__item">
-                                    Expert in mobility, flexibility, and mindfulness practices
-                                </li>
-                                <li class="expert-skills__item">
-                                    Conducted over 2,000 yoga sessions worldwide
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="expert" data-aos="fade-left" data-aos-duration="1000">
-                        <div class="expert-image" >
-                            <img src="../img/3.png" alt="">
-                        </div>
-                        <div class="expert-description">
-                            <div class="expert-description__name">
-                                Oliver Smith
-                            </div>
-                            <ul class="expert-skills">
-                                <li class="expert-skills__item">
-                                    Certified Personal Trainer (CPT) by NASM
-                                </li>
-                                <li class="expert-skills__item">
-                                    Specializes in weight loss and high-intensity interval training (HIIT)
-                                </li>
-                                <li class="expert-skills__item">
-                                    Helped over 500 clients achieve their fitness goals
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="inspiring-stories">
+        <div class="inspiring-stories" v-if="courses && groupBook">
             <div class="container">
                 <div class="inspiring-stories__title" data-aos="fade-left" data-aos-duration="1000">
                     Inspiring Stories from Our Community
@@ -383,7 +311,7 @@
             </div>
         </div>
 
-        <div class="fitness-reasons">
+        <div class="fitness-reasons" v-if="courses && groupBook">
             <div class="fitness-reasons__blick">
                 <svg width="538" height="939" viewBox="0 0 538 939" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_f_797_166)">
@@ -431,7 +359,7 @@
                 </div>
             </div>
         </div>
-        <div class="get-start">
+        <div class="get-start" v-if="courses && groupBook">
             <div class="get-start__blick">
                 <svg width="518" height="939" viewBox="0 0 518 939" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_f_826_355)">
@@ -937,6 +865,7 @@ onMounted(async () => {
             @include mqm(1024) {
                 display: block;
                 gap: 100px;
+                min-height: 400px;
             }
             .swiper {
                 display: none;
