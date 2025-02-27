@@ -147,6 +147,7 @@ async function fetchGroups() {
         &__header {
             display: flex;
             gap: 55px;
+            margin-top: 20px;
             flex-direction: column;
             @include mqm(1024) {
                 flex-direction: row;
