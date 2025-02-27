@@ -34,11 +34,7 @@
                             <div class="breadcrumbs__title">{{ currentGroup.name }}</div>
                         </router-link>
                     </div>
-                    <div class="course-group__header-right-text">
-                        Our Beginner's Fitness courses are designed specifically for those new to exercise or returning after a long break. These programs introduce you to essential movements, exercises, and fitness routines in a gradual and accessible way. Whether you’re aiming to lose weight, gain strength, or simply become more active, we make sure you start with the right foundation.
-
-                        These courses cover basic strength training, bodyweight exercises, flexibility, and cardio. You’ll also get expert advice on how to build consistency, stay motivated, and avoid injury. By the end of the course, you’ll have the knowledge, confidence, and habits to continue progressing toward your fitness goals.
-                    </div>
+                    <div class="course-group__header-right-text" v-html="currentGroup.description" />
                 </div>
             </div>
             <div class="course-group__list">
