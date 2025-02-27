@@ -85,67 +85,6 @@
                 </div>
             </div>
         </div>
-        <div class="fitness-backed" v-if="courses && groupBook">
-            <div class="fitness-backed__title" data-aos="zoom-in" data-aos-duration="1000">
-                Your Fitness <span>Backed By Science</span>
-            </div>
-            <div class="fitness-backed__img" data-aos="zoom-in" data-aos-duration="1000">
-                <img src="../img/backed.jpg" alt="">
-            </div>
-            <div class="fitness-backed__content">
-                <div class="fitness-backed__title-desk" data-aos="zoom-in" data-aos-duration="1000">
-                    <span>Your Fitness</span> <span>Backed By Science</span>
-                </div>
-                <div class="fitness-backed__description displayBox" data-aos="zoom-in" data-aos-duration="1000">
-                    At FitSphere, we go beyond traditional workouts. Our certified trainers craft programs based on the
-                    latest research in sports science, ensuring that every exercise is efficient and results-driven.
-                    Whether it's strength training, cardio, or yoga, our courses provide you with everything you need to
-                    succeed.
-                </div>
-                <div class="fitness-backed__learn-more-button" @click="router.push({name: 'about-us'})">
-                    Learn More About Our Approach
-                </div>
-            </div>
-        </div>
-        <div class="fitness-advantages" v-if="courses && groupBook">
-            <div class="container">
-                <div class="fitness-advantages__list">
-                    <div class="fitness-advantages__item displayBox" data-aos="fade-up">
-                        <div class="fitness-advantages__item-img">
-                            <img src="../img/mission.png" alt="">
-                        </div>
-                        <div class="fitness-advantages__item-name">
-                            Focus on Results
-                        </div>
-                    </div>
-                    <div class="fitness-advantages__item displayBox" data-aos="fade-up">
-                        <div class="fitness-advantages__item-img">
-                            <img src="../img/rate.png" alt="">
-                        </div>
-                        <div class="fitness-advantages__item-name">
-                            95% see results fast!
-                        </div>
-                    </div>
-                    <div class="fitness-advantages__item displayBox" data-aos="fade-up">
-                        <div class="fitness-advantages__item-img">
-                            <img src="../img/dude.png" alt="">
-                        </div>
-                        <div class="fitness-advantages__item-name">
-                            Expert-designed <br>workouts!
-                        </div>
-                    </div>
-                    <div class="fitness-advantages__item displayBox" data-aos="fade-up">
-                        <div class="fitness-advantages__item-img">
-                            <img src="../img/clock.png" alt="">
-                        </div>
-                        <div class="fitness-advantages__item-name">
-                            Train anytime,<br>anywhere!
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
         <div class="our-comm-wrapper" v-if="courses && groupBook">
             <div class="our-comm">
                 <div class="blick">
@@ -171,6 +110,9 @@
                     </div>
                     <div class="our-comm__text">
                         At FitSphere, we don’t rely on guesswork—we rely on science. Each program is developed using findings from sports physiology, biomechanics, and nutrition studies. We incorporate expert insights from certified trainers, sports scientists, and physical therapists to ensure maximum efficiency and safety.
+                    </div>
+                    <div class="our-comm__learn-more-button primary-button-hover">
+                        Learn More About Our Approach
                     </div>
                 </div>
                 <div class="our-comm__right">
@@ -227,6 +169,45 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="fitness-advantages" v-if="courses && groupBook">
+            <div class="container">
+                <div class="fitness-advantages__list">
+                    <div class="fitness-advantages__item displayBox" data-aos="fade-up">
+                        <div class="fitness-advantages__item-img">
+                            <img src="../img/mission.png" alt="">
+                        </div>
+                        <div class="fitness-advantages__item-name">
+                            Focus on Results
+                        </div>
+                    </div>
+                    <div class="fitness-advantages__item displayBox" data-aos="fade-up">
+                        <div class="fitness-advantages__item-img">
+                            <img src="../img/rate.png" alt="">
+                        </div>
+                        <div class="fitness-advantages__item-name">
+                            95% see results fast!
+                        </div>
+                    </div>
+                    <div class="fitness-advantages__item displayBox" data-aos="fade-up">
+                        <div class="fitness-advantages__item-img">
+                            <img src="../img/dude.png" alt="">
+                        </div>
+                        <div class="fitness-advantages__item-name">
+                            Expert-designed <br>workouts!
+                        </div>
+                    </div>
+                    <div class="fitness-advantages__item displayBox" data-aos="fade-up">
+                        <div class="fitness-advantages__item-img">
+                            <img src="../img/clock.png" alt="">
+                        </div>
+                        <div class="fitness-advantages__item-name">
+                            Train anytime,<br>anywhere!
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
         <div class="inspiring-stories" v-if="courses && groupBook">
@@ -516,7 +497,8 @@ onMounted(async () => {
     }
     .our-comm {
         position: relative;
-        background-color: #fff;
+        background: rgb(11, 70, 119);
+        background: linear-gradient(225deg, rgb(11, 70, 119) 0%, rgb(76, 142, 200) 100%);
         box-shadow: 0px 5px 14px 2px rgba(0, 0, 0, 0.1);
         gap: 120px;
         padding: 80px 0;
@@ -525,7 +507,7 @@ onMounted(async () => {
             display: flex;
         }
         &__left {
-            flex: 73%;
+            flex: 60%;
         }
         &__key-points-title {
             font-family: 'AtkinsonHyperlegible',sans-serif;
@@ -550,23 +532,27 @@ onMounted(async () => {
             font-size: 20px;
             line-height: 20px;
             letter-spacing: 1px;
-            color: #000;
+            color: #fff;
             font-family: "AtkinsonHyperlegible", sans-serif;
             margin-top: 15px;
             padding: 0 20px;
             @include mqm(1024) {
                 padding: 0;
                 line-height: 24px;
+                max-width: 630px;
                 font-size: 24px;
             }
         }
         &__right {
             flex: 45%;
+            padding: 40px;
+            margin: 0 20px;
             margin-top: 50px;
-            padding: 0 40px;
+            border-radius: 30px;
+            background-color: #fff;
             @include mqm(1024) {
-                padding: 0;
-                margin-top: 0;
+                padding: 40px;
+                margin: 0;
             }
         }
         .blick {
@@ -593,6 +579,19 @@ onMounted(async () => {
                 line-height: 26px;
             }
         }
+        &__learn-more-button {
+            transition: 300ms all ease;
+            text-align: center;
+            padding: 17px 0;
+            background-color: #fff;
+            margin: 0 20px;
+            margin-top: 40px;
+
+            @include mqm(1024) {
+                margin-left: 0;
+                max-width: 410px;
+            }
+        }
         &__key-item-img {
             margin-right: 20px;
             flex: 0 0 auto;
@@ -613,15 +612,11 @@ onMounted(async () => {
         &__title {
             font-family: 'AtkinsonHyperlegible',sans-serif;
             font-style: italic;
-            background: #1969AD;
             letter-spacing: 3px;
-            background: linear-gradient(to right, #1969AD 3%, #7EB8E8 90%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             font-weight: 700;
             font-size: 40px;
             line-height: 40px;
-            color: #576C7E;
+            color: #fff;
             padding: 0 20px;
             @include mqm(1024) {
                 padding: 0;
@@ -630,11 +625,13 @@ onMounted(async () => {
         &__text {
             font-size: 16px;
             margin-top: 25px;
+            color: #fff;
             font-family: 'Inter', sans-serif;
             padding: 0 20px;
             @include mqm(1024) {
                 padding: 0;
                 font-size: 18px;
+                max-width: 630px;
             }
         }
     }

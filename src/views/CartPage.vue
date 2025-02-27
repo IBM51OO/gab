@@ -26,7 +26,7 @@
                         <div class="cart-page__subtotal-label">
                             Subtotal:
                         </div>
-                        <div class="cart-page__subtotal-value">
+                        <div class="cart-page__subtotal-value" v-if="cartItems?.length">
                             <div class="cart-page__subtotal-old-price" v-if="cartItems.length > 1">
                                 {{ cartSubtotal }} {{ currencySign }}
                             </div>
@@ -118,7 +118,7 @@ const cartSubtotalWithDiscount = computed(() => {
 });
 async function onSubmitOrder() {
     try {
-        await api.post('/order-from-basket', {}, {
+        const r = await api.post('/order-from-basket', {}, {
             params: {
                 currency: currentValue.value
             }
@@ -127,7 +127,8 @@ async function onSubmitOrder() {
             type: 'success',
             title: "Order success",
         });
-        router.push({name: 'profile'})
+        window.open(r.payment_url, '_self').focus();
+        // router.push({name: 'profile'})
     } catch (e) {
         notify({
             type: 'error',

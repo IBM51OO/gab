@@ -33,7 +33,8 @@
                             Your Fitness Journey Starts Here
                         </div>
                         <div class="our-mission__description">
-                            At FitSphere, we stand out by combining the latest advancements in sports science with real-world training techniques. Our programs are crafted by certified fitness professionals and reviewed by experts to ensure they are safe, effective, and suitable for various fitness levels. Whether you’re a beginner or a seasoned athlete, our platform adapts to meet your needs and aspirations                    </div>
+                            At FitSphere, we stand out by combining the latest advancements in sports science with real-world training techniques. Our programs are designed using proven methods and reviewed by experts to ensure they are safe, effective, and suitable for various fitness levels. Whether you’re a beginner or a seasoned athlete, our platform adapts to meet your needs and aspirations.
+                        </div>
                     </div>
                     <div class="our-mission__image">
                         <img src="../img/aboutus2.png" alt="">
@@ -120,6 +121,7 @@
                         </div>
                         <div class="our-mission__slogan">
                             Training that’s designed with precision, based on research, and built for results
+                            <br><br>
                         </div>
                         <div class="our-mission__description our-mission__description--second">
                             At FitSphere, we don’t believe in guesswork or outdated fitness myths. Every program we offer is rooted in the latest scientific research in sports physiology, biomechanics, and nutrition. Our expert team collaborates with fitness professionals, sports scientists, and medical specialists to create workouts that maximize efficiency and safety.
@@ -622,7 +624,10 @@ const router = useRouter();
         }
         .our-mission__description {
             margin-bottom: 0;
+            padding: 0;
             @include mqm(1024) {
+                max-width: 612px;
+                margin-left: auto;
                 text-align: right;
                 margin-bottom: 40px;
             }
@@ -737,7 +742,6 @@ const router = useRouter();
         font-family: 'Inter', sans-serif;
         color: #000;
         margin-bottom: 10px;
-        padding: 0 10px;
         @include mqm(1024) {
             padding: 0;
         }
