@@ -18,6 +18,9 @@
                 <Field name="newPassword" type="password"/>
                 <ErrorMessage name="newPassword"/>
             </div>
+            <div class="sign-in__check-your">
+                Check your Spam folder
+            </div>
             <button class="primary-button sign-up-verify__new-password-button">Submit</button>
         </Form>
         <Form v-else :validation-schema="schemaSubmitForgot" @submit="onSubmitForgotCode">
@@ -162,6 +165,12 @@ async function onSubmitForgot(data) {
     }
     .sign-in__code-otp-label {
         margin-bottom: 5px;
+    }
+    .sign-in__check-your {
+        color: rgba(0, 0, 0, 0.3);
+        font-size: 14px;
+        font-family: 'Inter', sans-serif;
+        margin-top: 10px;
     }
     .sign-up-verify__new-password-button {
         width: 100%;

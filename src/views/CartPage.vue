@@ -61,6 +61,56 @@
                             <Field name="email" type="email" :value="user.email" />
                             <ErrorMessage name="email"/>
                         </div>
+                        <div class="cart-page__phone">
+                            <div class="cart-page__phone-label">
+                                Phone
+                            </div>
+                            <Field name="phone" type="phone" v-maska="'### #########'">
+                            </Field>
+                            <ErrorMessage name="phone"/>
+                        </div>
+                        <div class="cart-page__country">
+                            <div class="cart-page__country-label">
+                                Country
+                            </div>
+                            <Field name="country" type="text" :value="user.country" />
+                            <ErrorMessage name="country"/>
+                        </div>
+                        <div class="cart-page__city">
+                            <div class="cart-page__city-label">
+                                City
+                            </div>
+                            <Field name="city" type="text" :value="user.city" />
+                            <ErrorMessage name="city"/>
+                        </div>
+                        <div class="cart-page__postal">
+                            <div class="cart-page__postal-label">
+                                Postal Code
+                            </div>
+                            <Field name="postal_code" type="text" :value="user.postal" />
+                            <ErrorMessage name="postal_code"/>
+                        </div>
+                        <div class="cart-page__address-1">
+                            <div class="cart-page__address-1-label">
+                                Line 1 of the address
+                            </div>
+                            <Field name="address1" type="text" :value="user.address1" />
+                            <ErrorMessage name="address1"/>
+                        </div>
+                        <div class="cart-page__address-2">
+                            <div class="cart-page__address-2-label">
+                                Line 2 of the address
+                            </div>
+                            <Field name="address2" type="text" :value="user.address2" />
+                            <ErrorMessage name="address2"/>
+                        </div>
+                        <div class="cart-page__state">
+                            <div class="cart-page__state-label">
+                                State
+                            </div>
+                            <Field name="state" type="text" :value="user.state" />
+                            <ErrorMessage name="state"/>
+                        </div>
                         <div class="cart-page__billings-rule">
                             Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <p @click="router.push({name: 'privacy'})">privacy policy</p>.
                         </div>
@@ -71,7 +121,7 @@
                             </label>
                         </Field>
                         <ErrorMessage name="agree"/>
-                        <button class="primary-button">Place order</button>
+                        <button class="primary-button" v-if="cartItems.length">Place order</button>
                     </Form>
                 </div>
             </div>
@@ -81,6 +131,7 @@
 <script setup>
 import {computed, onMounted, ref} from "vue";
 import {ErrorMessage, Field, Form} from "vee-validate";
+import { vMaska } from "maska/vue"
 import * as yup from "yup";
 import api from "@/services/client.js";
 import {useMainStore} from "@/stores/main.js";
@@ -91,8 +142,17 @@ const schemaBillings = yup.object({
     firstName: yup.string().required('First Name is a required field'),
     lastName: yup.string().required('Last Name is a required field'),
     email: yup.string().email().required('E-mail is a required field'),
-    agree: yup.boolean().required('Confirm your consent'),
+    phone: yup.string().required('Phone is a required field'),
+    country: yup.string().required('country is a required field'),
+    city: yup.string().required('City is a required field'),
+    address1: yup.string().required('Address is a required field'),
+    address2: yup.string(),
+    postal_code: yup.string()
+        .required()
+        .matches(/^[0-9]+$/, "Must be only digits").required('Postal is a required field'),
+    state: yup.string().required('State is a required field'),
 });
+const phoneNumber = ref();
 const courses = ref();
 onMounted(() => {
     fetchCourses();
@@ -116,12 +176,24 @@ const cartSubtotalWithDiscount = computed(() => {
     }
     return cartSubtotal.value;
 });
-async function onSubmitOrder() {
+async function onSubmitOrder(data) {
+    console.log(data);
     try {
-        const r = await api.post('/order-from-basket', {}, {
+        const r = await api.post('/order-from-basket', {
+            name: data.firstName,
+            surname: data.lastName,
+            email: data.email,
+            phone: data.phone,
+            country: data.country,
+            city: data.city,
+            postal_code: data.postal_code,
+            line_one_address: data.address1,
+            line_second_address: data.address2,
+            state: data.state,
+        }, {
             params: {
                 currency: currentValue.value
-            }
+            },
         });
         notify({
             type: 'success',
@@ -191,7 +263,7 @@ async function onSubmitOrder() {
         height: 40px;
         background-color: rgba(0, 0, 0, 0.05);
     }
-    &__first-name-label, &__email-label, &__last-name-label, &__first-name-label {
+    &__first-name-label, &__email-label, &__postal-label, &__last-name-label, &__phone-label, &__state-label, &__country-label, &__city-label, &__address-1-label, &__address-1-label, &__address-2-label, &__first-name-label {
         margin-bottom: 5px;
         @include mqm(1024) {
             margin-top: 20px;

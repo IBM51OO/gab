@@ -221,6 +221,7 @@ async function fetchMyCourses() {
 const  { cookies } = useCookies();
 function logout() {
     mainStore.changeIsAuth(false);
+    mainStore.setUser('');
     cookies.set("access_token", '');
     router.push({ name: 'sign-in'})
 }
