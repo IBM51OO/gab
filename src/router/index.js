@@ -91,6 +91,7 @@ const router = createRouter({
             component: CartPage,
             meta: {
                 layout: 'DefaultLayout',
+                middleware: [auth],
             },
         },
         {
