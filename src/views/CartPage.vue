@@ -65,9 +65,20 @@
                             <div class="cart-page__phone-label">
                                 Phone
                             </div>
-                            <Field name="phone" type="phone" v-maska="'### #########'">
-                            </Field>
-                            <ErrorMessage name="phone"/>
+                            <IntlTelInput
+                                ref="intlTelInput"
+                                :options="{
+                                  initialCountry: 'us',
+                                  autoPlaceholder: 'aggressive',
+                                  separateDialCode: true,
+                                  strictMode: true,
+                                }"
+                                @changeNumber="onChangeNumber"
+                                @changeErrorCode="(val) => phoneError = val"
+                            />
+                            <span v-if="phoneError">
+                                Error number validation
+                            </span>
                         </div>
                         <div class="cart-page__country">
                             <div class="cart-page__country-label">
@@ -121,7 +132,7 @@
                             </label>
                         </Field>
                         <ErrorMessage name="agree"/>
-                        <button class="primary-button" v-if="cartItems.length">Place order</button>
+                        <button class="primary-button cart-button-submit" v-if="cartItems.length">Place order</button>
                     </Form>
                 </div>
             </div>
@@ -129,7 +140,9 @@
     </div>
 </template>
 <script setup>
-import {computed, onMounted, ref} from "vue";
+import {computed, nextTick, onMounted, ref} from "vue";
+import IntlTelInput from "intl-tel-input/vueWithUtils";
+import "intl-tel-input/styles";
 import {ErrorMessage, Field, Form} from "vee-validate";
 import { vMaska } from "maska/vue"
 import * as yup from "yup";
@@ -142,7 +155,6 @@ const schemaBillings = yup.object({
     firstName: yup.string().required('First Name is a required field'),
     lastName: yup.string().required('Last Name is a required field'),
     email: yup.string().email().required('E-mail is a required field'),
-    phone: yup.string().required('Phone is a required field'),
     country: yup.string().required('country is a required field'),
     city: yup.string().required('City is a required field'),
     address1: yup.string().required('Address is a required field'),
@@ -153,9 +165,12 @@ const schemaBillings = yup.object({
     state: yup.string().required('State is a required field'),
 });
 const phoneNumber = ref();
+const intlTelInput = ref();
+const phoneError = ref(false);
 const courses = ref();
-onMounted(() => {
-    fetchCourses();
+onMounted(async () => {
+    await fetchCourses();
+    console.log(intlTelInput.value)
 });
 const mainStore = useMainStore();
 const fetchCourses = async () => {
@@ -176,20 +191,43 @@ const cartSubtotalWithDiscount = computed(() => {
     }
     return cartSubtotal.value;
 });
+function formatPhoneNumber(phone) {
+    // Удаляем пробелы и символы, кроме цифр и "+"
+    const cleaned = phone.replace(/[^\d+]/g, '');
+    // Проверяем, начинается ли номер с "+"
+    if (!cleaned.startsWith('+')) {
+        return 'Номер должен начинаться с "+"';
+    }
+
+    if (!cleaned) {
+        return 'Неправильный формат номера';
+    }
+    const countryCode = cleaned[1];
+    console.log(countryCode, 'f333')
+    const number = cleaned.slice(2, cleaned.length); // Номер без кода страны
+    return `${countryCode} ${number}`;
+}
+function onChangeNumber(data) {
+    console.log(data)
+    phoneNumber.value = formatPhoneNumber(data);
+}
 async function onSubmitOrder(data) {
-    console.log(data);
+    if (phoneError.value) {
+        return;
+    }
     try {
         const r = await api.post('/order-from-basket', {
             name: data.firstName,
             surname: data.lastName,
             email: data.email,
-            phone: data.phone,
+            phone: phoneNumber.value,
             country: data.country,
             city: data.city,
             postal_code: data.postal_code,
             line_one_address: data.address1,
             line_second_address: data.address2,
             state: data.state,
+            country_code: intlTelInput.value.instance.defaultCountry.toUpperCase(),
         }, {
             params: {
                 currency: currentValue.value
@@ -314,7 +352,7 @@ async function onSubmitOrder(data) {
             margin: 10px 0;
         }
 
-        button {
+        .cart-button-submit {
             box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.35);
             text-align: center;
             padding: 23px 0;

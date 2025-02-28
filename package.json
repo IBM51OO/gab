@@ -12,6 +12,7 @@
     "@kyvg/vue3-notification": "^3.4.1",
     "aos": "^2.3.4",
     "axios": "^1.7.9",
+    "intl-tel-input": "^25.3.0",
     "jenesius-vue-modal": "^1.11.9",
     "maska": "^3.1.0",
     "pinia": "^2.3.0",
