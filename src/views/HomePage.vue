@@ -718,6 +718,7 @@ onMounted(async () => {
             }
         }
         &__blick {
+            pointer-events: none;
             position: absolute;
             height: 239px;
             right: 0;
@@ -799,6 +800,8 @@ onMounted(async () => {
             position: absolute;
             right: 0;
             top: 50%;
+            z-index: -1;
+            pointer-events: none;
             @include mqm(1024) {
                 top: -45%;
             }
