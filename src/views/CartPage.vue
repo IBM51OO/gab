@@ -216,6 +216,7 @@ async function onSubmitOrder(data) {
         return;
     }
     try {
+        console.log(data.address2)
         const r = await api.post('/order-from-basket', {
             name: data.firstName,
             surname: data.lastName,
@@ -225,7 +226,7 @@ async function onSubmitOrder(data) {
             city: data.city,
             postal_code: data.postal_code,
             line_one_address: data.address1,
-            line_second_address: data.address2,
+            line_second_address: data.address2 ? data.address2 : null,
             state: data.state,
             country_code: intlTelInput.value.instance.defaultCountry.toUpperCase(),
         }, {
