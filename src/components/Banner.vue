@@ -36,6 +36,7 @@
         background: rgb(217,230,244);
         background: linear-gradient(225deg, rgba(217,230,244,1) 0%, rgba(217,230,244,1) 22%, rgba(217,230,244,1) 54%, rgba(217,230,244,1) 100%);
         max-width: 1060px;
+        z-index: 99999;
         display: flex;
         flex-direction: column;
         @include mqm(1024) {
