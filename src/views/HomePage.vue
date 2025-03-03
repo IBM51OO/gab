@@ -85,7 +85,7 @@
                 </div>
             </div>
         </div>
-        <div class="our-comm-wrapper" v-if="courses && groupBook">
+        <div class="our-comm-wrapper">
             <div class="our-comm">
                 <div class="blick">
                     <svg width="460" height="904" viewBox="0 0 460 904" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -171,7 +171,7 @@
                 </div>
             </div>
         </div>
-        <div class="fitness-advantages" v-if="courses && groupBook">
+        <div class="fitness-advantages">
             <div class="container">
                 <div class="fitness-advantages__list">
                     <div class="fitness-advantages__item displayBox" data-aos="fade-up">
@@ -210,7 +210,7 @@
 
             </div>
         </div>
-        <div class="inspiring-stories" v-if="courses && groupBook">
+        <div class="inspiring-stories">
             <div class="container">
                 <div class="inspiring-stories__title" data-aos="fade-left" data-aos-duration="1000">
                     Inspiring Stories from Our Community
@@ -292,7 +292,7 @@
             </div>
         </div>
 
-        <div class="fitness-reasons" v-if="courses && groupBook">
+        <div class="fitness-reasons">
             <div class="fitness-reasons__blick">
                 <svg width="538" height="939" viewBox="0 0 538 939" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_f_797_166)">
@@ -340,7 +340,7 @@
                 </div>
             </div>
         </div>
-        <div class="get-start" v-if="courses && groupBook">
+        <div class="get-start">
             <div class="get-start__blick">
                 <svg width="518" height="939" viewBox="0 0 518 939" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_f_826_355)">
