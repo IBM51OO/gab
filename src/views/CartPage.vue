@@ -265,8 +265,14 @@ async function onSubmitOrder(data) {
     }
     &__country-and-phone {
         display: flex;
-        gap: 15px;
-        align-items: center;
+        flex-direction: column;
+        margin-bottom: 10px;
+        @include mqm(1024) {
+            gap: 15px;
+            margin-bottom: 0;
+            align-items: center;
+            flex-direction: row;
+        }
     }
     &__country-select-label, &__phone-label {
         margin-top: 20px;
@@ -274,6 +280,7 @@ async function onSubmitOrder(data) {
     }
     &__country-select {
         select {
+            width: 100%;
             min-height: 40px;
         }
     }
