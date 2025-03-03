@@ -61,32 +61,36 @@
                             <Field name="email" type="email" :value="user.email" />
                             <ErrorMessage name="email"/>
                         </div>
-                        <div class="cart-page__phone">
-                            <div class="cart-page__phone-label">
-                                Phone
+                        <div class="cart-page__country-and-phone">
+                            <div class="cart-page__country-select">
+                                <div class="cart-page__country-select-label">
+                                    Country
+                                </div>
+                                <country-select  topCountry="US" v-model="userCountry" />
                             </div>
-                            <IntlTelInput
-                                ref="intlTelInput"
-                                :options="{
+                            <div class="cart-page__phone">
+                                <div class="cart-page__phone-label">
+                                    Phone
+                                </div>
+                                <IntlTelInput
+                                    ref="intlTelInput"
+                                    :options="{
                                   initialCountry: 'us',
                                   autoPlaceholder: 'aggressive',
                                   separateDialCode: true,
                                   strictMode: true,
                                 }"
-                                @changeNumber="onChangeNumber"
-                                @changeErrorCode="(val) => phoneError = val"
-                            />
-                            <span v-if="phoneError">
+                                    @changeNumber="onChangeNumber"
+                                    @changeErrorCode="(val) => phoneError = val"
+                                />
+                                <span v-if="phoneError">
                                 Error number validation
                             </span>
-                        </div>
-                        <div class="cart-page__country">
-                            <div class="cart-page__country-label">
-                                Country
                             </div>
-                            <Field name="country" type="text" :value="user.country" />
-                            <ErrorMessage name="country"/>
                         </div>
+                        <span v-if="countryError">
+                            Error country validation
+                        </span>
                         <div class="cart-page__city">
                             <div class="cart-page__city-label">
                                 City
@@ -155,7 +159,6 @@ const schemaBillings = yup.object({
     firstName: yup.string().required('First Name is a required field'),
     lastName: yup.string().required('Last Name is a required field'),
     email: yup.string().email().required('E-mail is a required field'),
-    country: yup.string().required('country is a required field'),
     city: yup.string().required('City is a required field'),
     address1: yup.string().required('Address is a required field'),
     address2: yup.string(),
@@ -164,7 +167,9 @@ const schemaBillings = yup.object({
 });
 const phoneNumber = ref();
 const intlTelInput = ref();
+const userCountry = ref();
 const phoneError = ref(false);
+const countryError = ref(false);
 const courses = ref();
 onMounted(async () => {
     await fetchCourses();
@@ -201,16 +206,20 @@ function formatPhoneNumber(phone) {
         return 'Неправильный формат номера';
     }
     const countryCode = cleaned[1];
-    console.log(countryCode, 'f333')
     const number = cleaned.slice(2, cleaned.length); // Номер без кода страны
     return `${countryCode} ${number}`;
 }
 function onChangeNumber(data) {
-    console.log(data)
     phoneNumber.value = formatPhoneNumber(data);
 }
 async function onSubmitOrder(data) {
     if (phoneError.value) {
+        return;
+    }
+    if (!userCountry.value) {
+        countryError.value = true;
+    }
+    if (countryError.value) {
         return;
     }
     try {
@@ -220,7 +229,7 @@ async function onSubmitOrder(data) {
             surname: data.lastName,
             email: data.email,
             phone: phoneNumber.value,
-            country: data.country,
+            country: userCountry.value,
             city: data.city,
             postal_code: data.postal_code,
             line_one_address: data.address1,
@@ -252,6 +261,20 @@ async function onSubmitOrder(data) {
         padding: 0 20px;
         @include mqm(1024) {
             padding: 0 180px;
+        }
+    }
+    &__country-and-phone {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
+    &__country-select-label, &__phone-label {
+        margin-top: 20px;
+        margin-bottom: 5px;
+    }
+    &__country-select {
+        select {
+            min-height: 40px;
         }
     }
     &__subtotal-label {
@@ -300,7 +323,7 @@ async function onSubmitOrder(data) {
         height: 40px;
         background-color: rgba(0, 0, 0, 0.05);
     }
-    &__first-name-label, &__email-label, &__postal-label, &__last-name-label, &__phone-label, &__state-label, &__country-label, &__city-label, &__address-1-label, &__address-1-label, &__address-2-label, &__first-name-label {
+    &__first-name-label, &__email-label, &__postal-label, &__last-name-label, &__state-label, &__country-label, &__city-label, &__address-1-label, &__address-1-label, &__address-2-label, &__first-name-label {
         margin-bottom: 5px;
         @include mqm(1024) {
             margin-top: 20px;
