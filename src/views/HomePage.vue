@@ -21,7 +21,7 @@
                 </div>
             </div>
         </div>
-        <div class="fitness-explore" v-if="courses && groupBook">
+        <div class="fitness-explore">
             <div class="fitness-explore__blick">
                 <svg width="518" height="939" viewBox="0 0 518 939" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_f_797_169)">
@@ -43,7 +43,7 @@
                 <div class="fitness-explore__description" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                     From strength training to cardio, mobility, and specialized fitness programs – our expertly crafted courses help you achieve your goals efficiently. Whether you're a beginner or an advanced athlete, there's a perfect program for you!
                 </div>
-                <div class="fitness-explore__items">
+                <div class="fitness-explore__items" v-if="courses && groupBook">
                     <swiper :modules="[Navigation]" :breakpoints="swiperExploreOptions.breakpoints" @swiper="initSwiper" :navigation="true" v-if="courses && groupBook">
                         <swiper-slide v-for="item in groupBook" :key="item.id">
                             <div class="fitness-explore__item" @click="router.push(`/course/${item.id}`)">
@@ -69,6 +69,14 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="container" v-else>
+                    <div class="fitness-explore__items-skeleton">
+                        <div class="fitness-explore__item-skeleton"></div>
+                        <div class="fitness-explore__item-skeleton"></div>
+                        <div class="fitness-explore__item-skeleton"></div>
+
                     </div>
                 </div>
                 <div class="fitness-explore__all-courses" @click="router.push({name: 'courses'})">
@@ -807,6 +815,30 @@ onMounted(async () => {
             pointer-events: none;
             @include mqm(1024) {
                 top: -45%;
+            }
+        }
+        &__items-skeleton {
+            display: flex;
+            gap: 30px;
+            @include mqm(768) {
+                gap: 100px;
+            }
+        }
+        &__item-skeleton {
+            align-items: stretch;
+            background-color: #d7d6db;
+            height: 100vh;
+            width: 100%;
+            border-radius: 5px;
+            max-height: 150px;
+            @include mqm(425) {
+                max-height: 300px;
+            }
+            @include mqm(768) {
+                max-height: 300px;
+            }
+            @include mqm(1024) {
+                max-height: 400px;
             }
         }
         &__title {
