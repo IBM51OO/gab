@@ -72,8 +72,18 @@
                             <div class="course-detail__description-content" v-html="course.nutrition"/>
                         </div>
                     </div>
-                    <div class="course-detail__add-to-cart course-detail__add-to-cart--desktop primary-button-hover" @click="addToCart">
-                        Add to cart
+                    <div class="course-detail__bottom course-detail__bottom--desk">
+                        <div class="course-detail__price">
+                            <span class="course-detail__price-label">
+                                price:
+                            </span>
+                            <span class="course-detail__price-value">
+                                {{ course.prices.find((el) => el.currency === currentCurrency).amount }} {{ currentValue }}
+                            </span>
+                        </div>
+                        <div class="course-detail__add-to-cart course-detail__add-to-cart--desktop primary-button-hover" @click="addToCart">
+                            Add to cart
+                        </div>
                     </div>
                 </div>
                 <div class="course-detail__right">
@@ -87,8 +97,18 @@
                         <div class="course-detail__content" v-html="course.content" />
                     </div>
                 </div>
-                <div class="course-detail__add-to-cart course-detail__add-to-cart--mobile primary-button-hover" @click="addToCart">
-                    Add to cart
+                <div class="course-detail__bottom course-detail__bottom--mob">
+                    <div class="course-detail__price">
+                            <span class="course-detail__price-label">
+                                price:
+                            </span>
+                        <span class="course-detail__price-value">
+                                {{ course.prices.find((el) => el.currency === currentCurrency).amount }} {{ currentValue }}
+                            </span>
+                    </div>
+                    <div class="course-detail__add-to-cart course-detail__add-to-cart--mobile primary-button-hover" @click="addToCart">
+                        Add to cart
+                    </div>
                 </div>
             </div>
         </div>
@@ -106,7 +126,9 @@ const route = useRoute();
 const course = ref();
 const groups = ref();
 const mainStore = useMainStore();
+const currentCurrency = computed(() => mainStore.currency);
 const currentGroup = computed(() => groups.value && groups.value.find((el) => el.id === course.value?.group))
+const currentValue = computed(() => currentCurrency.value === 'EUR' ? '€': '£');
 onMounted(() => {
     fetchGroups();
     fetchPreviewCourse(route.params.id)
@@ -160,6 +182,49 @@ const addToCart = async () => {
     margin-top: 20px;
     @include mqm(1024) {
         margin-top: 30px;
+    }
+    &__bottom {
+        display: flex;
+        width: 100%;
+        gap: 20px;
+        align-items: center;
+        margin-top: 50px;
+        margin-bottom: 70px;
+        @include mqm(1024) {
+            gap: 50px;
+        }
+    }
+    &__bottom--desk {
+        display: none;
+        @include mqm(1024) {
+            display: flex;
+        }
+    }
+    &__bottom--mob {
+        display: flex;
+        @include mqm(1024) {
+            display: none;
+        }
+    }
+    &__price {
+        flex: 17%;
+        @include mqm(1024) {
+            flex: unset;
+        }
+    }
+    &__price-label {
+        font-family: 'Inter', sans-serif;
+        font-style: italic;
+        font-size: 14px;
+        color: #000;
+        display: block;
+    }
+    &__price-value {
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        font-style: italic;
+        font-size: 24px;
+        color: #1969AD;
     }
     &__left {
         order: 2;
@@ -241,8 +306,7 @@ const addToCart = async () => {
         }
     }
     &__add-to-cart {
-        margin-top: 50px;
-        margin-bottom: 70px;
+        width: 100%;
         &.button {
             &--secondary {
                 cursor: pointer;
@@ -253,6 +317,7 @@ const addToCart = async () => {
                 height: 60px;
                 background-color: #576C7E;
                 color: #fff;
+                width: 100%;
                 max-width: 413px;
             }
         }
@@ -278,7 +343,6 @@ const addToCart = async () => {
             font-weight: 500;
             font-size: 20px;
             padding: 14px 0;
-            margin-bottom: 40px;
             @include mqm(1024) {
                 display: none;
             }

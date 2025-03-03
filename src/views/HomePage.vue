@@ -745,7 +745,10 @@ onMounted(async () => {
             &:hover .fitness-reasons__value  {
                 color: #fff;
             }
+            margin: 0 -20px;
+            padding: 25px 20px;
             @include mqm(1024) {
+                margin: 0 auto;
                 font-size: 48px;
                 padding: 25px 60px;
                 flex-direction: row;
