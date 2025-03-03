@@ -159,9 +159,7 @@ const schemaBillings = yup.object({
     city: yup.string().required('City is a required field'),
     address1: yup.string().required('Address is a required field'),
     address2: yup.string(),
-    postal_code: yup.string()
-        .required()
-        .matches(/^[0-9]+$/, "Must be only digits").required('Postal is a required field'),
+    postal_code: yup.string().required('Postal is a required field'),
     state: yup.string().required('State is a required field'),
 });
 const phoneNumber = ref();
