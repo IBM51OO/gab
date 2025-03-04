@@ -41,6 +41,14 @@
                                 <li @click="router.push({name: 'privacy'})">Privacy Policy</li>
                                 <li @click="router.push({name: 'terms'})">Terms & Condition</li>
                             </ul>
+                            <div class="footer__address">
+                                <div class="footer__address-title">
+                                    Address
+                                </div>
+                                <ul class="footer__address-value">
+                                    593 Holly Lane, Birmingham, UK, B24 9LU
+                                </ul>
+                            </div>
                         </div>
                         <div class="footer__contacts">
                             <div class="footer__contacts-title">
@@ -49,6 +57,9 @@
                             <ul>
                                 <li>
                                     info@fitshpere.pro
+                                </li>
+                                <li>
+                                    +44 7537 133610
                                 </li>
                             </ul>
                         </div>
@@ -145,6 +156,16 @@ const router = useRouter();
             max-width: 325px;
         }
     }
+    &__address-title {
+        margin-top: 15px;
+    }
+    &__address-value {
+        font-size: 14px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        white-space: nowrap;
+        margin-top: 16px;
+    }
     &__subscribe-submit {
         max-width: 196px;
         text-align: center;
@@ -181,6 +202,24 @@ const router = useRouter();
     }
     &__menu-list {
         margin-top: 15px;
+    }
+    &__menu {
+        min-width: 160px;
+    }
+    &__contacts {
+        @include mqm(1024) {
+            margin-left: -100px;
+        }
+    }
+    &__legal-information-list {
+        @include mqm(1024) {
+            margin-top: -30px;
+        }
+    }
+    &__legal-information {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
     ul {
         list-style-type: none;
