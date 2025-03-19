@@ -23,7 +23,8 @@
                 <div class="course-item" v-for="course in courses" :key="course.id" @click="router.push(`/course-group/${course.id}`)">
                     <div class="course-item__content">
                         <div class="course-item__image" v-if="course.images.length">
-                            <img :src="`${BaseUrl}/image/${course.images[course.images.length - 1]}`" alt="">
+                            <img :src="`${BaseUrl}/image/${course.images[course.images.length - 1]}`" alt="" onload="">
+                            <div class="course-item__image-wrap"></div>
                         </div>
                         <div class="course-item__title">
                             {{ course.name }}
@@ -143,6 +144,8 @@
         }
         &__image {
             overflow: hidden;
+            background-color: #d7d6db;
+            width: 100px;
             margin-right: 15px;
             transition: 500ms all ease;
             border-radius: 25px;

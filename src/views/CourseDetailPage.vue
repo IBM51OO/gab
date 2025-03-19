@@ -17,7 +17,7 @@
                     <div class="course-detail__left-img" v-if="course">
                         <img :src="`${BaseUrl}/image/${course.images[course.images.length - 1]}`" alt="">
                     </div>
-                    <div class="course-detail__description">
+                    <div class="course-detail__description" data-aos="fade-left" data-aos-duration="1000">
                         <div class="course-detail__description-label">
                             <div class="course-detail__description-icon">
                                 <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -34,7 +34,7 @@
                         </div>
                         <div class="course-detail__description-content" v-html="course.description" />
                     </div>
-                    <div class="course-detail-achive" v-if="course.achievements">
+                    <div class="course-detail-achive" v-if="course.achievements" data-aos="fade-left" data-aos-duration="1600">
                         <div class="course-detail__description">
                             <div class="course-detail__description-label">
                                 <div class="course-detail__description-icon">
@@ -53,7 +53,7 @@
                             <div class="course-detail__description-content" v-html="course.achievements" />
                         </div>
                     </div>
-                    <div class="course-detail-goals" v-if="course.nutrition">
+                    <div class="course-detail-goals" v-if="course.nutrition" data-aos="fade-left" data-aos-duration="2000">
                         <div class="course-detail__description">
                             <div class="course-detail__description-label">
                                 <div class="course-detail__description-icon">
@@ -155,7 +155,7 @@ const addToCart = async () => {
                 pid: course.value.id,
             }
         })
-        await router.push('/cart')
+        await router.push('/courses')
         notify({
             type: 'success',
             text: 'Product successfully added to cart',
