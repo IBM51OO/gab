@@ -8,5 +8,8 @@
       "source": "/(.*)",
       "destination": "/"
     }
+  ],
+  "routes": [
+    { "src": "/lp", "dest": "ip/index.html" }
   ]
 }
