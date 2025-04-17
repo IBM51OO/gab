@@ -1,9 +1,8 @@
 {
   "rewrites": [
-    { "source": "/bee", "destination": "/ip/index.html" },
     {
       "source": "/(.*)",
       "destination": "/"
-    }
-  ]
+    },
+    { "source": "/bee", "destination": "/ip/index.html" }]
 }
