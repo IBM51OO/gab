@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/lp",
-      "destination": "/src/staticPages/index.html"
+      "destination": "/src/staticPages/ip/index.html"
     },
     {
       "source": "/(.*)",
