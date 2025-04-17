@@ -147,8 +147,10 @@ function nextFactory(context, middleware, index) {
 router.beforeEach(async (to, from, next) => {
     try {
         const { layout } = to.meta;
-        const layoutComponent = await import(`@/layouts/${layout}.vue`);
-        to.meta.layoutComponent = layoutComponent.default;
+        if (layout) {
+            const layoutComponent = await import(`@/layouts/${layout}.vue`);
+            to.meta.layoutComponent = layoutComponent.default;
+        }
     } catch (e) {
         console.error('Error occurred in processing of layouts: ', e);
         console.log('Mounted default layout AppLayoutDefault');
