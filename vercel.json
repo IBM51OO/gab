@@ -3,10 +3,6 @@
     {
       "source": "/(.*)",
       "destination": "/"
-    },
-    {
-      "source": "/lp",
-      "destination": "/src/staticPages/index.html"
     }
   ]
 }
