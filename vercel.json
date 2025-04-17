@@ -7,7 +7,7 @@
   ],
   "routes": [
     {
-      "src": "/bee",
+      "src": "/beee",
       "dest": "/test.html"
     }
   ]
