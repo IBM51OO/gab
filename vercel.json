@@ -1,14 +1,9 @@
 {
   "rewrites": [
+    { "source": "/bee", "destination": "/test.html" },
     {
       "source": "/(.*)",
       "destination": "/"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/beee",
-      "dest": "/test.html"
     }
   ]
 }
