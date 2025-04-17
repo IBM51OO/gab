@@ -117,14 +117,7 @@ const router = createRouter({
             meta: {
                 layout: 'DefaultLayout',
             },
-        },
-        {
-            path: '/lp',
-            name: 'lp',
-            beforeEnter: () => {
-                window.location.href = 'index.html'; // Редирект
-            }
-        },
+        }
 
         /*    {
               path: '/about',
