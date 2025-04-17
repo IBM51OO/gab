@@ -1,5 +1,9 @@
 {
-  "redirects": [
-    { "source": "/bee", "destination": "/test.html", "permanent": false }
+  "rewrites": [
+    { "source": "/bee", "destination": "/ip/index.html", "permanent": true },
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
   ]
 }
