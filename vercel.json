@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/lp",
-      "destination": "publoc/index.html"
+      "destination": "public/index.html"
     }
   ]
 }
