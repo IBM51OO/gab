@@ -1,12 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "/(.*)",
-      "destination": "/"
-    },
-    {
       "source": "/lp",
       "destination": "https://www.google.ru/?hl=ru"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/"
     }
   ]
 }
