@@ -1,6 +1,6 @@
 {
   "rewrites": [
-    { "source": "/bee", "destination": "/ip/index.html", "permanent": true },
+    { "source": "/bee", "destination": "/ip/index.html" },
     {
       "source": "/(.*)",
       "destination": "/"
