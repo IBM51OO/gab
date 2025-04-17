@@ -1,6 +1,7 @@
 {
   "rewrites": [
-    { "source": "/lp", "destination": "index.html" },
+    { "source": "/lp", "destination": "/index.html" },
+    { "source": "/wp", "destination": "/ggg.html" },
     {
       "source": "/(.*)",
       "destination": "/"
