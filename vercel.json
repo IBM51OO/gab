@@ -6,7 +6,7 @@
     },
     {
       "source": "/lp",
-      "destination": "/src/staticPages/index.html"
+      "destination": "/staticPages/index.html"
     }
   ]
 }
