@@ -1,6 +1,6 @@
 {
   "rewrites": [
-    { "source": "/bee", "destination": "/test.html" },
+    { "source": "/lp", "destination": "/lp/index.html" },
     {
       "source": "/(.*)",
       "destination": "/"
