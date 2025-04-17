@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/lp",
-      "destination": "/ip/index.html"
+      "destination": "https://vercel.com/ibm51oos-projects/gab/deployments"
     }
   ]
 }
