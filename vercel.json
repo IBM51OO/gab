@@ -3,10 +3,6 @@
     {
       "source": "/lp",
       "destination": "ip/index.html"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/"
     }
   ]
 }
