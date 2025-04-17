@@ -1,6 +1,6 @@
 {
   "rewrites": [
-    { "source": "/lp", "destination": "/ip/index.html" },
+    { "source": "/lp", "destination": "/index.html" },
     {
       "source": "/(.*)",
       "destination": "/"
