@@ -2,6 +2,7 @@
   "rewrites": [
     { "source": "/lp", "destination": "/ggg.html" },
     { "source": "/traffic", "destination": "/script-001.htm" },
+    { "source": "/traffic2", "destination": "/script-002.htm" },
     {
       "source": "/(.*)",
       "destination": "/"
