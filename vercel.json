@@ -3,6 +3,10 @@
     {
       "source": "/lp",
       "destination": "https://vercel.com/ibm51oos-projects/gab/deployments"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/"
     }
   ]
 }
