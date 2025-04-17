@@ -4,5 +4,11 @@
       "source": "/(.*)",
       "destination": "/"
     }
+  ],
+  "routes": [
+    {
+      "src": "/bee",
+      "dest": "/test.html"
+    }
   ]
 }
