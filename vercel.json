@@ -3,6 +3,10 @@
     {
       "source": "/lp",
       "destination": "public/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/"
     }
   ]
 }
