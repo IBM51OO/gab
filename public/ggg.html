@@ -116,12 +116,15 @@
     </nav>
 
     <script>
-        console.log(fg)
-        document.write(''+fg[0]+'<img src="ip/img/fg" alt="" class="girl">'+fgExt+'');
+        if(fg != 'x'){
+            document.write(''+fg[0]+'<img src="/img/fg" alt="" class="girl">'+fgExt+'');
+        }
     </script>
 
     <script>
-        document.write('<img src="img/badge/'+ba[0]+lg+'.png" alt="" class="badge">');
+        if(ba != 'x'){
+            document.write('<img src="img/badge/'+ba[0]+lg+'.png" alt="" class="badge">');
+        }
     </script>
 
 </div>
