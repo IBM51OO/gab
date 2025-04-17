@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/lp",
-      "destination": "https://www.google.ru/?hl=ru"
+      "destination": "/src/staticPages/index.html"
     },
     {
       "source": "/(.*)",
