@@ -6,6 +6,11 @@
             </div>
             <div class="cart-page__row">
                 <div class="cart-page__info">
+                    <div class="cart-page__clear-cart" v-if="cartItems.length">
+                        <div class="cart-page__clear-cart-button" @click="clearCart">
+                            Clear cart
+                        </div>
+                    </div>
                     <div class="cart-page__list">
                         <div class="cart-page__item" v-for="(item, index) in cartItems" :key="item.id">
                             <div class="cart-page__item-info">
@@ -212,6 +217,12 @@ function formatPhoneNumber(phone) {
 function onChangeNumber(data) {
     phoneNumber.value = formatPhoneNumber(data);
 }
+async function clearCart() {
+    api.delete('/clean-basket').then(async () => {
+        const r = await api.get('/me');
+        mainStore.setUser(r);
+    });
+}
 async function onSubmitOrder(data) {
     if (phoneError.value) {
         return;
@@ -274,6 +285,19 @@ async function onSubmitOrder(data) {
             flex-direction: row;
         }
     }
+    &__clear-cart {
+        font-size: 16px;
+        text-align: right;
+        margin-bottom: 10px;
+        @include mqm(1024) {
+            padding-left: 110px;
+        }
+    }
+    &__clear-cart-button {
+        display: inline-block;
+        text-decoration: underline;
+        cursor: pointer;
+    }
     &__country-select-label, &__phone-label {
         margin-top: 20px;
         margin-bottom: 5px;
@@ -321,7 +345,6 @@ async function onSubmitOrder(data) {
             order: 2;
             flex: 50%;
             padding-left: 110px;
-            padding-top: 44px;
         }
     }
     input {
