@@ -518,12 +518,10 @@ const router = useRouter();
             margin-top: 30px;
             img {
                 border-radius: 30px;
-                height: 413px;
                 width: auto;
                 margin: 0 auto;
             }
             @include mqm(1024) {
-                height: 413px;
                 margin-top: 50px;
             }
         }
@@ -540,6 +538,7 @@ const router = useRouter();
         }
         &__content-right-img {
             border-radius: 30px;
+            max-width: 476px;
             img {
                 border-radius: 30px;
             }
@@ -615,7 +614,6 @@ const router = useRouter();
                 margin-top: 40px;
                 img {
                     width: 100%;
-                    max-height: 413px;
                 }
                 @include mqm(1024) {
                     display: none;
@@ -687,7 +685,6 @@ const router = useRouter();
                 margin-top: 40px;
                 img {
                     width: 100%;
-                    max-height: 413px;
                 }
                 @include mqm(1024) {
                     display: none;

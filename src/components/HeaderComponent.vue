@@ -656,6 +656,7 @@ const burderItems = reactive([
         &__content-right-img {
             display: none;
             @include mqm(1024) {
+                max-width: 478px;
                 display: block;
             }
         }
@@ -695,7 +696,6 @@ const burderItems = reactive([
 
         }
         &__preview {
-            height: 413px;
             margin-top: 50px;
             @include mqm(1024) {
                 display: none;
@@ -716,15 +716,19 @@ const burderItems = reactive([
     }
     .primary-button {
         cursor: pointer;
+        transition: 200ms all ease;
         position: relative;
         z-index: 3;
-        background: rgb(26,105,173);
         border-radius: 20px;
         color: #fff;
         font-size: 20px;
         font-family: 'Inter', sans-serif;
         font-weight: 500;
         background: linear-gradient(90deg, rgba(26,105,173,1) 0%, rgba(11,43,71,1) 100%);
+        &:hover {
+            color: #fff;
+            opacity: 0.85;
+        }
     }
     .primary-button-hover {
         cursor: pointer;
